@@ -164,8 +164,11 @@
         <input type="hidden" name="_subject" value="New message from giuvul.github.io">
         <input type="hidden" name="_next" value="https://giuvul.github.io/contact/thanks/">
         <input type="hidden" name="_template" value="table">
-        <!-- trappola anti-spam: invisibile alle persone, i bot la compilano -->
-        <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <!-- trappola anti-spam come da documentazione FormSubmit: se contiene un
+             valore l'invio viene scartato in silenzio. Deve essere display:none,
+             non solo nascosta alla vista: altrimenti l'autocompilazione del
+             browser la riempie e i messaggi veri vanno persi. -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="field">
           <label for="name">Name <span class="req">*</span></label>
           <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
