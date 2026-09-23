@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// Pagina About — schermata 03
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.about-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 36%);
+  gap: clamp(1.8rem, 4vw, 4.5rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 4.9vw, 5.6rem);
+
+  @include down($bp-lg) { grid-template-columns: 1fr; }
+
+  // titolo sopra, bio sotto: affiancati non ci stanno piu' accanto al ritratto
+  &__text {
+    align-self: center;
+
+    .about-bio {
+      margin-top: clamp(1.6rem, 3.4vw, 3.4rem);
+      max-width: 36rem;
+    }
+  }
+}
+
+// Ritratto scontornato: un alone ciano dietro, e il busto che sfuma nello
+// sfondo invece di finire con un taglio netto sulla linea dei numeri.
+.about-portrait {
+  position: relative;
+  margin: 0 0 calc(-1 * clamp(2.5rem, 4.9vw, 5.6rem));   // scende fino ai numeri
+  justify-self: center;
+  width: min(100%, 30rem);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 12% 4% 20%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba($color-accent, 0.2), rgba($color-accent, 0.05) 60%, transparent);
+    filter: blur(8px);
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
+    mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
+  }
+
+  @include down($bp-lg) {
+    order: -1;
+    width: min(72%, 20rem);
+    margin: 0 auto;
+  }
+}
+
+// titolo piu' grande di tutte le altre sezioni, come nel concept
+.about-title { @include display(clamp(2.4rem, 8.54vw, 9.6rem), 800, 0.90); }
+
+.about-bio {
+  font-size: clamp(1rem, 1.85vw, 1.9rem);
+  color: $color-text;
+  line-height: 1.47;
+  padding-top: 0.3em;
+
+  p + p { margin-top: 1.5em; }
+}
+
+// Blocco "Beyond work": testo, foto, micro etichette
+.beyond {
+  display: grid;
+  grid-template-columns: minmax(0, 38.1%) minmax(0, 31.6%) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+
+  @include down($bp-lg) { grid-template-columns: 1fr; gap: 1.8rem; }
+
+  &__text {
+    font-size: clamp(0.95rem, 1.72vw, 1.75rem);
+    color: $color-text;
+    line-height: 1.47;
+    margin-top: clamp(0.8rem, 2.7vw, 3rem);
+  }
+
+  // due paragrafi affiancati: il lavoro fuori dal codice, la vita fuori dal lavoro
+  &--text {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    @include down($bp-lg) { grid-template-columns: 1fr; }
+  }
+
+  &__media img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.02);
+  }
+}
+
+// Competenze per area: un gruppo per riga su mobile, due colonne da tablet
+.about-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.6rem, 3vw, 2.8rem) clamp(1.8rem, 4vw, 4.5rem);
+  margin-bottom: clamp(2.5rem, 4.9vw, 5.6rem);
+
+  @include down($bp-md) { grid-template-columns: 1fr; }
+
+  &__title {
+    @include label($color-accent, $fs-label);
+    margin-bottom: 0.9em;
+  }
+}

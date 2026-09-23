@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Transformation Layer, Tested &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="Business logic that lives inside one-off queries cannot be tested, versioned or traced. Modelling it as a layered graph turns analytics from a set of opinions into a build with a…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/the-transformation-layer/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="The Transformation Layer, Tested &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="Business logic that lives inside one-off queries cannot be tested, versioned or traced. Modelling it as a layered graph turns analytics from a set of opinions into a build with a…">
+  <meta property="og:url" content="https://giuvul.github.io/work/the-transformation-layer/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Transformation Layer, Tested &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="Business logic that lives inside one-off queries cannot be tested, versioned or traced. Modelling it as a layered graph turns analytics from a set of opinions into a build with a…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">Analytics Engineering</p>
+          <h1 class="case-title">The transformation<br><span class="display-accent">layer, tested</span></h1>
+          <p class="case-lead">Business logic that lives inside one-off queries cannot be tested, versioned or traced. Modelling it as a layered graph turns analytics from a set of opinions into a build with a pass or fail result.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Passenger profiling platform</dd></div>
+          <div><dt>Scale</dt><dd>Layered model graph, refreshed nightly</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>dbt / Dagster / DuckDB</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">Once the data lived somewhere queryable, the question stopped being where it is and became whose definition of the metric is the right one.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Model the logic as a layered graph with declared expectations and a recorded lineage, refreshed on a schedule like any other build.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">One authoritative definition per metric, tracing a number to its source is a lookup rather than an investigation, and regressions surface at build time.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg05" id="dg05-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg05" id="dg05-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg05" id="dg05-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg05" id="dg05-4">
+        <input class="dg-state dg-state--reset" type="radio" name="dg05" id="dg05-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-workflow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></g></symbol><symbol id="i-amazons3" viewBox="0 0 24 24"><path fill="currentColor" d="m20.913 13.147l.12-.895c.947.576 1.258.922 1.354 1.071c-.16.031-.562.046-1.474-.176m-2.174 7.988l-.005.073c0 .084-.207.405-1.124.768a10 10 0 0 1-1.438.432c-1.405.325-3.128.504-4.853.504c-4.612 0-7.412-1.184-7.412-1.704l-.005-.073L1.81 5.602q.203.117.432.227q.064.03.128.057q.2.093.417.18l.179.069q.232.087.478.168l.13.043q.311.097.646.187l.176.044q.263.066.534.127a23 23 0 0 0 .843.17l.121.023q.378.067.768.122q.107.016.216.03q.299.04.604.077l.24.027q.366.04.74.07l.081.009q.413.033.83.056l.233.012q.316.015.633.025a33 33 0 0 0 2.795-.026l.232-.011q.417-.023.83-.056l.08-.008q.375-.03.742-.072l.238-.026q.307-.036.609-.077l.211-.03q.392-.056.772-.122l.111-.02q.323-.06.634-.125l.212-.047q.279-.062.546-.13l.166-.042q.338-.09.654-.189l.115-.038a11 11 0 0 0 .493-.173q.087-.032.17-.066q.225-.089.43-.185q.059-.025.116-.052q.23-.11.436-.228l-.976 7.245c-2.488-.78-5.805-2.292-7.311-3a1.09 1.09 0 0 0-1.088-1.085c-.6 0-1.088.489-1.088 1.088s.488 1.089 1.088 1.089c.196 0 .378-.056.537-.148c1.72.812 5.144 2.367 7.715 3.15zm-7.42-20.047c5.677 0 9.676 1.759 9.75 2.736l-.014.113c-.01.033-.031.067-.048.101c-.015.028-.026.057-.047.087c-.024.033-.058.068-.09.102c-.028.03-.051.06-.084.09c-.038.035-.087.07-.133.105c-.04.03-.074.06-.119.091c-.053.036-.116.071-.177.107c-.05.03-.095.06-.15.09c-.068.036-.147.073-.222.11c-.059.028-.114.057-.177.085c-.084.038-.177.074-.268.111c-.068.027-.13.054-.203.082c-.097.036-.205.072-.31.107c-.075.026-.148.053-.228.079c-.111.035-.233.069-.35.103c-.085.024-.165.05-.253.073c-.124.034-.258.065-.389.098c-.093.022-.181.046-.278.068c-.139.032-.287.061-.433.091c-.098.02-.191.041-.293.06c-.155.03-.32.057-.482.084c-.1.018-.198.036-.302.052c-.166.026-.342.048-.515.072c-.11.014-.213.03-.325.044c-.181.023-.372.041-.56.06q-.163.019-.332.036c-.188.016-.386.029-.58.043c-.122.009-.24.02-.364.028c-.207.012-.422.02-.635.028c-.12.005-.234.012-.354.016a36 36 0 0 1-2.069 0c-.12-.004-.234-.011-.352-.016c-.214-.008-.43-.016-.637-.028c-.122-.008-.238-.02-.36-.027c-.195-.015-.394-.028-.584-.044c-.11-.01-.215-.024-.324-.035c-.19-.02-.384-.038-.568-.06l-.315-.044c-.176-.024-.355-.046-.525-.073c-.1-.015-.192-.033-.29-.05c-.167-.028-.335-.055-.494-.086c-.096-.018-.183-.038-.276-.056c-.151-.032-.305-.062-.45-.095c-.09-.02-.173-.043-.26-.064c-.138-.034-.277-.067-.407-.102c-.082-.022-.157-.046-.235-.069a12 12 0 0 1-.368-.108c-.075-.024-.141-.049-.213-.073c-.11-.037-.223-.075-.325-.113c-.067-.025-.125-.051-.188-.077c-.096-.038-.195-.076-.282-.115c-.06-.027-.11-.054-.166-.08c-.08-.039-.162-.077-.233-.116c-.052-.028-.094-.055-.142-.084c-.063-.038-.13-.075-.185-.113c-.043-.029-.075-.058-.113-.086c-.048-.037-.098-.073-.139-.11c-.032-.029-.054-.057-.08-.087c-.033-.035-.069-.07-.093-.104c-.02-.03-.031-.058-.046-.086c-.018-.035-.039-.068-.049-.102l-.015-.113c.076-.977 4.074-2.736 9.748-2.736m12.182 12.124c-.118-.628-.84-1.291-2.31-2.128l.963-7.16l.005-.073C22.16 1.581 16.447 0 11.32 0C6.194 0 .482 1.581.482 3.851l.005.072L2.819 21.25c.071 2.002 5.236 2.75 8.5 2.75c1.805 0 3.615-.188 5.098-.531c.598-.138 1.133-.3 1.592-.48c1.18-.467 1.789-1.053 1.813-1.739l.945-7.018c.557.131 1.016.197 1.389.197c.54 0 .902-.137 1.134-.413a.96.96 0 0 0 .21-.804Z"/></symbol><symbol id="i-apacheparquet" viewBox="0 0 24 24"><path fill="currentColor" d="M10.953 20.391c-.95-1.013-.978-1.057-.807-1.248c.27-.304 11.811-10.868 11.977-10.964c.143-.083 1.558.6 1.867.902c.119.115-.8 1.098-5.817 6.218c-3.277 3.345-6.021 6.095-6.097 6.112c-.076.016-.582-.442-1.123-1.02M8.333 17.7c-.511-.515-.835-.92-.803-1.003c.058-.152 6.693-5.515 6.817-5.51c.153.005 1.714 1.191 1.714 1.302c0 .116-6.67 6.073-6.8 6.073c-.038 0-.456-.388-.928-.862M5.91 15.227c-.4-.448-.652-.81-.598-.86c.28-.26 3.164-2.26 3.26-2.26c.154.002 1.547 1.196 1.547 1.327c0 .161-3.124 2.566-3.334 2.566c-.1 0-.494-.348-.875-.773m-1.988-2.04c-.574-.58-.642-.69-.512-.81c.187-.174 9.357-6.094 9.545-6.162c.146-.053 1.417.716 1.417.858c0 .102-9.401 6.685-9.63 6.744c-.091.023-.435-.241-.82-.63m6.117-.935c-.379-.314-.687-.626-.684-.692c.002-.066.337-.354.743-.64c.406-.285 2.227-1.587 4.046-2.894s3.383-2.376 3.474-2.376c.245 0 1.485.717 1.445.835c-.057.173-8.012 6.336-8.179 6.337c-.086 0-.467-.256-.845-.57m-7.963-.923c-.452-.478-.518-.593-.4-.701c.103-.093 5.783-3.449 6.47-3.821c.114-.062 1.318.807 1.28.922c-.05.15-6.456 4.172-6.645 4.172c-.09 0-.408-.257-.705-.572m13.735.038c-.416-.298-.772-.59-.792-.65c-.028-.083 3.74-3.215 4.595-3.818c.166-.118.297-.079 1.01.301c.45.24.818.485.817.545c-.002.152-4.487 4.098-4.7 4.135c-.096.016-.515-.214-.93-.513M.547 9.707L0 9.156l.243-.158c.133-.086 2.841-1.563 6.018-3.282l5.775-3.126l.553.27c.303.15.552.322.552.384c0 .084-11.875 7.018-12.02 7.018c-.015 0-.274-.249-.574-.553zm8.88-2.79c-.269-.2-.487-.418-.487-.483s1.083-.755 2.406-1.534l2.405-1.417l.617.33c.34.18.617.363.617.406c0 .122-4.715 3.07-4.904 3.067c-.092-.001-.387-.167-.655-.368Zm4.816-.612c-.325-.2-.589-.418-.588-.484c.002-.112 1.64-1.209 1.909-1.279c.123-.032 1.226.55 1.315.694c.027.044-.031.15-.128.237c-.333.296-1.7 1.202-1.81 1.199c-.06-.002-.374-.167-.698-.367"/></symbol><symbol id="i-dbt" viewBox="0 0 24 24"><path fill="currentColor" d="M17.9 9.376a8.15 8.15 0 0 0-3.042-3.12l1.771.838a10.3 10.3 0 0 1 3.74 3l3.234-5.929a2.86 2.86 0 0 0-.061-2.96a2.726 2.726 0 0 0-3.567-.872L14.1 3.543a4.36 4.36 0 0 1-4.176 0L4.177.408a2.86 2.86 0 0 0-2.96.063a2.726 2.726 0 0 0-.872 3.566L3.55 9.91a4.36 4.36 0 0 1 0 4.177L.423 19.83a2.86 2.86 0 0 0 .085 2.997a2.726 2.726 0 0 0 3.545.839l6.058-3.305a10.3 10.3 0 0 1-3.005-3.746l-.838-1.77a8.15 8.15 0 0 0 3.12 3.042l10.584 5.779a2.726 2.726 0 0 0 3.543-.837a2.87 2.87 0 0 0 .08-3.001zm3.38-7.735a1.09 1.09 0 1 1 0 2.181a1.09 1.09 0 0 1 0-2.18M2.744 3.822a1.09 1.09 0 1 1 0-2.18a1.09 1.09 0 0 1 0 2.18m0 18.536a1.09 1.09 0 1 1 0-2.18a1.09 1.09 0 0 1 0 2.18M13.103 10.91a2.174 2.174 0 0 0-2.18 2.168a2.17 2.17 0 0 0 .704 1.61a2.72 2.72 0 1 1 .758-5.386a2.72 2.72 0 0 1 2.314 2.314a2.16 2.16 0 0 0-1.596-.706m8.177 11.45a1.09 1.09 0 1 1 0-2.182a1.09 1.09 0 0 1 0 2.181"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1200 310" role="img" aria-label="A layered transformation graph from raw sources to marts, wide" aria-describedby="d05w-d">
+            <desc id="d05w-d">Raw records are staged into typed sources, composed into intermediate models and resolved into presentation marts, with expectations asserted at every layer and the lineage recorded.</desc>
+            <rect x="30.0" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-amazons3" x="164.9" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <use href="#i-apacheparquet" x="196.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="130.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Raw</text>
+            <text x="130.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">as it arrived</text>
+            <rect x="343.3" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="356.3" y="127.0" class="dg-num" font-size="13" text-anchor="start">02</text>
+            <use href="#i-dbt" x="509.3" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="443.3" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Staging</text>
+            <text x="443.3" y="224.0" class="dg-note" font-size="16" text-anchor="middle">typed and cleaned</text>
+            <line x1="240.0" y1="152.0" x2="331.3" y2="152.0" class="dg-edge"/>
+            <polygon points="340.3,152.0 331.3,147.5 331.3,156.5" class="dg-arrow"/>
+            <rect x="656.7" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="669.7" y="127.0" class="dg-num" font-size="13" text-anchor="start">03</text>
+            <use href="#i-dbt" x="822.7" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="756.7" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Intermediate</text>
+            <text x="756.7" y="224.0" class="dg-note" font-size="16" text-anchor="middle">business logic</text>
+            <line x1="553.3" y1="152.0" x2="644.7" y2="152.0" class="dg-edge"/>
+            <polygon points="653.7,152.0 644.7,147.5 644.7,156.5" class="dg-arrow"/>
+            <rect x="970.0" y="104.0" width="200.0" height="96.0" class="dg-node dg-node--key"/>
+            <text x="983.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">04</text>
+            <use href="#i-dbt" x="1105.0" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-workflow" x="1136.0" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="1070.0" y="157.8" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Marts</text>
+            <text x="1070.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">one agreed answer</text>
+            <line x1="866.7" y1="152.0" x2="958.0" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="967.0,152.0 958.0,147.5 958.0,156.5" class="dg-arrow--key"/>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg05-1" style="left:2.500%;top:33.548%;width:16.667%;height:30.968%;anchor-name:--dg05-wide-1"><span class="visually-hidden">Raw</span><span class="diagram__tip" style="position-anchor:--dg05-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Raw</span><span class="diagram__tip-text">The records exactly as they arrived, untouched. Keeping this layer honest means any mistake made later can be found and corrected without going back to the source system.</span><span class="diagram__tip-tech">S3 / Parquet</span></span></label>
+            <label class="diagram__hit " for="dg05-2" style="left:28.611%;top:33.548%;width:16.667%;height:30.968%;anchor-name:--dg05-wide-2"><span class="visually-hidden">Staging</span><span class="diagram__tip" style="position-anchor:--dg05-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Staging</span><span class="diagram__tip-text">One thin layer that does nothing clever: it gives every column a real type, fixes names, and drops what is not needed. Keeping cleaning separate from logic is what makes the layers above readable.</span><span class="diagram__tip-tech">dbt / typed sources</span></span></label>
+            <label class="diagram__hit " for="dg05-3" style="left:54.722%;top:33.548%;width:16.667%;height:30.968%;anchor-name:--dg05-wide-3"><span class="visually-hidden">Intermediate</span><span class="diagram__tip" style="position-anchor:--dg05-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Intermediate</span><span class="diagram__tip-text">This is where the business rules live &mdash; what counts as a matched passenger, how a dwell window is defined, which flights belong to a terminal. Written once here rather than re-invented in each report.</span><span class="diagram__tip-tech">dbt models / Jinja</span></span></label>
+            <label class="diagram__hit diagram__hit--end" for="dg05-4" style="left:80.833%;top:33.548%;width:16.667%;height:30.968%;anchor-name:--dg05-wide-4"><span class="visually-hidden">Marts</span><span class="diagram__tip" style="position-anchor:--dg05-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Marts</span><span class="diagram__tip-text">The tables the dashboards actually read, each one the single agreed answer to a question. Every layer carries expectations that are checked on each run, including deliberate wrong-answer tests that prove the checks are capable of failing &mdash; a check that has never failed is not evidence of anything.</span><span class="diagram__tip-tech">dbt tests / Dagster assets / scheduled refresh</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 690" role="img" aria-label="A layered transformation graph from raw sources to marts, stacked" aria-describedby="d05t-d">
+            <desc id="d05t-d">Raw records are staged into typed sources, composed into intermediate models and resolved into presentation marts, with expectations asserted at every layer and the lineage recorded.</desc>
+            <rect x="60.0" y="24.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="47.0" class="dg-num" font-size="19" text-anchor="start">01</text>
+            <use href="#i-amazons3" x="387.9" y="33.0" width="26.0" height="26.0" class="dg-icon"/>
+            <use href="#i-apacheparquet" x="423.0" y="33.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="77.9" class="dg-label" font-size="22" text-anchor="middle">Raw</text>
+            <text x="260.0" y="144.5" class="dg-note" font-size="19" text-anchor="middle">as it arrived</text>
+            <rect x="60.0" y="202.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="225.0" class="dg-num" font-size="19" text-anchor="start">02</text>
+            <use href="#i-dbt" x="423.0" y="211.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="255.9" class="dg-label" font-size="22" text-anchor="middle">Staging</text>
+            <text x="260.0" y="322.5" class="dg-note" font-size="19" text-anchor="middle">typed and cleaned</text>
+            <line x1="260.0" y1="126.0" x2="260.0" y2="190.0" class="dg-edge"/>
+            <polygon points="260.0,199.0 255.5,190.0 264.5,190.0" class="dg-arrow"/>
+            <rect x="60.0" y="380.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="403.0" class="dg-num" font-size="19" text-anchor="start">03</text>
+            <use href="#i-dbt" x="423.0" y="389.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="433.9" class="dg-label" font-size="22" text-anchor="middle">Intermediate</text>
+            <text x="260.0" y="500.5" class="dg-note" font-size="19" text-anchor="middle">business logic</text>
+            <line x1="260.0" y1="304.0" x2="260.0" y2="368.0" class="dg-edge"/>
+            <polygon points="260.0,377.0 255.5,368.0 264.5,368.0" class="dg-arrow"/>
+            <rect x="60.0" y="558.0" width="400.0" height="92.0" class="dg-node dg-node--key"/>
+            <text x="73.0" y="581.0" class="dg-num" font-size="19" text-anchor="start">04</text>
+            <use href="#i-dbt" x="387.9" y="567.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-workflow" x="423.0" y="567.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="611.9" class="dg-label dg-label--key" font-size="22" text-anchor="middle">Marts</text>
+            <text x="260.0" y="678.5" class="dg-note" font-size="19" text-anchor="middle">one agreed answer</text>
+            <line x1="260.0" y1="482.0" x2="260.0" y2="546.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,555.0 255.5,546.0 264.5,546.0" class="dg-arrow--key"/>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit " for="dg05-1" style="left:11.538%;top:3.478%;width:76.923%;height:13.333%;anchor-name:--dg05-tall-1"><span class="visually-hidden">Raw</span><span class="diagram__tip" style="position-anchor:--dg05-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Raw</span><span class="diagram__tip-text">The records exactly as they arrived, untouched. Keeping this layer honest means any mistake made later can be found and corrected without going back to the source system.</span><span class="diagram__tip-tech">S3 / Parquet</span></span></label>
+            <label class="diagram__hit " for="dg05-2" style="left:11.538%;top:29.275%;width:76.923%;height:13.333%;anchor-name:--dg05-tall-2"><span class="visually-hidden">Staging</span><span class="diagram__tip" style="position-anchor:--dg05-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Staging</span><span class="diagram__tip-text">One thin layer that does nothing clever: it gives every column a real type, fixes names, and drops what is not needed. Keeping cleaning separate from logic is what makes the layers above readable.</span><span class="diagram__tip-tech">dbt / typed sources</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg05-3" style="left:11.538%;top:55.072%;width:76.923%;height:13.333%;anchor-name:--dg05-tall-3"><span class="visually-hidden">Intermediate</span><span class="diagram__tip" style="position-anchor:--dg05-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Intermediate</span><span class="diagram__tip-text">This is where the business rules live &mdash; what counts as a matched passenger, how a dwell window is defined, which flights belong to a terminal. Written once here rather than re-invented in each report.</span><span class="diagram__tip-tech">dbt models / Jinja</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg05-4" style="left:11.538%;top:80.870%;width:76.923%;height:13.333%;anchor-name:--dg05-tall-4"><span class="visually-hidden">Marts</span><span class="diagram__tip" style="position-anchor:--dg05-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Marts</span><span class="diagram__tip-text">The tables the dashboards actually read, each one the single agreed answer to a question. Every layer carries expectations that are checked on each run, including deliberate wrong-answer tests that prove the checks are capable of failing &mdash; a check that has never failed is not evidence of anything.</span><span class="diagram__tip-tech">dbt tests / Dagster assets / scheduled refresh</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 05 &mdash; Every number on a dashboard can be traced back to a raw record</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg05-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg05-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

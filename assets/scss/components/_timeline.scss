@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------------------
+// Componenti della pagina CV: timeline, elenco competenze, barre di livello
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.cv-section {
+  display: grid;
+  grid-template-columns: minmax(140px, 18%) 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-block: clamp(2rem, 4.5vh, 3.4rem);
+  border-top: 1px solid $color-line-soft;
+
+  @include down($bp-md) { grid-template-columns: 1fr; gap: 1.2rem; }
+
+  &__title { @include label($color-accent, $fs-label); padding-top: 0.35em; }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.6rem, 3vh, 2.6rem);
+
+  &__item {
+    display: grid;
+    grid-template-columns: minmax(110px, 16%) 1fr;
+    gap: clamp(1rem, 2vw, 2rem);
+
+    @include down($bp-sm) { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+
+  &__period { @include label($color-muted, $fs-micro); line-height: 1.9; }
+
+  &__role {
+    font-family: $font-display;
+    font-variation-settings: 'wdth' 108;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.2vw, 1.3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: $color-heading;
+  }
+
+  &__org { @include label($color-accent, $fs-micro); display: block; margin: 0.5em 0 0.9em; }
+
+  &__text { font-size: $fs-small; color: $color-text; line-height: 1.75; max-width: 62ch; }
+
+  &__list {
+    margin-top: 0.8em;
+    font-size: $fs-small;
+    color: $color-text;
+    line-height: 1.85;
+
+    li { position: relative; padding-left: 1.2em; }
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 1px;
+      background: $color-accent;
+    }
+  }
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(1.2rem, 2.4vw, 2.2rem);
+}
+
+.skill {
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    @include label($color-heading, $fs-micro);
+    margin-bottom: 0.8em;
+
+    span:last-child { color: $color-muted; }
+  }
+
+  &__bar {
+    height: 2px;
+    background: $color-line;
+    position: relative;
+
+    i {
+      position: absolute;
+      inset: 0 auto 0 0;
+      background: linear-gradient(90deg, $color-accent-dim, $color-accent);
+      box-shadow: 0 0 10px rgba($color-accent, 0.6);
+    }
+  }
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  li {
+    @include label($color-text, $fs-micro);
+    letter-spacing: 0.12em;
+    border: 1px solid $color-line;
+    padding: 0.55em 0.9em;
+  }
+}

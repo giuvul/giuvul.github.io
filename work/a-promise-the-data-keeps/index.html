@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Promise the Data Keeps &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="Data quality does not fail loudly. Nothing crashes; the numbers simply become wrong, and somebody notices weeks later in a meeting. The only defence is to write down every…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/a-promise-the-data-keeps/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="A Promise the Data Keeps &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="Data quality does not fail loudly. Nothing crashes; the numbers simply become wrong, and somebody notices weeks later in a meeting. The only defence is to write down every…">
+  <meta property="og:url" content="https://giuvul.github.io/work/a-promise-the-data-keeps/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Promise the Data Keeps &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="Data quality does not fail loudly. Nothing crashes; the numbers simply become wrong, and somebody notices weeks later in a meeting. The only defence is to write down every…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">Data Governance</p>
+          <h1 class="case-title">A promise<br><span class="display-accent">the data keeps</span></h1>
+          <p class="case-lead">Data quality does not fail loudly. Nothing crashes; the numbers simply become wrong, and somebody notices weeks later in a meeting. The only defence is to write down every assumption about the data as something a machine can check, and to check it on a schedule.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Passenger profiling platform</dd></div>
+          <div><dt>Scale</dt><dd>43 contracts, hourly and on every write</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>YAML / SQL / CloudWatch</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">The product's output is inference, so a wrong value does not look wrong. Upstream feeds changed formats without warning and nothing objected.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Move every assumption out of the code and into a declared registry that runs on a schedule, records its verdicts, and reports its own health.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">Whole classes of silent corruption are now caught before a customer sees them, and the registry doubles as the written definition of what each field means.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg03" id="dg03-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg03" id="dg03-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg03" id="dg03-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg03" id="dg03-4">
+        <input class="dg-state dg-state--pick" type="radio" name="dg03" id="dg03-5">
+        <input class="dg-state dg-state--reset" type="radio" name="dg03" id="dg03-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-amazoncloudwatch" viewBox="0 0 24 24"><path fill="currentColor" d="M18.454 14.905c0-1.676-1.372-3.039-3.059-3.039c-1.686 0-3.058 1.363-3.058 3.039c0 1.675 1.372 3.038 3.058 3.038c1.687 0 3.059-1.363 3.059-3.038m.862 0c0 2.147-1.759 3.894-3.92 3.894s-3.92-1.747-3.92-3.894s1.758-3.895 3.92-3.895s3.92 1.747 3.92 3.895m3.617 5.87l-3.004-2.688c-.242.34-.523.649-.834.926l2.999 2.687c.256.23.654.208.885-.046a.623.623 0 0 0-.046-.88Zm-7.538-1.206c2.59 0 4.696-2.092 4.696-4.664c0-2.573-2.106-4.665-4.696-4.665s-4.696 2.092-4.696 4.665s2.107 4.664 4.696 4.664m8.224 2.658c-.293.323-.7.487-1.107.487a1.5 1.5 0 0 1-.995-.378l-3.118-2.794a5.54 5.54 0 0 1-3.004.883c-3.064 0-5.557-2.476-5.557-5.52s2.493-5.521 5.557-5.521s5.558 2.477 5.558 5.52c0 .874-.21 1.697-.576 2.432l3.133 2.803c.608.546.657 1.482.11 2.088ZM3.977 7.454q0 .335.04.659a.426.426 0 0 1-.352.473C2.605 8.858.862 9.681.862 12.148c0 1.863 1.034 2.892 1.902 3.427c.297.185.647.284 1.017.288l5.195.005v.856l-5.2-.005a2.8 2.8 0 0 1-1.469-.418C1.447 15.77 0 14.524 0 12.148c0-2.864 1.971-3.923 3.129-4.297a6 6 0 0 1-.013-.397c0-2.34 1.598-4.767 3.716-5.645c2.478-1.031 5.104-.52 7.022 1.367a7 7 0 0 1 1.459 2.116a2.8 2.8 0 0 1 1.78-.644c1.287 0 2.735.97 2.993 3.092c1.205.276 3.751 1.24 3.751 4.441c0 1.278-.403 2.333-1.199 3.137l-.614-.6c.632-.638.952-1.491.952-2.537c0-2.8-2.36-3.495-3.374-3.664a.43.43 0 0 1-.353-.496c-.141-1.738-1.18-2.517-2.156-2.517c-.616 0-1.193.298-1.584.818a.431.431 0 0 1-.75-.111c-.353-.971-.861-1.788-1.511-2.426c-1.663-1.636-3.936-2.079-6.084-1.186c-1.787.74-3.187 2.873-3.187 4.855"/></symbol><symbol id="i-celery" viewBox="0 0 24 24"><path fill="currentColor" d="M2.303 0A2.3 2.3 0 0 0 0 2.303v19.394A2.3 2.3 0 0 0 2.303 24h19.394A2.3 2.3 0 0 0 24 21.697V2.303A2.3 2.3 0 0 0 21.697 0zm8.177 3.072c4.098 0 7.028 1.438 7.68 1.764l-1.194 2.55c-2.442-1.057-4.993-1.41-5.672-1.41c-1.574 0-2.17.922-2.17 1.763v8.494c0 .869.596 1.791 2.17 1.791c.679 0 3.23-.38 5.672-1.41l1.194 2.496c-.435.271-3.637 1.818-7.68 1.818c-1.112 0-4.64-.244-4.64-4.64V7.713c0-4.397 3.528-4.64 4.64-4.64z"/></symbol><symbol id="i-postgresql" viewBox="0 0 24 24"><path fill="currentColor" d="M23.56 14.723a.5.5 0 0 0-.057-.12q-.21-.395-1.007-.231c-1.654.34-2.294.13-2.526-.02c1.342-2.048 2.445-4.522 3.041-6.83c.272-1.05.798-3.523.122-4.73a1.6 1.6 0 0 0-.15-.236C21.693.91 19.8.025 17.51.001c-1.495-.016-2.77.346-3.116.479a10 10 0 0 0-.516-.082a8 8 0 0 0-1.312-.127c-1.182-.019-2.203.264-3.05.84C8.66.79 4.729-.534 2.296 1.19C.935 2.153.309 3.873.43 6.304c.041.818.507 3.334 1.243 5.744q.69 2.26 1.433 3.582q.83 1.493 1.714 1.79c.448.148 1.133.143 1.858-.729a56 56 0 0 1 1.945-2.206c.435.235.906.362 1.39.377v.004a11 11 0 0 0-.247.305c-.339.43-.41.52-1.5.745c-.31.064-1.134.233-1.146.811a.6.6 0 0 0 .091.327c.227.423.922.61 1.015.633c1.335.333 2.505.092 3.372-.679c-.017 2.231.077 4.418.345 5.088c.221.553.762 1.904 2.47 1.904q.375.001.829-.094c1.782-.382 2.556-1.17 2.855-2.906c.15-.87.402-2.875.539-4.101c.017-.07.036-.12.057-.136c0 0 .07-.048.427.03l.044.007l.254.022l.015.001c.847.039 1.911-.142 2.531-.43c.644-.3 1.806-1.033 1.595-1.67M2.37 11.876c-.744-2.435-1.178-4.885-1.212-5.571c-.109-2.172.417-3.683 1.562-4.493c1.837-1.299 4.84-.54 6.108-.13l-.01.01C6.795 3.734 6.843 7.226 6.85 7.44c0 .082.006.199.016.36c.034.586.1 1.68-.074 2.918c-.16 1.15.194 2.276.973 3.089q.12.126.252.237c-.347.371-1.1 1.193-1.903 2.158c-.568.682-.96.551-1.088.508c-.392-.13-.813-.587-1.239-1.322c-.48-.839-.963-2.032-1.415-3.512m6.007 5.088a1.6 1.6 0 0 1-.432-.178c.089-.039.237-.09.483-.14c1.284-.265 1.482-.451 1.915-1a8 8 0 0 1 .367-.443a.4.4 0 0 0 .074-.13c.17-.151.272-.11.436-.042c.156.065.308.26.37.475c.03.102.062.295-.045.445c-.904 1.266-2.222 1.25-3.168 1.013m2.094-3.988l-.052.14c-.133.357-.257.689-.334 1.004c-.667-.002-1.317-.288-1.81-.803c-.628-.655-.913-1.566-.783-2.5c.183-1.308.116-2.447.08-3.059l-.013-.22c.296-.262 1.666-.996 2.643-.772c.446.102.718.406.83.928c.585 2.704.078 3.83-.33 4.736a9 9 0 0 0-.23.546m7.364 4.572q-.024.266-.062.596l-.146.438a.4.4 0 0 0-.018.108c-.006.475-.054.649-.115.87a4.8 4.8 0 0 0-.18 1.057c-.11 1.414-.878 2.227-2.417 2.556c-1.515.325-1.784-.496-2.02-1.221a7 7 0 0 0-.078-.227c-.215-.586-.19-1.412-.157-2.555c.016-.561-.025-1.901-.33-2.646q.006-.44.019-.892a.4.4 0 0 0-.016-.113a2 2 0 0 0-.044-.208c-.122-.428-.42-.786-.78-.935c-.142-.059-.403-.167-.717-.087c.067-.276.183-.587.309-.925l.053-.142c.06-.16.134-.325.213-.5c.426-.948 1.01-2.246.376-5.178c-.237-1.098-1.03-1.634-2.232-1.51c-.72.075-1.38.366-1.709.532a6 6 0 0 0-.196.104c.092-1.106.439-3.174 1.736-4.482a4 4 0 0 1 .303-.276a.35.35 0 0 0 .145-.064c.752-.57 1.695-.85 2.802-.833q.616.01 1.174.081c1.94.355 3.244 1.447 4.036 2.383c.814.962 1.255 1.931 1.431 2.454c-1.323-.134-2.223.127-2.68.78c-.992 1.418.544 4.172 1.282 5.496c.135.242.252.452.289.54c.24.583.551.972.778 1.256c.07.087.138.171.189.245c-.4.116-1.12.383-1.055 1.717a35 35 0 0 1-.084.815c-.046.208-.07.46-.1.766m.89-1.621c-.04-.832.27-.919.597-1.01l.135-.041a1 1 0 0 0 .134.103c.57.376 1.583.421 3.007.134c-.202.177-.519.4-.953.601c-.41.19-1.096.333-1.747.364c-.72.034-1.086-.08-1.173-.151m.57-9.271a7 7 0 0 1-.105 1.001c-.055.358-.112.728-.127 1.177c-.014.436.04.89.093 1.33c.107.887.216 1.8-.207 2.701a4 4 0 0 1-.188-.385a8 8 0 0 0-.325-.617c-.616-1.104-2.057-3.69-1.32-4.744c.38-.543 1.342-.566 2.179-.463m.228 7.013l-.085-.107l-.035-.044c.726-1.2.584-2.387.457-3.439c-.052-.432-.1-.84-.088-1.222c.013-.407.066-.755.118-1.092c.064-.415.13-.844.111-1.35a.6.6 0 0 0 .012-.19c-.046-.486-.6-1.938-1.73-3.253a7.8 7.8 0 0 0-2.688-2.04A9.3 9.3 0 0 1 17.62.746c2.052.046 3.675.814 4.824 2.283a1 1 0 0 1 .067.1c.723 1.356-.276 6.275-2.987 10.54m-8.816-6.116c-.025.18-.31.423-.621.423l-.081-.006a.8.8 0 0 1-.506-.315c-.046-.06-.12-.178-.106-.285a.22.22 0 0 1 .093-.149c.118-.089.352-.122.61-.086c.316.044.642.193.61.418m7.93-.411c.011.08-.049.2-.153.31a.72.72 0 0 1-.408.223l-.075.005c-.293 0-.541-.234-.56-.371c-.024-.177.264-.31.56-.352c.298-.042.612.009.636.185"/></symbol><symbol id="i-yaml" viewBox="0 0 24 24"><path fill="currentColor" d="m0 .97l4.111 6.453v4.09h2.638v-4.09L11.053.969H8.214L5.58 5.125L2.965.969Zm12.093.024l-4.47 10.544h2.114l.97-2.345h4.775l.804 2.345h2.26L14.255.994Zm1.133 2.225l1.463 3.87h-3.096zm3.06 9.475v10.29H24v-2.199h-5.454v-8.091zm-12.175.002v10.335h2.217v-7.129l2.32 4.792h1.746l2.4-4.96v7.295h2.127V12.696h-2.904L9.44 17.37l-2.455-4.674Z"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1200 438" role="img" aria-label="Declarative data contracts with a violation ledger, wide layout" aria-describedby="d03w-d">
+            <desc id="d03w-d">New data is checked against a registry of declared contracts; failures are recorded in a queryable ledger and alerted on, and the checker emits its own liveness signal so that its silence cannot be mistaken for success.</desc>
+            <rect x="30.0" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-celery" x="196.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="130.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">New data</text>
+            <text x="130.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">just written</text>
+            <rect x="343.3" y="104.0" width="200.0" height="96.0" class="dg-node dg-node--key"/>
+            <text x="356.3" y="127.0" class="dg-num" font-size="13" text-anchor="start">02</text>
+            <use href="#i-yaml" x="478.3" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-postgresql" x="509.3" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="443.3" y="157.8" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Contracts</text>
+            <text x="443.3" y="224.0" class="dg-note" font-size="16" text-anchor="middle">declared, not coded</text>
+            <line x1="240.0" y1="152.0" x2="331.3" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="340.3,152.0 331.3,147.5 331.3,156.5" class="dg-arrow--key"/>
+            <rect x="656.7" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="669.7" y="127.0" class="dg-num" font-size="13" text-anchor="start">03</text>
+            <use href="#i-postgresql" x="822.7" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="756.7" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Ledger</text>
+            <text x="756.7" y="224.0" class="dg-note" font-size="16" text-anchor="middle">queryable history</text>
+            <line x1="553.3" y1="152.0" x2="644.7" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="653.7,152.0 644.7,147.5 644.7,156.5" class="dg-arrow--key"/>
+            <rect x="970.0" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="983.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">04</text>
+            <use href="#i-amazoncloudwatch" x="1136.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="1070.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Alert</text>
+            <text x="1070.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">before the customer</text>
+            <line x1="866.7" y1="152.0" x2="958.0" y2="152.0" class="dg-edge"/>
+            <polygon points="967.0,152.0 958.0,147.5 958.0,156.5" class="dg-arrow"/>
+            <line x1="443.3" y1="238.0" x2="443.3" y2="284.0" class="dg-edge dg-edge--idle"/>
+            <polygon points="443.3,293.0 438.8,284.0 447.8,284.0" class="dg-arrow"/>
+            <rect x="343.3" y="296.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="356.3" y="319.0" class="dg-num" font-size="13" text-anchor="start">05</text>
+            <use href="#i-amazoncloudwatch" x="509.3" y="305.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="443.3" y="338.6" class="dg-label" font-size="16" text-anchor="middle">Liveness</text>
+            <text x="443.3" y="361.0" class="dg-label" font-size="16" text-anchor="middle">signal</text>
+            <text x="443.3" y="416.0" class="dg-note" font-size="16" text-anchor="middle">is the checker running?</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg03-1" style="left:2.500%;top:23.744%;width:16.667%;height:21.918%;anchor-name:--dg03-wide-1"><span class="visually-hidden">New data</span><span class="diagram__tip" style="position-anchor:--dg03-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">New data</span><span class="diagram__tip-text">A batch has just landed. This is the moment to check it, while it is still possible to hold it back, rather than after a customer has already built a decision on top of it.</span><span class="diagram__tip-tech">Celery / post-write trigger</span></span></label>
+            <label class="diagram__hit " for="dg03-2" style="left:28.611%;top:23.744%;width:16.667%;height:21.918%;anchor-name:--dg03-wide-2"><span class="visually-hidden">Contracts</span><span class="diagram__tip" style="position-anchor:--dg03-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Contracts</span><span class="diagram__tip-text">Each contract is a named, written-down promise: this field only ever holds these values, this table is never older than this many minutes, every record here has a matching record there. They live in one list as configuration, so adding a check is a line of settings rather than new code &mdash; which is why there are dozens of them instead of a handful.</span><span class="diagram__tip-tech">YAML registry / templated SQL / SET LOCAL statement_timeout</span></span></label>
+            <label class="diagram__hit " for="dg03-3" style="left:54.722%;top:23.744%;width:16.667%;height:21.918%;anchor-name:--dg03-wide-3"><span class="visually-hidden">Ledger</span><span class="diagram__tip" style="position-anchor:--dg03-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Ledger</span><span class="diagram__tip-text">Failures are not just alerts that scroll past. Every violation is recorded with its history, so you can ask how long something has been wrong and whether it is getting worse. That history is what turns a surprise into a trend.</span><span class="diagram__tip-tech">PostgreSQL / 90-day retention</span></span></label>
+            <label class="diagram__hit diagram__hit--end" for="dg03-4" style="left:80.833%;top:23.744%;width:16.667%;height:21.918%;anchor-name:--dg03-wide-4"><span class="visually-hidden">Alert</span><span class="diagram__tip" style="position-anchor:--dg03-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Alert</span><span class="diagram__tip-text">The point of all of it is arriving first. A wrong number that reaches a customer dashboard costs trust; the same wrong number caught at this stage costs an afternoon.</span><span class="diagram__tip-tech">CloudWatch / SNS</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg03-5" style="left:28.611%;top:67.580%;width:16.667%;height:21.918%;anchor-name:--dg03-wide-5"><span class="visually-hidden">Liveness signal</span><span class="diagram__tip" style="position-anchor:--dg03-wide-5"><span class="diagram__tip-num">05</span><span class="diagram__tip-term">Liveness signal</span><span class="diagram__tip-text">The checker also reports that it ran at all. Without this, a checker that quietly stopped would look exactly like a system with no problems &mdash; the most dangerous failure a monitoring system can have.</span><span class="diagram__tip-tech">CloudWatch custom metric</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 868" role="img" aria-label="Declarative data contracts with a violation ledger, stacked" aria-describedby="d03t-d">
+            <desc id="d03t-d">New data is checked against a registry of declared contracts; failures are recorded in a queryable ledger and alerted on, and the checker emits its own liveness signal so that its silence cannot be mistaken for success.</desc>
+            <rect x="60.0" y="24.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="47.0" class="dg-num" font-size="19" text-anchor="start">01</text>
+            <use href="#i-celery" x="423.0" y="33.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="77.9" class="dg-label" font-size="22" text-anchor="middle">New data</text>
+            <text x="260.0" y="144.5" class="dg-note" font-size="19" text-anchor="middle">just written</text>
+            <rect x="60.0" y="202.0" width="400.0" height="92.0" class="dg-node dg-node--key"/>
+            <text x="73.0" y="225.0" class="dg-num" font-size="19" text-anchor="start">02</text>
+            <use href="#i-yaml" x="387.9" y="211.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-postgresql" x="423.0" y="211.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="255.9" class="dg-label dg-label--key" font-size="22" text-anchor="middle">Contracts</text>
+            <text x="260.0" y="322.5" class="dg-note" font-size="19" text-anchor="middle">declared, not coded</text>
+            <line x1="260.0" y1="126.0" x2="260.0" y2="190.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,199.0 255.5,190.0 264.5,190.0" class="dg-arrow--key"/>
+            <rect x="60.0" y="380.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="403.0" class="dg-num" font-size="19" text-anchor="start">03</text>
+            <use href="#i-postgresql" x="423.0" y="389.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="433.9" class="dg-label" font-size="22" text-anchor="middle">Ledger</text>
+            <text x="260.0" y="500.5" class="dg-note" font-size="19" text-anchor="middle">queryable history</text>
+            <line x1="260.0" y1="304.0" x2="260.0" y2="368.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,377.0 255.5,368.0 264.5,368.0" class="dg-arrow--key"/>
+            <rect x="60.0" y="558.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="581.0" class="dg-num" font-size="19" text-anchor="start">04</text>
+            <use href="#i-amazoncloudwatch" x="423.0" y="567.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="611.9" class="dg-label" font-size="22" text-anchor="middle">Alert</text>
+            <text x="260.0" y="678.5" class="dg-note" font-size="19" text-anchor="middle">before the customer</text>
+            <line x1="260.0" y1="482.0" x2="260.0" y2="546.0" class="dg-edge"/>
+            <polygon points="260.0,555.0 255.5,546.0 264.5,546.0" class="dg-arrow"/>
+            <rect x="60.0" y="736.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="759.0" class="dg-num" font-size="19" text-anchor="start">05</text>
+            <use href="#i-amazoncloudwatch" x="423.0" y="745.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="789.9" class="dg-label" font-size="22" text-anchor="middle">Liveness signal</text>
+            <text x="260.0" y="856.5" class="dg-note" font-size="19" text-anchor="middle">is the checker running?</text>
+            <line x1="260.0" y1="304.0" x2="260.0" y2="724.0" class="dg-edge dg-edge--key dg-edge--idle"/>
+            <polygon points="260.0,733.0 255.5,724.0 264.5,724.0" class="dg-arrow--key"/>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit " for="dg03-1" style="left:11.538%;top:2.765%;width:76.923%;height:10.599%;anchor-name:--dg03-tall-1"><span class="visually-hidden">New data</span><span class="diagram__tip" style="position-anchor:--dg03-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">New data</span><span class="diagram__tip-text">A batch has just landed. This is the moment to check it, while it is still possible to hold it back, rather than after a customer has already built a decision on top of it.</span><span class="diagram__tip-tech">Celery / post-write trigger</span></span></label>
+            <label class="diagram__hit " for="dg03-2" style="left:11.538%;top:23.272%;width:76.923%;height:10.599%;anchor-name:--dg03-tall-2"><span class="visually-hidden">Contracts</span><span class="diagram__tip" style="position-anchor:--dg03-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Contracts</span><span class="diagram__tip-text">Each contract is a named, written-down promise: this field only ever holds these values, this table is never older than this many minutes, every record here has a matching record there. They live in one list as configuration, so adding a check is a line of settings rather than new code &mdash; which is why there are dozens of them instead of a handful.</span><span class="diagram__tip-tech">YAML registry / templated SQL / SET LOCAL statement_timeout</span></span></label>
+            <label class="diagram__hit " for="dg03-3" style="left:11.538%;top:43.779%;width:76.923%;height:10.599%;anchor-name:--dg03-tall-3"><span class="visually-hidden">Ledger</span><span class="diagram__tip" style="position-anchor:--dg03-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Ledger</span><span class="diagram__tip-text">Failures are not just alerts that scroll past. Every violation is recorded with its history, so you can ask how long something has been wrong and whether it is getting worse. That history is what turns a surprise into a trend.</span><span class="diagram__tip-tech">PostgreSQL / 90-day retention</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg03-4" style="left:11.538%;top:64.286%;width:76.923%;height:10.599%;anchor-name:--dg03-tall-4"><span class="visually-hidden">Alert</span><span class="diagram__tip" style="position-anchor:--dg03-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Alert</span><span class="diagram__tip-text">The point of all of it is arriving first. A wrong number that reaches a customer dashboard costs trust; the same wrong number caught at this stage costs an afternoon.</span><span class="diagram__tip-tech">CloudWatch / SNS</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg03-5" style="left:11.538%;top:84.793%;width:76.923%;height:10.599%;anchor-name:--dg03-tall-5"><span class="visually-hidden">Liveness signal</span><span class="diagram__tip" style="position-anchor:--dg03-tall-5"><span class="diagram__tip-num">05</span><span class="diagram__tip-term">Liveness signal</span><span class="diagram__tip-text">The checker also reports that it ran at all. Without this, a checker that quietly stopped would look exactly like a system with no problems &mdash; the most dangerous failure a monitoring system can have.</span><span class="diagram__tip-tech">CloudWatch custom metric</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 03 &mdash; The checker also reports whether it is still alive</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg03-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg03-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

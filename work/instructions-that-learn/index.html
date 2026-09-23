@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Instructions That Learn &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="An agent that repeats a mistake in a new session does not have a model problem, it has a memory problem. The answer is not a bigger context window. It is a curated set of…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/instructions-that-learn/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="Instructions That Learn &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="An agent that repeats a mistake in a new session does not have a model problem, it has a memory problem. The answer is not a bigger context window. It is a curated set of…">
+  <meta property="og:url" content="https://giuvul.github.io/work/instructions-that-learn/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instructions That Learn &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="An agent that repeats a mistake in a new session does not have a model problem, it has a memory problem. The answer is not a bigger context window. It is a curated set of…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">AI Engineering</p>
+          <h1 class="case-title">Instructions<br><span class="display-accent">that learn</span></h1>
+          <p class="case-lead">An agent that repeats a mistake in a new session does not have a model problem, it has a memory problem. The answer is not a bigger context window. It is a curated set of operating rules that grows out of real failures, where every rule can be read, questioned and reversed.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Internal agent operations platform</dd></div>
+          <div><dt>Scale</dt><dd>Roughly 200 rules in four months</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>Retrieval / Git / Prompt engineering</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">Months of daily use kept surfacing the same classes of error, because nothing carried a lesson from one session into the next.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Distil real failures into proposed rules, gate every one behind human review, and keep the result as versioned plain text.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">Recurring errors stopped recurring, and the system's accumulated judgement became something a new engineer can read in an afternoon.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg09" id="dg09-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg09" id="dg09-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg09" id="dg09-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg09" id="dg09-4">
+        <input class="dg-state dg-state--pick" type="radio" name="dg09" id="dg09-5">
+        <input class="dg-state dg-state--reset" type="radio" name="dg09" id="dg09-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2m16 0h2m-7-1v2m-6-2v2"/></g></symbol><symbol id="i-scroll-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M15 12h-5m5-4h-5m9 9V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></g></symbol><symbol id="i-stamp" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13m10 2.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1zM5 22h14"/></symbol><symbol id="i-claude" viewBox="0 0 24 24"><path fill="currentColor" d="m4.714 15.956l4.718-2.648l.079-.23l-.08-.128h-.23l-.79-.048l-2.695-.073l-2.337-.097l-2.265-.122l-.57-.121l-.535-.704l.055-.353l.48-.321l.685.06l1.518.104l2.277.157l1.651.098l2.447.255h.389l.054-.158l-.133-.097l-.103-.098l-2.356-1.596l-2.55-1.688l-1.336-.972l-.722-.491L2 6.223l-.158-1.008l.656-.722l.88.06l.224.061l.893.686l1.906 1.476l2.49 1.833l.364.304l.146-.104l.018-.072l-.164-.274l-1.354-2.446l-1.445-2.49l-.644-1.032l-.17-.619a3 3 0 0 1-.103-.729L6.287.133L6.7 0l.995.134l.42.364l.619 1.415L9.735 4.14l1.555 3.03l.455.898l.243.832l.09.255h.159V9.01l.127-1.706l.237-2.095l.23-2.695l.08-.76l.376-.91l.747-.492l.583.28l.48.685l-.067.444l-.286 1.851l-.558 2.903l-.365 1.942h.213l.243-.242l.983-1.306l1.652-2.064l.728-.82l.85-.904l.547-.431h1.032l.759 1.129l-.34 1.166l-1.063 1.347l-.88 1.142l-1.263 1.7l-.79 1.36l.074.11l.188-.02l2.853-.606l1.542-.28l1.84-.315l.832.388l.09.395l-.327.807l-1.967.486l-2.307.462l-3.436.813l-.043.03l.049.061l1.548.146l.662.036h1.62l3.018.225l.79.522l.473.638l-.08.485l-1.213.62l-1.64-.389l-3.825-.91l-1.31-.329h-.183v.11l1.093 1.068l2.003 1.81l2.508 2.33l.127.578l-.321.455l-.34-.049l-2.204-1.657l-.85-.747l-1.925-1.62h-.127v.17l.443.649l2.343 3.521l.122 1.08l-.17.353l-.607.213l-.668-.122l-1.372-1.924l-1.415-2.168l-1.141-1.943l-.14.08l-.674 7.254l-.316.37l-.728.28l-.607-.461l-.322-.747l.322-1.476l.388-1.924l.316-1.53l.285-1.9l.17-.632l-.012-.042l-.14.018l-1.432 1.967l-2.18 2.945l-1.724 1.845l-.413.164l-.716-.37l.066-.662l.401-.589l2.386-3.036l1.439-1.882l.929-1.086l-.006-.158h-.055L4.138 18.56l-1.13.146l-.485-.456l.06-.746l.231-.243l1.907-1.312Z"/></symbol><symbol id="i-git" viewBox="0 0 24 24"><path fill="currentColor" d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19l2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63L10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></symbol><symbol id="i-markdown" viewBox="0 0 24 24"><path fill="currentColor" d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885l2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885l-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1200 406" role="img" aria-label="A review-gated loop from observed failure to operating rule, wide" aria-describedby="d09w-d">
+            <desc id="d09w-d">Failures observed in real sessions are distilled into proposed rules, reviewed by a person before they are adopted, and carried into every later session as part of the shared operating instructions.</desc>
+            <rect x="30.0" y="104.0" width="196.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-claude" x="192.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="128.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Session</text>
+            <text x="128.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">real work, real errors</text>
+            <rect x="266.0" y="104.0" width="196.0" height="96.0" class="dg-node"/>
+            <text x="279.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">02</text>
+            <use href="#i-scroll-text" x="428.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="364.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Failure seen</text>
+            <text x="364.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">with its cause</text>
+            <line x1="236.0" y1="152.0" x2="254.0" y2="152.0" class="dg-edge"/>
+            <polygon points="263.0,152.0 254.0,147.5 254.0,156.5" class="dg-arrow"/>
+            <rect x="502.0" y="104.0" width="196.0" height="96.0" class="dg-node"/>
+            <text x="515.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">03</text>
+            <use href="#i-bot" x="664.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="600.0" y="146.6" class="dg-label" font-size="16" text-anchor="middle">Rule</text>
+            <text x="600.0" y="169.0" class="dg-label" font-size="16" text-anchor="middle">proposed</text>
+            <text x="600.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">by a dedicated agent</text>
+            <line x1="472.0" y1="152.0" x2="490.0" y2="152.0" class="dg-edge"/>
+            <polygon points="499.0,152.0 490.0,147.5 490.0,156.5" class="dg-arrow"/>
+            <rect x="738.0" y="104.0" width="196.0" height="96.0" class="dg-node dg-node--key"/>
+            <text x="751.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">04</text>
+            <use href="#i-stamp" x="900.0" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="836.0" y="157.8" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Human review</text>
+            <text x="836.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">nothing enters alone</text>
+            <line x1="708.0" y1="152.0" x2="726.0" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="735.0,152.0 726.0,147.5 726.0,156.5" class="dg-arrow--key"/>
+            <rect x="974.0" y="104.0" width="196.0" height="96.0" class="dg-node"/>
+            <text x="987.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">05</text>
+            <use href="#i-markdown" x="1105.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <use href="#i-git" x="1136.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="1072.0" y="146.6" class="dg-label" font-size="16" text-anchor="middle">Operating</text>
+            <text x="1072.0" y="169.0" class="dg-label" font-size="16" text-anchor="middle">rules</text>
+            <text x="1072.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">plain text, versioned</text>
+            <line x1="944.0" y1="152.0" x2="962.0" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="971.0,152.0 962.0,147.5 962.0,156.5" class="dg-arrow--key"/>
+            <path d="M 1072.0 256.0 C 1072.0 336.0 128.0 336.0 128.0 265.0" class="dg-edge dg-edge--idle"/>
+            <polygon points="128.0,256.0 123.5,265.0 132.5,265.0" class="dg-arrow"/>
+            <text x="600.0" y="354.0" class="dg-band" font-size="15" text-anchor="middle">Carried into every session that follows</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg09-1" style="left:2.500%;top:25.616%;width:16.333%;height:23.645%;anchor-name:--dg09-wide-1"><span class="visually-hidden">Session</span><span class="diagram__tip" style="position-anchor:--dg09-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Session</span><span class="diagram__tip-text">Ordinary daily work. The system is doing real tasks on real business material, which is the only place failures worth learning from actually appear.</span><span class="diagram__tip-tech">Claude Code / agent runtime</span></span></label>
+            <label class="diagram__hit " for="dg09-2" style="left:22.167%;top:25.616%;width:16.333%;height:23.645%;anchor-name:--dg09-wide-2"><span class="visually-hidden">Failure seen</span><span class="diagram__tip" style="position-anchor:--dg09-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Failure seen</span><span class="diagram__tip-text">Something went wrong and the reason is identified &mdash; a path that changed, a format that was assumed, a check that was skipped. What gets recorded is the cause, not the symptom, because the symptom will look different next time.</span><span class="diagram__tip-tech">Session logs / structured issue records</span></span></label>
+            <label class="diagram__hit " for="dg09-3" style="left:41.833%;top:25.616%;width:16.333%;height:23.645%;anchor-name:--dg09-wide-3"><span class="visually-hidden">Rule proposed</span><span class="diagram__tip" style="position-anchor:--dg09-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Rule proposed</span><span class="diagram__tip-text">A dedicated agent turns that cause into a proposed rule and nothing more. It cannot adopt its own suggestion, which keeps the system from quietly teaching itself something wrong.</span><span class="diagram__tip-tech">Dedicated curator agent</span></span></label>
+            <label class="diagram__hit " for="dg09-4" style="left:61.500%;top:25.616%;width:16.333%;height:23.645%;anchor-name:--dg09-wide-4"><span class="visually-hidden">Human review</span><span class="diagram__tip" style="position-anchor:--dg09-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Human review</span><span class="diagram__tip-text">A person decides whether the rule is right before it takes effect. This is the step that makes the whole loop safe: the system improves deliberately rather than drifting, and a rule that turns out to be a mistake can simply be taken back out.</span><span class="diagram__tip-tech">Review gate before adoption</span></span></label>
+            <label class="diagram__hit diagram__hit--end" for="dg09-5" style="left:81.167%;top:25.616%;width:16.333%;height:23.645%;anchor-name:--dg09-wide-5"><span class="visually-hidden">Operating rules</span><span class="diagram__tip" style="position-anchor:--dg09-wide-5"><span class="diagram__tip-num">05</span><span class="diagram__tip-term">Operating rules</span><span class="diagram__tip-text">The accepted rules are plain text under version control, each traceable to the incident that produced it. That means the learning can be read, argued with, diffed and reverted &mdash; it is a file history rather than something buried in a model. Long documents are never pasted into the conversation either; they are referenced and edited in place, which is what keeps this affordable.</span><span class="diagram__tip-tech">Markdown / Git / semantic retrieval</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 928" role="img" aria-label="A review-gated loop from observed failure to operating rule, stacked" aria-describedby="d09t-d">
+            <desc id="d09t-d">Failures observed in real sessions are distilled into proposed rules, reviewed by a person before they are adopted, and carried into every later session as part of the shared operating instructions.</desc>
+            <rect x="60.0" y="24.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="47.0" class="dg-num" font-size="19" text-anchor="start">01</text>
+            <use href="#i-claude" x="423.0" y="33.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="77.9" class="dg-label" font-size="22" text-anchor="middle">Session</text>
+            <text x="260.0" y="144.5" class="dg-note" font-size="19" text-anchor="middle">real work, real errors</text>
+            <rect x="60.0" y="202.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="225.0" class="dg-num" font-size="19" text-anchor="start">02</text>
+            <use href="#i-scroll-text" x="423.0" y="211.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="255.9" class="dg-label" font-size="22" text-anchor="middle">Failure seen</text>
+            <text x="260.0" y="322.5" class="dg-note" font-size="19" text-anchor="middle">with its cause</text>
+            <line x1="260.0" y1="126.0" x2="260.0" y2="190.0" class="dg-edge"/>
+            <polygon points="260.0,199.0 255.5,190.0 264.5,190.0" class="dg-arrow"/>
+            <rect x="60.0" y="380.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="403.0" class="dg-num" font-size="19" text-anchor="start">03</text>
+            <use href="#i-bot" x="423.0" y="389.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="433.9" class="dg-label" font-size="22" text-anchor="middle">Rule proposed</text>
+            <text x="260.0" y="500.5" class="dg-note" font-size="19" text-anchor="middle">by a dedicated agent</text>
+            <line x1="260.0" y1="304.0" x2="260.0" y2="368.0" class="dg-edge"/>
+            <polygon points="260.0,377.0 255.5,368.0 264.5,368.0" class="dg-arrow"/>
+            <rect x="60.0" y="558.0" width="400.0" height="92.0" class="dg-node dg-node--key"/>
+            <text x="73.0" y="581.0" class="dg-num" font-size="19" text-anchor="start">04</text>
+            <use href="#i-stamp" x="423.0" y="567.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="611.9" class="dg-label dg-label--key" font-size="22" text-anchor="middle">Human review</text>
+            <text x="260.0" y="678.5" class="dg-note" font-size="19" text-anchor="middle">nothing enters alone</text>
+            <line x1="260.0" y1="482.0" x2="260.0" y2="546.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,555.0 255.5,546.0 264.5,546.0" class="dg-arrow--key"/>
+            <rect x="60.0" y="736.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="759.0" class="dg-num" font-size="19" text-anchor="start">05</text>
+            <use href="#i-markdown" x="387.9" y="745.0" width="26.0" height="26.0" class="dg-icon"/>
+            <use href="#i-git" x="423.0" y="745.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="789.9" class="dg-label" font-size="22" text-anchor="middle">Operating rules</text>
+            <text x="260.0" y="856.5" class="dg-note" font-size="19" text-anchor="middle">plain text, versioned</text>
+            <line x1="260.0" y1="660.0" x2="260.0" y2="724.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,733.0 255.5,724.0 264.5,724.0" class="dg-arrow--key"/>
+            <path d="M 57 782.0 C 16 782.0 16 70.0 48 70.0" class="dg-edge dg-edge--idle"/>
+            <polygon points="57,70.0 48,65.5 48,74.5" class="dg-arrow"/>
+            <text x="260.0" y="906.0" class="dg-band" font-size="17" text-anchor="middle">Carried into every session that follows</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit " for="dg09-1" style="left:11.538%;top:2.586%;width:76.923%;height:9.914%;anchor-name:--dg09-tall-1"><span class="visually-hidden">Session</span><span class="diagram__tip" style="position-anchor:--dg09-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Session</span><span class="diagram__tip-text">Ordinary daily work. The system is doing real tasks on real business material, which is the only place failures worth learning from actually appear.</span><span class="diagram__tip-tech">Claude Code / agent runtime</span></span></label>
+            <label class="diagram__hit " for="dg09-2" style="left:11.538%;top:21.767%;width:76.923%;height:9.914%;anchor-name:--dg09-tall-2"><span class="visually-hidden">Failure seen</span><span class="diagram__tip" style="position-anchor:--dg09-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Failure seen</span><span class="diagram__tip-text">Something went wrong and the reason is identified &mdash; a path that changed, a format that was assumed, a check that was skipped. What gets recorded is the cause, not the symptom, because the symptom will look different next time.</span><span class="diagram__tip-tech">Session logs / structured issue records</span></span></label>
+            <label class="diagram__hit " for="dg09-3" style="left:11.538%;top:40.948%;width:76.923%;height:9.914%;anchor-name:--dg09-tall-3"><span class="visually-hidden">Rule proposed</span><span class="diagram__tip" style="position-anchor:--dg09-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Rule proposed</span><span class="diagram__tip-text">A dedicated agent turns that cause into a proposed rule and nothing more. It cannot adopt its own suggestion, which keeps the system from quietly teaching itself something wrong.</span><span class="diagram__tip-tech">Dedicated curator agent</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg09-4" style="left:11.538%;top:60.129%;width:76.923%;height:9.914%;anchor-name:--dg09-tall-4"><span class="visually-hidden">Human review</span><span class="diagram__tip" style="position-anchor:--dg09-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Human review</span><span class="diagram__tip-text">A person decides whether the rule is right before it takes effect. This is the step that makes the whole loop safe: the system improves deliberately rather than drifting, and a rule that turns out to be a mistake can simply be taken back out.</span><span class="diagram__tip-tech">Review gate before adoption</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg09-5" style="left:11.538%;top:79.310%;width:76.923%;height:9.914%;anchor-name:--dg09-tall-5"><span class="visually-hidden">Operating rules</span><span class="diagram__tip" style="position-anchor:--dg09-tall-5"><span class="diagram__tip-num">05</span><span class="diagram__tip-term">Operating rules</span><span class="diagram__tip-text">The accepted rules are plain text under version control, each traceable to the incident that produced it. That means the learning can be read, argued with, diffed and reverted &mdash; it is a file history rather than something buried in a model. Long documents are never pasted into the conversation either; they are referenced and edited in place, which is what keeps this affordable.</span><span class="diagram__tip-tech">Markdown / Git / semantic retrieval</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 09 &mdash; Learning is a file history, not a model weight</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg09-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg09-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

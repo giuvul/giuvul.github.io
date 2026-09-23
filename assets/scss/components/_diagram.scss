@@ -1,0 +1,321 @@
+// -----------------------------------------------------------------------------
+// Diagrammi dei case study.
+// La geometria arriva dal generatore (scratchpad/dg.py) come SVG inline; i
+// colori e la tipografia restano qui, cosi la palette sta in un posto solo.
+//
+// La spiegazione di ogni casella vive dentro la casella stessa, una volta sola
+// nel documento, con due presentazioni:
+//   desktop  tooltip in hover (o con il focus da tastiera)
+//   mobile   pannello che sale dal basso al tocco, con velo per chiudere
+// Niente JavaScript: radio nascosti + :checked, come il menu a tutto schermo.
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+$dg-max-nodes: 6;
+
+// Aria sopra il diagramma: le tre colonne che lo introducono finiscono con un
+// testo senza margine inferiore, e senza questo distacco i due blocchi si toccano.
+.diagram-explore {
+  display: block;
+  margin-top: clamp(2.6rem, 6vh, 4.5rem);
+}
+
+// `fixed` e non `absolute`: quando un radio riceve il focus il browser lo porta
+// in vista, e se sta in cima al blocco la pagina salta.
+.dg-state {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.diagram {
+  position: relative;
+  border: 1px solid $color-line;
+  margin: 0 0 clamp(1.2rem, 2.2vh, 1.8rem);
+  padding: clamp(1rem, 2.4vw, 2.2rem) clamp(0.8rem, 2vw, 1.8rem);
+  background: $color-bg-elev;
+
+  &__stage { position: relative; }
+
+  svg { display: block; width: 100%; height: auto; }
+
+  // lo sprite delle icone non si disegna: esiste solo per essere richiamato
+  svg.dg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+  // Due geometrie dalla stessa specifica. Il selettore ripete `svg` perche
+  // altrimenti `.diagram svg` vincerebbe per specificita.
+  svg.diagram__wide { display: none; @include up($bp-md) { display: block; } }
+  svg.diagram__tall { display: block; @include up($bp-md) { display: none; } }
+
+  &__hits {
+    position: absolute;
+    inset: 0;
+    &--wide { display: none; @include up($bp-md) { display: block; } }
+    &--tall { display: block; @include up($bp-md) { display: none; } }
+  }
+
+  // Le percentuali sono calcolate sul viewBox: l'SVG scala mantenendo le
+  // proporzioni, quindi l'area sensibile lo seguue a ogni larghezza.
+  &__hit {
+    position: absolute;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border-color 0.28s $ease, box-shadow 0.28s $ease;
+
+    &:hover,
+    &:focus-within {
+      border-color: $color-accent;
+      box-shadow: 0 0 26px rgba($color-accent, 0.4),
+                  inset 0 0 18px rgba($color-accent, 0.1);
+    }
+  }
+
+  &__caption {
+    @include label($color-faint, $fs-micro);
+    margin: clamp(0.8rem, 1.6vh, 1.3rem) 0 0;
+    line-height: 1.5;
+  }
+
+  &__hint {
+    @include label($color-faint, $fs-micro);
+    margin: clamp(0.5rem, 1vh, 0.8rem) 0 0;
+    opacity: 0.8;
+  }
+}
+
+// --- primitive del disegno ---------------------------------------------------
+.dg {
+  &-node { fill: $color-bg; stroke: $color-line; stroke-width: 1; }
+
+  // L'accento marca UNA sola cosa per diagramma: l'idea di cui si parla.
+  // Filetto tenue e testo ciano, MA nessun bagliore: il bagliore appartiene
+  // alla casella sotto il puntatore, altrimenti i due significati si confondono.
+  &-node--key { stroke: rgba($color-accent, 0.5); stroke-width: 1.2; }
+
+  &-edge { fill: none; stroke: $color-line; stroke-width: 1.2; }
+  &-edge--key { stroke: $color-accent; stroke-width: 1.4; }
+  &-edge--idle { stroke-dasharray: 5 6; opacity: 0.75; }
+
+  &-arrow { fill: $color-line; }
+  &-arrow--key { fill: $color-accent; }
+
+  &-label {
+    font-family: $font-ui;
+    font-weight: 500;
+    letter-spacing: $tracking-nav;
+    text-transform: uppercase;
+    fill: $color-heading;
+  }
+  &-label--key { fill: $color-accent; }
+
+  &-note { font-family: $font-body; font-weight: 300; fill: $color-muted; }
+
+  &-band {
+    font-family: $font-ui;
+    font-weight: 500;
+    letter-spacing: $tracking-label;
+    text-transform: uppercase;
+    fill: $color-faint;
+  }
+
+  &-num {
+    font-family: $font-ui;
+    font-weight: 600;
+    letter-spacing: $tracking-label;
+    fill: $color-accent;
+    opacity: 0.85;
+  }
+
+  // Loghi delle tecnologie: monocromatici e nel colore del testo secondario,
+  // cosi informano senza competere con l'etichetta. Ciano solo sulla casella chiave.
+  &-icon { color: $color-muted; opacity: 0.9; }
+  &-icon--key { color: $color-accent; opacity: 1; }
+
+  &-rule { stroke: $color-line-soft; stroke-width: 1; }
+  &-axis { stroke: $color-accent; stroke-width: 1; stroke-dasharray: 3 7; opacity: 0.55; }
+}
+
+// --- la spiegazione ----------------------------------------------------------
+.diagram__tip {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(23rem, 62vw);
+  padding: clamp(0.9rem, 1.5vw, 1.15rem) clamp(1rem, 1.7vw, 1.3rem);
+  text-align: left;
+  // trasparente al puntatore: essendo figlio dell'area sensibile, se
+  // ricevesse gli eventi coprirebbe la casella accanto e il tooltip
+  // precedente resterebbe aperto passando alla successiva
+  pointer-events: none;
+
+  // fondo pieno: un tooltip translucido sopra un diagramma non si legge
+  background: $color-bg;
+  border: 1px solid rgba($color-accent, 0.45);
+  box-shadow: 0 20px 52px rgba(#000, 0.6), 0 0 28px rgba($color-accent, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s $ease, visibility 0.18s $ease;
+
+  > span { display: block; }
+}
+
+// riposizionamento ai bordi, cosi il tooltip non esce dal disegno
+.diagram__hit--start .diagram__tip { left: 0; transform: none; }
+.diagram__hit--end   .diagram__tip { left: auto; right: 0; transform: none; }
+.diagram__hit--up    .diagram__tip { top: auto; bottom: calc(100% + 12px); }
+
+.diagram__tip-num  { @include label($color-accent, $fs-micro); margin-bottom: 0.7em; }
+.diagram__tip-term { @include label($color-heading, $fs-label); margin-bottom: 0.6em; }
+.diagram__tip-text {
+  font-family: $font-body;
+  font-weight: 300;
+  font-size: $fs-small;
+  line-height: 1.6;
+  color: $color-text;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.diagram__tip-tech {
+  @include label($color-faint, $fs-micro);
+  margin-top: 0.9em;
+  padding-top: 0.8em;
+  border-top: 1px solid $color-line;
+  line-height: 1.5;
+}
+
+// --- due modi di interagire ---------------------------------------------------
+// Il tooltip in hover serve solo a chi ha un puntatore preciso e spazio per il
+// disegno largo; tutti gli altri (dito, finestra stretta) aprono il pannello.
+// Le due condizioni sono complementari: ogni dispositivo ne soddisfa una sola.
+$dg-pointer: '(hover: hover) and (pointer: fine) and (min-width: #{$bp-md})';
+$dg-touch: '(hover: none), (pointer: coarse), (max-width: #{$bp-md - 0.02px})';
+
+.diagram__hint--touch { display: none; }
+@media #{$dg-touch} {
+  .diagram__hint--pointer { display: none; }
+  .diagram__hint--touch { display: inline; }
+}
+
+// --- desktop: hover e tastiera ----------------------------------------------
+@media #{$dg-pointer} {
+  .diagram__hit:hover .diagram__tip { opacity: 1; visibility: visible; }
+}
+
+// Dove il browser supporta l'anchor positioning il tooltip esce dal flusso del
+// diagramma e si aggancia alla casella in coordinate di viewport: se sotto non
+// c'e' spazio si ribalta sopra, e ai lati viene spinto dentro lo schermo.
+// Altrove resta il posizionamento assoluto con le correzioni ai bordi.
+@supports (position-anchor: --a) {
+  @media #{$dg-pointer} {
+    .diagram .diagram__hit .diagram__tip {
+      position: fixed;
+      inset: auto;
+      transform: none;
+      margin: 12px 0;
+      position-area: bottom;
+      justify-self: anchor-center;
+      position-try-fallbacks: flip-block;
+      max-width: min(23rem, calc(100vw - 32px));
+    }
+  }
+}
+
+// --- mobile: pannello sopra il diagramma --------------------------------------
+// Un riquadro sospeso nella parte alta dello schermo, non attaccato al fondo:
+// sui telefoni il fondo e' coperto dalla barra del browser, e un pannello li'
+// sembra "caduto" in basso. Le unita' `svh` misurano l'area sempre visibile,
+// quindi la posizione non cambia quando la barra compare o scompare.
+$dg-sheet-top: 13vh;
+$dg-sheet-top-s: 13svh;
+$dg-close-h: 2.9rem;
+
+.diagram__close {
+  position: fixed;
+  right: clamp(0.8rem, 4vw, 1.2rem);
+  top: $dg-sheet-top;
+  top: $dg-sheet-top-s;
+  z-index: 55;
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  background: $color-bg;
+  border: 1px solid rgba($color-accent, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s $ease, visibility 0.2s $ease;
+  @include label($color-accent, $fs-micro);
+}
+
+.diagram__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  margin: 0;
+  background: rgba($color-bg, 0.82);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s $ease, visibility 0.2s $ease;
+}
+
+@media #{$dg-pointer} {
+  .diagram__close,
+  .diagram__scrim { display: none; }
+}
+
+@media #{$dg-touch} {
+  .dg-state--pick:checked ~ .diagram__scrim,
+  .dg-state--pick:checked ~ .diagram__close { opacity: 1; visibility: visible; }
+}
+
+// Mappa radio -> casella illuminata + spiegazione aperta.
+// La classe --pick esclude il radio di chiusura, che sta in fondo alla lista.
+@for $i from 1 through $dg-max-nodes {
+  .dg-state--pick:nth-of-type(#{$i}):focus-visible ~ .diagram
+    .diagram__hit:nth-of-type(#{$i}) {
+    outline: 2px solid $color-heading;
+    outline-offset: 3px;
+  }
+
+  // da tastiera (frecce sui radio) il tooltip segue la casella selezionata
+  @media #{$dg-pointer} {
+    .dg-state--pick:nth-of-type(#{$i}):focus-visible ~ .diagram
+      .diagram__hit:nth-of-type(#{$i}) .diagram__tip { opacity: 1; visibility: visible; }
+  }
+
+  @media #{$dg-touch} {
+    .dg-state--pick:nth-of-type(#{$i}):checked ~ .diagram
+      .diagram__hit:nth-of-type(#{$i}) {
+      border-color: $color-accent;
+      box-shadow: 0 0 26px rgba($color-accent, 0.4);
+    }
+    .dg-state--pick:nth-of-type(#{$i}):checked ~ .diagram
+      .diagram__hit:nth-of-type(#{$i}) .diagram__tip {
+      position: fixed;
+      z-index: 50;
+      inset: auto clamp(0.8rem, 4vw, 1.2rem);
+      top: calc(#{$dg-sheet-top} + #{$dg-close-h});
+      top: calc(#{$dg-sheet-top-s} + #{$dg-close-h});
+      width: auto;
+      max-width: 34rem;
+      max-height: 70vh;
+      max-height: 70svh;
+      margin-inline: auto;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: clamp(1.2rem, 5vw, 1.8rem) clamp(1.1rem, 5vw, 1.6rem);
+    }
+  }
+}

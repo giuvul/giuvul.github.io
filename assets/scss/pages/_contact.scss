@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// Pagina Contatti — schermata 05
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.contact-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 59%) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-inline: $gutter;
+  padding-block: $section-top clamp(2rem, 8vh, 6.5rem);
+  min-height: calc(100vh - #{$header-h});
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-block: $section-top 3rem;
+  }
+
+  // filetto verticale centrale come nel concept
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: $color-line-soft;
+
+    @include down($bp-lg) { display: none; }
+  }
+}
+
+.contact-title { @include display($fs-display-xl, 800, 1.046); }
+
+.contact-hero__left {
+  display: flex;
+  flex-direction: column;
+}
+
+// l'elenco dei recapiti e' rientrato rispetto al titolo, come nel concept
+.contact-list-wrap {
+  margin-top: clamp(1.5rem, 8.6vh, 7rem);
+  padding-left: clamp(0px, 11.5vw, 170px);
+
+  @include down($bp-lg) { padding-left: 0; }
+}
+
+.contact-hero__keywords {
+  margin-top: auto;
+  padding-top: clamp(1rem, 2.3vh, 2rem);
+  border-top: 1px solid $color-line-soft;
+
+  .rule { margin-bottom: clamp(0.8rem, 2.35vh, 2rem); }
+
+  .micro-list {
+    font-size: clamp(0.8rem, 1.39vw, 1.45rem);
+    line-height: 1.84;
+    color: $color-faint;
+  }
+}
+
+.contact-hero__right {
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(0.5rem, 4.7vw, 5rem);
+}
+
+.contact-hero__note {
+  font-size: clamp(0.95rem, 1.67vw, 1.7rem);
+  color: $color-text;
+  line-height: 1.5;
+}
+
+// Cerchio decorativo con micro etichette
+.contact-dial {
+  position: relative;
+  flex: 1;
+  min-height: clamp(9rem, 31.1vw, 33rem);
+
+  &__circle {
+    position: absolute;
+    left: -9.3%;
+    top: 0;
+    width: 31.1vw;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid rgba($color-accent, 0.22);
+    border-radius: 50%;
+  }
+
+  &__axis {
+    position: absolute;
+    left: 42%;
+    top: 0;
+    bottom: -8vh;          // la linea prosegue oltre il cerchio
+    width: 1px;
+    background: $color-line-soft;
+  }
+
+  &__dot {
+    position: absolute;
+    left: 42%;
+    top: clamp(4rem, 10.7vw, 11rem);
+    width: 0.8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: $color-accent;
+    translate: -50% -50%;
+    box-shadow: 0 0 14px rgba($color-accent, 0.8);
+  }
+
+  @include down($bp-lg) { display: none; }
+}
+
+.contact-hero__cta {
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 4vh, 3.2rem);
+  padding-bottom: clamp(0.5rem, 2.7vh, 2.2rem);
+  padding-left: clamp(0px, 1.65vw, 24px);
+  display: flex;
+  justify-content: flex-start;
+
+  @include down($bp-lg) { padding-top: 2rem; }
+}
+
+// Sezione con il form vero e proprio
+.form-section {
+  padding-inline: $gutter;
+  padding-block: clamp(3rem, 9vh, 6.5rem);
+  border-top: 1px solid $color-line-soft;
+}
+
+.form-section__head {
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3.2rem);
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+
+  @include down($bp-lg) { grid-template-columns: 1fr; }
+}
+
+.form-section__title { @include display($fs-display-md, 800); }
+
+// Pagina di ringraziamento dopo l'invio: una sola colonna, blocchi vicini
+.contact-hero--thanks {
+  grid-template-columns: 1fr;
+
+  .contact-hero__note { margin-top: clamp(1.4rem, 3vh, 2.4rem); }
+  .contact-hero__cta { margin-top: clamp(2rem, 5vh, 3.6rem); }
+}

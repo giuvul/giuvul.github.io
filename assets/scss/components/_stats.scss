@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// Blocco statistiche (10+ anni, 50+ progetti, ∞ curiosità)
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.stats {
+  display: flex;                       // layout in Flexbox
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 1 1 200px;
+    padding-left: clamp(1.2rem, 2.2vw, 2.2rem);
+    border-left: 1px solid $color-line;
+
+    &:first-child { padding-left: 0; border-left: 0; }
+
+    // in colonna su schermi stretti: il filetto passa sopra
+    @include down($bp-md) {
+      flex-basis: 100%;
+      padding: 1.4rem 0 0;
+      border-left: 0;
+      border-top: 1px solid $color-line;
+
+      &:first-child { padding-top: 0; border-top: 0; }
+    }
+  }
+
+  &__value {
+    font-family: $font-ui;
+    font-weight: 300;
+    font-size: clamp(2rem, 3.47vw, 3.9rem);
+    line-height: 1;
+    color: $color-heading;
+    margin-bottom: 0.4em;
+  }
+
+  &__label {
+    @include label($color-muted, clamp(0.72rem, 1.1vw, 1.15rem));
+    line-height: 2.3;
+  }
+}
+
+// Tre colonne numerate (sfida / soluzione / impatto)
+.numbered-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $color-line-soft;
+  padding-top: clamp(1.4rem, 2.7vh, 2.2rem);
+
+  @include down($bp-md) { grid-template-columns: 1fr; }
+
+  &__item {
+    padding-left: clamp(1.2rem, 2.1vw, 2.2rem);
+    border-left: 1px solid $color-line;
+
+    &:first-child { padding-left: 0; border-left: 0; }
+
+    @include down($bp-md) { padding-left: 0; border-left: 0; padding-block: 1rem; }
+  }
+
+  &__num { @include label($color-accent, $fs-micro); display: block; margin-bottom: 1.65em; }
+
+  &__title {
+    font-family: $font-display;
+    font-variation-settings: 'wdth' $wdth-display;
+    font-stretch: #{$wdth-display + '%'};
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.25vw, 1.35rem);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: $color-heading;
+    margin-bottom: 1.3em;
+  }
+
+  &__text { font-size: $fs-body; color: $color-text; line-height: 1.9; }
+}

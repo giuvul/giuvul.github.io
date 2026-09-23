@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// Impalcatura comune delle sezioni interne
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.section {
+  padding-inline: $gutter;
+  padding-block: $section-top clamp(2rem, 2.3vh, 2.5rem);
+
+  &--about {
+    // il titolo della pagina About e' piu' grande: serve piu' respiro
+    .section__label { margin-bottom: clamp(1rem, 2.57vw, 2.7rem); }
+  }
+
+  @include down($bp-lg) { padding-block: $section-top 3rem; }
+}
+
+.section--flush { padding-top: $section-top; }
+
+.section__label { margin-bottom: clamp(0.8rem, 1.74vw, 1.6rem); }
+
+// Intestazione a tre colonne: titolo, testo introduttivo, colonna laterale
+.section__head {
+  display: grid;
+  grid-template-columns: minmax(0, 33%) minmax(0, 1fr) minmax(0, 19.5%);
+  gap: clamp(1.5rem, 3.6vw, 3.3rem);
+  align-items: start;
+  margin-bottom: clamp(1.5rem, 2.78vw, 2.6rem);
+
+  @include down($bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+.section__intro {
+  font-size: $fs-body;
+  color: $color-text;
+  line-height: 1.54;
+  max-width: 44ch;
+  padding-top: 0.7em;
+
+  // nel concept il paragrafo e' allineato al centro del titolo
+  @include up($bp-lg) { padding-top: 5.3vw; }
+}
+
+.divider {
+  height: 1px;
+  background: $color-line-soft;
+  border: 0;
+  margin-block: clamp(2rem, 5.4vh, 4.2rem);
+  opacity: 1;
+}

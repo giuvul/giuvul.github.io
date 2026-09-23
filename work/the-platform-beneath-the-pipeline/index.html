@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Platform Beneath the Pipeline &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="A pipeline should prove what is running, not assume it. Every deployment system has a state where the automation reports success and the old code is still serving traffic — and if…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/the-platform-beneath-the-pipeline/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="The Platform Beneath the Pipeline &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="A pipeline should prove what is running, not assume it. Every deployment system has a state where the automation reports success and the old code is still serving traffic — and if…">
+  <meta property="og:url" content="https://giuvul.github.io/work/the-platform-beneath-the-pipeline/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Platform Beneath the Pipeline &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="A pipeline should prove what is running, not assume it. Every deployment system has a state where the automation reports success and the old code is still serving traffic — and if…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">DataOps</p>
+          <h1 class="case-title">The platform<br><span class="display-accent">beneath the pipeline</span></h1>
+          <p class="case-lead">A pipeline should prove what is running, not assume it. Every deployment system has a state where the automation reports success and the old code is still serving traffic — and if nothing compares the two, nobody finds out from a dashboard.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Passenger profiling platform</dd></div>
+          <div><dt>Scale</dt><dd>Two environments, one declared source</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>Terraform / AWS ECS / GitHub Actions</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">A release passed every check and was then silently reverted by the platform's own safety mechanism. Nothing in the pipeline was built to notice.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Declare the whole platform as code, make the quality gates ratchet, and end every deployment by proving what is running.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">An entire class of green-pipeline failures became impossible to miss, and the data platform can be rebuilt from source rather than from memory.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg06" id="dg06-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg06" id="dg06-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg06" id="dg06-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg06" id="dg06-4">
+        <input class="dg-state dg-state--reset" type="radio" name="dg06" id="dg06-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-amazonecs" viewBox="0 0 24 24"><path fill="currentColor" d="m21.895 15.256l-3.369-2.021V8.421a.42.42 0 0 0-.209-.364l-4.843-2.825V1.159l8.42 4.976Zm.635-9.724L13.267.06a.422.422 0 0 0-.635.362v5.053c0 .15.08.288.208.363l4.844 2.826v4.81a.42.42 0 0 0 .205.362l4.21 2.526a.42.42 0 0 0 .638-.361V5.895a.42.42 0 0 0-.207-.363M11.977 23.1l-9.872-5.248V6.135l8.421-4.976v4.084L6.09 8.066a.42.42 0 0 0-.195.355v7.158a.42.42 0 0 0 .226.373l5.665 2.948a.42.42 0 0 0 .387 0l5.496-2.84l3.382 2.03zm10.135-5.356l-4.21-2.526a.42.42 0 0 0-.411-.013l-5.51 2.847l-5.244-2.729v-6.67l4.436-2.824a.42.42 0 0 0 .195-.355V.42a.421.421 0 0 0-.635-.362L1.47 5.532a.42.42 0 0 0-.207.363v12.21c0 .156.086.299.223.372l10.297 5.474a.42.42 0 0 0 .401-.004l9.915-5.473a.422.422 0 0 0 .013-.73"/></symbol><symbol id="i-docker" viewBox="0 0 24 24"><path fill="currentColor" d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51q-.508.001-1.01.087c-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199l-.226.327c-.284.438-.49.922-.612 1.43c-.23.97-.09 1.882.403 2.661c-.595.332-1.55.413-1.744.42H.751a.75.75 0 0 0-.75.748a11.4 11.4 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124c1.18.723 3.1 1.137 5.275 1.137a15.7 15.7 0 0 0 2.93-.266a12.3 12.3 0 0 0 3.823-1.389a10.5 10.5 0 0 0 2.61-2.136c1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009c.309-.293.55-.65.707-1.046l.098-.288Z"/></symbol><symbol id="i-githubactions" viewBox="0 0 24 24"><path fill="currentColor" d="M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391l1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.5.5 0 0 1-.354.146m9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18l-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001M4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85m2.03-2.436L4 6.602V3.406zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.5 3.5 0 0 1-3.46-3h-2.08a3.5 3.5 0 0 1-3.46 3a3.5 3.5 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3c1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.5 3.5 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.01 5.01 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.48 2.48 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.5 3.5 0 0 1 3.46 3h2.08a3.5 3.5 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5m-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5s-1.122-2.5-2.5-2.5S9 19.122 9 20.5M5 9c2.206 0 4-1.794 4-4S7.206 1 5 1S1 2.794 1 5s1.794 4 4 4m9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5m9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5m-13 8a.5.5 0 1 0 1 0a.5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0a.5.5 0 0 0-1 0m12 0c0 1.93-1.57 3.5-3.5 3.5a3.5 3.5 0 0 1-3.46-3.002l-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.5 3.5 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5m-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5"/></symbol><symbol id="i-terraform" viewBox="0 0 24 24"><path fill="currentColor" d="M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1200 406" role="img" aria-label="Declared infrastructure, build, deploy and verification, wide" aria-describedby="d06w-d">
+            <desc id="d06w-d">The whole platform is declared as code and applied through a reviewed pipeline, and a final step compares the version actually running against the one that was just built.</desc>
+            <rect x="30.0" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-terraform" x="196.0" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="130.0" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Declared</text>
+            <text x="130.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">infrastructure as code</text>
+            <rect x="343.3" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="356.3" y="127.0" class="dg-num" font-size="13" text-anchor="start">02</text>
+            <use href="#i-githubactions" x="509.3" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="443.3" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Build</text>
+            <text x="443.3" y="224.0" class="dg-note" font-size="16" text-anchor="middle">gates that ratchet</text>
+            <line x1="240.0" y1="152.0" x2="331.3" y2="152.0" class="dg-edge"/>
+            <polygon points="340.3,152.0 331.3,147.5 331.3,156.5" class="dg-arrow"/>
+            <rect x="656.7" y="104.0" width="200.0" height="96.0" class="dg-node"/>
+            <text x="669.7" y="127.0" class="dg-num" font-size="13" text-anchor="start">03</text>
+            <use href="#i-amazonecs" x="822.7" y="113.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="756.7" y="157.8" class="dg-label" font-size="16" text-anchor="middle">Deploy</text>
+            <text x="756.7" y="224.0" class="dg-note" font-size="16" text-anchor="middle">ordered rollout</text>
+            <line x1="553.3" y1="152.0" x2="644.7" y2="152.0" class="dg-edge"/>
+            <polygon points="653.7,152.0 644.7,147.5 644.7,156.5" class="dg-arrow"/>
+            <rect x="970.0" y="104.0" width="200.0" height="96.0" class="dg-node dg-node--key"/>
+            <text x="983.0" y="127.0" class="dg-num" font-size="13" text-anchor="start">04</text>
+            <use href="#i-docker" x="1136.0" y="113.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="1070.0" y="157.8" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Verify</text>
+            <text x="1070.0" y="224.0" class="dg-note" font-size="16" text-anchor="middle">running vs built</text>
+            <line x1="866.7" y1="152.0" x2="958.0" y2="152.0" class="dg-edge dg-edge--key"/>
+            <polygon points="967.0,152.0 958.0,147.5 958.0,156.5" class="dg-arrow--key"/>
+            <path d="M 1070.0 256.0 C 1070.0 336.0 756.7 336.0 756.7 265.0" class="dg-edge dg-edge--idle"/>
+            <polygon points="756.7,256.0 752.2,265.0 761.2,265.0" class="dg-arrow"/>
+            <text x="913.3" y="354.0" class="dg-band" font-size="15" text-anchor="middle">A mismatch fails the build</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg06-1" style="left:2.500%;top:25.616%;width:16.667%;height:23.645%;anchor-name:--dg06-wide-1"><span class="visually-hidden">Declared</span><span class="diagram__tip" style="position-anchor:--dg06-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Declared</span><span class="diagram__tip-text">Everything the pipeline needs to run &mdash; the workers, the queues, the storage, the cache, the alarms &mdash; is written down as code rather than clicked together. A rule like this data must never expire becomes a reviewable line protected by a test, instead of a setting nobody re-checks.</span><span class="diagram__tip-tech">Terraform / 11 reusable modules / S3 remote state</span></span></label>
+            <label class="diagram__hit " for="dg06-2" style="left:28.611%;top:25.616%;width:16.667%;height:23.645%;anchor-name:--dg06-wide-2"><span class="visually-hidden">Build</span><span class="diagram__tip" style="position-anchor:--dg06-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Build</span><span class="diagram__tip-text">The quality gates only move one way. Test coverage, bundle size, lint debt and security findings can hold or improve but never quietly slip, because each one is measured against the last accepted value rather than a fixed target someone can lower.</span><span class="diagram__tip-tech">GitHub Actions / coverage ratchet / checkov / gitleaks</span></span></label>
+            <label class="diagram__hit " for="dg06-3" style="left:54.722%;top:25.616%;width:16.667%;height:23.645%;anchor-name:--dg06-wide-3"><span class="visually-hidden">Deploy</span><span class="diagram__tip" style="position-anchor:--dg06-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Deploy</span><span class="diagram__tip-text">The rollout has a deliberate order: the half of the pipeline that consumes data is upgraded before the half that produces it, so the two are never briefly incompatible. Credentials are short-lived and issued per run, so there is no long-term key to leak.</span><span class="diagram__tip-tech">ECS rolling deploy / GitHub OIDC federation</span></span></label>
+            <label class="diagram__hit diagram__hit--end" for="dg06-4" style="left:80.833%;top:25.616%;width:16.667%;height:23.645%;anchor-name:--dg06-wide-4"><span class="visually-hidden">Verify</span><span class="diagram__tip" style="position-anchor:--dg06-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Verify</span><span class="diagram__tip-text">The last step asks the only question that matters: is the version actually running the one we just built? A deployment can pass every check and still be silently rolled back by the platform, leaving last week's code in production with all the lights green. Comparing the two turns an invisible failure into a red build.</span><span class="diagram__tip-tech">Running-task inspection / image digest comparison</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 750" role="img" aria-label="Declared infrastructure, build, deploy and verification, stacked" aria-describedby="d06t-d">
+            <desc id="d06t-d">The whole platform is declared as code and applied through a reviewed pipeline, and a final step compares the version actually running against the one that was just built.</desc>
+            <rect x="60.0" y="24.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="47.0" class="dg-num" font-size="19" text-anchor="start">01</text>
+            <use href="#i-terraform" x="423.0" y="33.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="77.9" class="dg-label" font-size="22" text-anchor="middle">Declared</text>
+            <text x="260.0" y="144.5" class="dg-note" font-size="19" text-anchor="middle">infrastructure as code</text>
+            <rect x="60.0" y="202.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="225.0" class="dg-num" font-size="19" text-anchor="start">02</text>
+            <use href="#i-githubactions" x="423.0" y="211.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="255.9" class="dg-label" font-size="22" text-anchor="middle">Build</text>
+            <text x="260.0" y="322.5" class="dg-note" font-size="19" text-anchor="middle">gates that ratchet</text>
+            <line x1="260.0" y1="126.0" x2="260.0" y2="190.0" class="dg-edge"/>
+            <polygon points="260.0,199.0 255.5,190.0 264.5,190.0" class="dg-arrow"/>
+            <rect x="60.0" y="380.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="403.0" class="dg-num" font-size="19" text-anchor="start">03</text>
+            <use href="#i-amazonecs" x="423.0" y="389.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="433.9" class="dg-label" font-size="22" text-anchor="middle">Deploy</text>
+            <text x="260.0" y="500.5" class="dg-note" font-size="19" text-anchor="middle">ordered rollout</text>
+            <line x1="260.0" y1="304.0" x2="260.0" y2="368.0" class="dg-edge"/>
+            <polygon points="260.0,377.0 255.5,368.0 264.5,368.0" class="dg-arrow"/>
+            <rect x="60.0" y="558.0" width="400.0" height="92.0" class="dg-node dg-node--key"/>
+            <text x="73.0" y="581.0" class="dg-num" font-size="19" text-anchor="start">04</text>
+            <use href="#i-docker" x="423.0" y="567.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="611.9" class="dg-label dg-label--key" font-size="22" text-anchor="middle">Verify</text>
+            <text x="260.0" y="678.5" class="dg-note" font-size="19" text-anchor="middle">running vs built</text>
+            <line x1="260.0" y1="482.0" x2="260.0" y2="546.0" class="dg-edge dg-edge--key"/>
+            <polygon points="260.0,555.0 255.5,546.0 264.5,546.0" class="dg-arrow--key"/>
+            <path d="M 57 604.0 C 16 604.0 16 426.0 48 426.0" class="dg-edge dg-edge--idle"/>
+            <polygon points="57,426.0 48,421.5 48,430.5" class="dg-arrow"/>
+            <text x="260.0" y="728.0" class="dg-band" font-size="17" text-anchor="middle">A mismatch fails the build</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit " for="dg06-1" style="left:11.538%;top:3.200%;width:76.923%;height:12.267%;anchor-name:--dg06-tall-1"><span class="visually-hidden">Declared</span><span class="diagram__tip" style="position-anchor:--dg06-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Declared</span><span class="diagram__tip-text">Everything the pipeline needs to run &mdash; the workers, the queues, the storage, the cache, the alarms &mdash; is written down as code rather than clicked together. A rule like this data must never expire becomes a reviewable line protected by a test, instead of a setting nobody re-checks.</span><span class="diagram__tip-tech">Terraform / 11 reusable modules / S3 remote state</span></span></label>
+            <label class="diagram__hit " for="dg06-2" style="left:11.538%;top:26.933%;width:76.923%;height:12.267%;anchor-name:--dg06-tall-2"><span class="visually-hidden">Build</span><span class="diagram__tip" style="position-anchor:--dg06-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Build</span><span class="diagram__tip-text">The quality gates only move one way. Test coverage, bundle size, lint debt and security findings can hold or improve but never quietly slip, because each one is measured against the last accepted value rather than a fixed target someone can lower.</span><span class="diagram__tip-tech">GitHub Actions / coverage ratchet / checkov / gitleaks</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg06-3" style="left:11.538%;top:50.667%;width:76.923%;height:12.267%;anchor-name:--dg06-tall-3"><span class="visually-hidden">Deploy</span><span class="diagram__tip" style="position-anchor:--dg06-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Deploy</span><span class="diagram__tip-text">The rollout has a deliberate order: the half of the pipeline that consumes data is upgraded before the half that produces it, so the two are never briefly incompatible. Credentials are short-lived and issued per run, so there is no long-term key to leak.</span><span class="diagram__tip-tech">ECS rolling deploy / GitHub OIDC federation</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg06-4" style="left:11.538%;top:74.400%;width:76.923%;height:12.267%;anchor-name:--dg06-tall-4"><span class="visually-hidden">Verify</span><span class="diagram__tip" style="position-anchor:--dg06-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Verify</span><span class="diagram__tip-text">The last step asks the only question that matters: is the version actually running the one we just built? A deployment can pass every check and still be silently rolled back by the platform, leaving last week's code in production with all the lights green. Comparing the two turns an invisible failure into a red build.</span><span class="diagram__tip-tech">Running-task inspection / image digest comparison</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 06 &mdash; The last step is the one that checks the other three told the truth</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg06-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg06-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

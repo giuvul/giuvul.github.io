@@ -1,0 +1,115 @@
+// -----------------------------------------------------------------------------
+// Home page — schermata 01 "HERO" del concept
+// Le misure sono state ricavate dal concept e riportate su un viewport di
+// riferimento di 1440 x 1215 px, poi espresse in unita' fluide (vw/vh).
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - #{$header-h});
+  padding-inline: $gutter;
+  padding-block: clamp(1.5rem, 6vh, 7.7rem) clamp(2rem, 7.5vh, 6rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+// Immagine di sfondo sul lato destro, sfumata verso il centro
+.hero__media {
+  position: absolute;
+  inset: 0 0 0 44%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // il cerchio luminoso fa parte della foto: l'inquadratura lo tiene intero
+    object-position: 78% 100%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, $color-bg 0%, rgba($color-bg, 0.72) 14%, rgba($color-bg, 0) 46%),
+      linear-gradient(180deg, $color-bg 0%, rgba($color-bg, 0) 26%);
+  }
+
+  @include down($bp-lg) {
+    inset: auto 0 0 0;
+    height: 55%;
+    opacity: 0.5;
+
+    &::after {
+      background: linear-gradient(180deg, $color-bg 0%, rgba($color-bg, 0) 60%);
+    }
+  }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  // il blocco del titolo rientra rispetto al logo, come nel concept
+  padding-left: clamp(0px, 3.1vw, 45px);
+
+  @include down($bp-lg) { padding-left: 0; }
+}
+
+.hero__title {
+  @include display($fs-display-xl, 800, 0.941);
+  // Il concept era su uno schermo alto 1215px: su un 1440x900 il titolo in vw
+  // spingeva il pulsante sotto la piega. Il tetto in vh lo fa stare nella
+  // prima schermata anche sugli schermi bassi.
+  font-size: min(#{$fs-display-xl}, 10.4vh);
+  max-width: 14ch;
+
+  @include down($bp-lg) { font-size: $fs-display-xl; }
+}
+
+.hero__rule { margin-top: clamp(1.2rem, 3.5vh, 2.8rem); }
+
+.hero__roles {
+  margin-top: clamp(0.9rem, 2.72vh, 2.2rem);
+  font-family: $font-display;
+  font-variation-settings: 'wdth' $wdth-ui;
+  font-stretch: 100%;
+  font-weight: 500;
+  font-size: clamp(1.05rem, min(2.1vw, 3vh), 2.15rem);
+  line-height: 1.44;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $color-heading;
+  margin-bottom: 0;      // la spaziatura e' gestita dai margini del blocco
+}
+
+.hero__foot {
+  margin-top: auto;
+  padding-top: clamp(1.5rem, 5.74vh, 4.6rem);
+  margin-left: clamp(0px, 16.6vw, 240px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: clamp(1.2rem, 4.57vh, 3.7rem);
+
+  // da desktop frase e pulsante stanno sulla stessa riga: impilati costavano
+  // un'intera altezza di pulsante in piu' nella prima schermata
+  @include up($bp-lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(1.2rem, 2vh, 1.8rem) clamp(2rem, 4vw, 4.5rem);
+  }
+
+  @include down($bp-lg) { margin-left: 0; }
+}
+
+.hero__lead { max-width: 40ch; margin-bottom: 0; }
+
+

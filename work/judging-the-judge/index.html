@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Judging the Judge &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="The moment you let a model grade another model's work, you have created a number nobody has checked. A judge that has never been compared to a person is not a measurement — it is…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/judging-the-judge/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="Judging the Judge &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="The moment you let a model grade another model's work, you have created a number nobody has checked. A judge that has never been compared to a person is not a measurement — it is…">
+  <meta property="og:url" content="https://giuvul.github.io/work/judging-the-judge/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Judging the Judge &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="The moment you let a model grade another model's work, you have created a number nobody has checked. A judge that has never been compared to a person is not a measurement — it is…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">AI Engineering</p>
+          <h1 class="case-title">Judging<br><span class="display-accent">the judge</span></h1>
+          <p class="case-lead">The moment you let a model grade another model's work, you have created a number nobody has checked. A judge that has never been compared to a person is not a measurement — it is an opinion with a number attached.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Internal agent operations platform</dd></div>
+          <div><dt>Scale</dt><dd>Quality scoring for outbound work</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>Python / LLM evaluation / Statistics</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">Model-generated quality scores were shaping which work got attention, and nothing established that they agreed with the person whose standard mattered.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Score blind on both sides, measure the agreement with a statistic built for it, and fix the usable threshold before seeing the answer.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">The quality metric became measurable in its own right, with an explicit rule for when it must be ignored — a loop most systems never close.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg07" id="dg07-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg07" id="dg07-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg07" id="dg07-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg07" id="dg07-4">
+        <input class="dg-state dg-state--reset" type="radio" name="dg07" id="dg07-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-sigma" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></symbol><symbol id="i-user-round" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></g></symbol><symbol id="i-claude" viewBox="0 0 24 24"><path fill="currentColor" d="m4.714 15.956l4.718-2.648l.079-.23l-.08-.128h-.23l-.79-.048l-2.695-.073l-2.337-.097l-2.265-.122l-.57-.121l-.535-.704l.055-.353l.48-.321l.685.06l1.518.104l2.277.157l1.651.098l2.447.255h.389l.054-.158l-.133-.097l-.103-.098l-2.356-1.596l-2.55-1.688l-1.336-.972l-.722-.491L2 6.223l-.158-1.008l.656-.722l.88.06l.224.061l.893.686l1.906 1.476l2.49 1.833l.364.304l.146-.104l.018-.072l-.164-.274l-1.354-2.446l-1.445-2.49l-.644-1.032l-.17-.619a3 3 0 0 1-.103-.729L6.287.133L6.7 0l.995.134l.42.364l.619 1.415L9.735 4.14l1.555 3.03l.455.898l.243.832l.09.255h.159V9.01l.127-1.706l.237-2.095l.23-2.695l.08-.76l.376-.91l.747-.492l.583.28l.48.685l-.067.444l-.286 1.851l-.558 2.903l-.365 1.942h.213l.243-.242l.983-1.306l1.652-2.064l.728-.82l.85-.904l.547-.431h1.032l.759 1.129l-.34 1.166l-1.063 1.347l-.88 1.142l-1.263 1.7l-.79 1.36l.074.11l.188-.02l2.853-.606l1.542-.28l1.84-.315l.832.388l.09.395l-.327.807l-1.967.486l-2.307.462l-3.436.813l-.043.03l.049.061l1.548.146l.662.036h1.62l3.018.225l.79.522l.473.638l-.08.485l-1.213.62l-1.64-.389l-3.825-.91l-1.31-.329h-.183v.11l1.093 1.068l2.003 1.81l2.508 2.33l.127.578l-.321.455l-.34-.049l-2.204-1.657l-.85-.747l-1.925-1.62h-.127v.17l.443.649l2.343 3.521l.122 1.08l-.17.353l-.607.213l-.668-.122l-1.372-1.924l-1.415-2.168l-1.141-1.943l-.14.08l-.674 7.254l-.316.37l-.728.28l-.607-.461l-.322-.747l.322-1.476l.388-1.924l.316-1.53l.285-1.9l.17-.632l-.012-.042l-.14.018l-1.432 1.967l-2.18 2.945l-1.724 1.845l-.413.164l-.716-.37l.066-.662l.401-.589l2.386-3.036l1.439-1.882l.929-1.086l-.006-.158h-.055L4.138 18.56l-1.13.146l-.485-.456l.06-.746l.231-.243l1.907-1.312Z"/></symbol><symbol id="i-python" viewBox="0 0 24 24"><path fill="currentColor" d="m14.25.18l.9.2l.73.26l.59.3l.45.32l.34.34l.25.34l.16.33l.1.3l.04.26l.02.2l-.01.13V8.5l-.05.63l-.13.55l-.21.46l-.26.38l-.3.31l-.33.25l-.35.19l-.35.14l-.33.1l-.3.07l-.26.04l-.21.02H8.77l-.69.05l-.59.14l-.5.22l-.41.27l-.33.32l-.27.35l-.2.36l-.15.37l-.1.35l-.07.32l-.04.27l-.02.21v3.06H3.17l-.21-.03l-.28-.07l-.32-.12l-.35-.18l-.36-.26l-.36-.36l-.35-.46l-.32-.59l-.28-.73l-.21-.88l-.14-1.05l-.05-1.23l.06-1.22l.16-1.04l.24-.87l.32-.71l.36-.57l.4-.44l.42-.33l.42-.24l.4-.16l.36-.1l.32-.05l.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75l-.02-.37l.05-.34l.11-.31l.17-.28l.25-.26l.31-.23l.38-.2l.44-.18l.51-.15l.58-.12l.64-.1l.71-.06l.77-.04l.84-.02l1.27.05zm-6.3 1.98l-.23.33l-.08.41l.08.41l.23.34l.33.22l.41.09l.41-.09l.33-.22l.23-.34l.08-.41l-.08-.41l-.23-.33l-.33-.22l-.41-.09l-.41.09zm13.09 3.95l.28.06l.32.12l.35.18l.36.27l.36.35l.35.47l.32.59l.28.73l.21.88l.14 1.04l.05 1.23l-.06 1.23l-.16 1.04l-.24.86l-.32.71l-.36.57l-.4.45l-.42.33l-.42.24l-.4.16l-.36.09l-.32.05l-.24.02l-.16-.01h-8.22v.82h5.84l.01 2.76l.02.36l-.05.34l-.11.31l-.17.29l-.25.25l-.31.24l-.38.2l-.44.17l-.51.15l-.58.13l-.64.09l-.71.07l-.77.04l-.84.01l-1.27-.04l-1.07-.14l-.9-.2l-.73-.25l-.59-.3l-.45-.33l-.34-.34l-.25-.34l-.16-.33l-.1-.3l-.04-.25l-.02-.2l.01-.13v-5.34l.05-.64l.13-.54l.21-.46l.26-.38l.3-.32l.33-.24l.35-.2l.35-.14l.33-.1l.3-.06l.26-.04l.21-.02l.13-.01h5.84l.69-.05l.59-.14l.5-.21l.41-.28l.33-.32l.27-.35l.2-.36l.15-.36l.1-.35l.07-.32l.04-.28l.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33l-.08.41l.08.41l.23.33l.33.23l.41.08l.41-.08l.33-.23l.23-.33l.08-.41l-.08-.41l-.23-.33l-.33-.23l-.41-.08l-.41.08z"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1200 400" role="img" aria-label="Blind model and human scoring compared by agreement, wide" aria-describedby="d07w-d">
+            <desc id="d07w-d">A model and a person score the same work without seeing each other's verdicts; the agreement between them is measured statistically and a declared threshold decides whether the model's score is allowed to influence anything.</desc>
+            <rect x="30.0" y="92.0" width="210.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="115.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-claude" x="206.0" y="101.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="135.0" y="145.8" class="dg-label" font-size="16" text-anchor="middle">Model score</text>
+            <text x="135.0" y="212.0" class="dg-note" font-size="16" text-anchor="middle">fast, cheap</text>
+            <rect x="30.0" y="244.0" width="210.0" height="96.0" class="dg-node"/>
+            <text x="43.0" y="267.0" class="dg-num" font-size="13" text-anchor="start">02</text>
+            <use href="#i-user-round" x="206.0" y="253.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="135.0" y="297.8" class="dg-label" font-size="16" text-anchor="middle">Human score</text>
+            <text x="135.0" y="364.0" class="dg-note" font-size="16" text-anchor="middle">blind to the model</text>
+            <rect x="495.0" y="176.0" width="210.0" height="96.0" class="dg-node dg-node--key"/>
+            <text x="508.0" y="199.0" class="dg-num" font-size="13" text-anchor="start">03</text>
+            <use href="#i-sigma" x="671.0" y="185.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="600.0" y="229.8" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Agreement</text>
+            <text x="600.0" y="296.0" class="dg-note" font-size="16" text-anchor="middle">measured, not assumed</text>
+            <rect x="960.0" y="176.0" width="210.0" height="96.0" class="dg-node"/>
+            <text x="973.0" y="199.0" class="dg-num" font-size="13" text-anchor="start">04</text>
+            <use href="#i-python" x="1136.0" y="185.0" width="23.0" height="23.0" class="dg-icon"/>
+            <text x="1065.0" y="229.8" class="dg-label" font-size="16" text-anchor="middle">Threshold</text>
+            <text x="1065.0" y="296.0" class="dg-note" font-size="16" text-anchor="middle">decided in advance</text>
+            <line x1="715.0" y1="224.0" x2="948.0" y2="224.0" class="dg-edge"/>
+            <polygon points="957.0,224.0 948.0,219.5 948.0,228.5" class="dg-arrow"/>
+            <path d="M 250.0 140.0 L 371.0 140.0 L 371.0 224.0 L 483.0 224.0" class="dg-edge"/>
+            <polygon points="492.0,224.0 483.0,219.5 483.0,228.5" class="dg-arrow"/>
+            <path d="M 250.0 292.0 L 371.0 292.0 L 371.0 224.0 L 483.0 224.0" class="dg-edge"/>
+            <polygon points="492.0,224.0 483.0,219.5 483.0,228.5" class="dg-arrow"/>
+            <text x="600.0" y="40.0" class="dg-band" font-size="16" text-anchor="middle">Scored independently, compared afterwards</text>
+            <line x1="30" y1="56" x2="1170" y2="56" class="dg-rule"/>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg07-1" style="left:2.500%;top:23.000%;width:17.500%;height:24.000%;anchor-name:--dg07-wide-1"><span class="visually-hidden">Model score</span><span class="diagram__tip" style="position-anchor:--dg07-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Model score</span><span class="diagram__tip-text">A model reads each piece of work and grades it. This is the cheap, fast, endlessly repeatable half &mdash; and the half with no way of knowing whether it is any good.</span><span class="diagram__tip-tech">LLM judge / structured output</span></span></label>
+            <label class="diagram__hit diagram__hit--start diagram__hit--up" for="dg07-2" style="left:2.500%;top:61.000%;width:17.500%;height:24.000%;anchor-name:--dg07-wide-2"><span class="visually-hidden">Human score</span><span class="diagram__tip" style="position-anchor:--dg07-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Human score</span><span class="diagram__tip-text">A person grades the same sample without being shown the model's verdict. Hiding it is not a nicety: seeing a score first pulls a rater towards it, and the agreement you then measure is one you manufactured.</span><span class="diagram__tip-tech">Blind export / no score shown to the rater</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg07-3" style="left:41.250%;top:44.000%;width:17.500%;height:24.000%;anchor-name:--dg07-wide-3"><span class="visually-hidden">Agreement</span><span class="diagram__tip" style="position-anchor:--dg07-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Agreement</span><span class="diagram__tip-text">The two sets of verdicts are compared with a statistic built for exactly this question, one that treats being off by a single grade differently from being wildly wrong. It produces a single figure for how much the model's judgement can be trusted.</span><span class="diagram__tip-tech">Cohen's kappa, quadratic weights</span></span></label>
+            <label class="diagram__hit diagram__hit--end diagram__hit--up" for="dg07-4" style="left:80.000%;top:44.000%;width:17.500%;height:24.000%;anchor-name:--dg07-wide-4"><span class="visually-hidden">Threshold</span><span class="diagram__tip" style="position-anchor:--dg07-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Threshold</span><span class="diagram__tip-text">The levels are written down before the result is known: above this, the score may drive decisions; below it, the score is not allowed to influence anything at all. Deciding in advance is what stops the number from being explained away once it is inconvenient.</span><span class="diagram__tip-tech">Declared bands / Python</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 522" role="img" aria-label="Blind model and human scoring compared by agreement, stacked" aria-describedby="d07t-d">
+            <desc id="d07t-d">A model and a person score the same work without seeing each other's verdicts; the agreement between them is measured statistically and a declared threshold decides whether the model's score is allowed to influence anything.</desc>
+            <rect x="60.0" y="24.0" width="190.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="47.0" class="dg-num" font-size="14" text-anchor="start">01</text>
+            <use href="#i-claude" x="214.0" y="33.0" width="25.0" height="25.0" class="dg-icon"/>
+            <text x="155.0" y="64.2" class="dg-label" font-size="17" text-anchor="middle">Model</text>
+            <text x="155.0" y="88.0" class="dg-label" font-size="17" text-anchor="middle">score</text>
+            <text x="155.0" y="138.5" class="dg-note" font-size="15" text-anchor="middle">fast, cheap</text>
+            <rect x="270.0" y="24.0" width="190.0" height="92.0" class="dg-node"/>
+            <text x="283.0" y="47.0" class="dg-num" font-size="14" text-anchor="start">02</text>
+            <use href="#i-user-round" x="424.0" y="33.0" width="25.0" height="25.0" class="dg-icon"/>
+            <text x="365.0" y="64.2" class="dg-label" font-size="17" text-anchor="middle">Human</text>
+            <text x="365.0" y="88.0" class="dg-label" font-size="17" text-anchor="middle">score</text>
+            <text x="365.0" y="138.5" class="dg-note" font-size="15" text-anchor="middle">blind to the model</text>
+            <rect x="60.0" y="220.0" width="400.0" height="92.0" class="dg-node dg-node--key"/>
+            <text x="73.0" y="243.0" class="dg-num" font-size="19" text-anchor="start">03</text>
+            <use href="#i-sigma" x="423.0" y="229.0" width="26.0" height="26.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="273.9" class="dg-label dg-label--key" font-size="22" text-anchor="middle">Agreement</text>
+            <text x="260.0" y="340.5" class="dg-note" font-size="19" text-anchor="middle">measured, not assumed</text>
+            <rect x="60.0" y="390.0" width="400.0" height="92.0" class="dg-node"/>
+            <text x="73.0" y="413.0" class="dg-num" font-size="19" text-anchor="start">04</text>
+            <use href="#i-python" x="423.0" y="399.0" width="26.0" height="26.0" class="dg-icon"/>
+            <text x="260.0" y="443.9" class="dg-label" font-size="22" text-anchor="middle">Threshold</text>
+            <text x="260.0" y="510.5" class="dg-note" font-size="19" text-anchor="middle">decided in advance</text>
+            <line x1="260.0" y1="322.0" x2="260.0" y2="378.0" class="dg-edge"/>
+            <polygon points="260.0,387.0 255.5,378.0 264.5,378.0" class="dg-arrow"/>
+            <path d="M 155.0 126.0 L 207.5 126.0 L 207.5 217.0 L 251.0 217.0" class="dg-edge"/>
+            <polygon points="260.0,217.0 251.0,212.5 251.0,221.5" class="dg-arrow"/>
+            <path d="M 365.0 126.0 L 312.5 126.0 L 312.5 217.0 L 251.0 217.0" class="dg-edge"/>
+            <polygon points="260.0,217.0 251.0,212.5 251.0,221.5" class="dg-arrow"/>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit diagram__hit--start" for="dg07-1" style="left:11.538%;top:4.598%;width:36.538%;height:17.625%;anchor-name:--dg07-tall-1"><span class="visually-hidden">Model score</span><span class="diagram__tip" style="position-anchor:--dg07-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">Model score</span><span class="diagram__tip-text">A model reads each piece of work and grades it. This is the cheap, fast, endlessly repeatable half &mdash; and the half with no way of knowing whether it is any good.</span><span class="diagram__tip-tech">LLM judge / structured output</span></span></label>
+            <label class="diagram__hit diagram__hit--end" for="dg07-2" style="left:51.923%;top:4.598%;width:36.538%;height:17.625%;anchor-name:--dg07-tall-2"><span class="visually-hidden">Human score</span><span class="diagram__tip" style="position-anchor:--dg07-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Human score</span><span class="diagram__tip-text">A person grades the same sample without being shown the model's verdict. Hiding it is not a nicety: seeing a score first pulls a rater towards it, and the agreement you then measure is one you manufactured.</span><span class="diagram__tip-tech">Blind export / no score shown to the rater</span></span></label>
+            <label class="diagram__hit " for="dg07-3" style="left:11.538%;top:42.146%;width:76.923%;height:17.625%;anchor-name:--dg07-tall-3"><span class="visually-hidden">Agreement</span><span class="diagram__tip" style="position-anchor:--dg07-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Agreement</span><span class="diagram__tip-text">The two sets of verdicts are compared with a statistic built for exactly this question, one that treats being off by a single grade differently from being wildly wrong. It produces a single figure for how much the model's judgement can be trusted.</span><span class="diagram__tip-tech">Cohen's kappa, quadratic weights</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg07-4" style="left:11.538%;top:74.713%;width:76.923%;height:17.625%;anchor-name:--dg07-tall-4"><span class="visually-hidden">Threshold</span><span class="diagram__tip" style="position-anchor:--dg07-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">Threshold</span><span class="diagram__tip-text">The levels are written down before the result is known: above this, the score may drive decisions; below it, the score is not allowed to influence anything at all. Deciding in advance is what stops the number from being explained away once it is inconvenient.</span><span class="diagram__tip-tech">Declared bands / Python</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 07 &mdash; Two independent verdicts, then a measure of how far apart they are</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg07-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg07-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// Mixin e funzioni riutilizzabili
+// -----------------------------------------------------------------------------
+@use 'variables' as v;
+
+@mixin up($bp) {
+  @media (min-width: $bp) { @content; }
+}
+
+@mixin down($bp) {
+  @media (max-width: ($bp - 0.02px)) { @content; }
+}
+
+// Micro etichetta maiuscola spaziata (es. "SELECTED WORK", "01 — HERO")
+@mixin label($color: v.$color-accent, $size: v.$fs-label) {
+  font-family: v.$font-ui;
+  font-size: $size;
+  font-weight: 500;
+  letter-spacing: v.$tracking-label;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// Titolo display: largo, pesante, molto compatto in altezza
+@mixin display($size: v.$fs-display-lg, $weight: 800, $lh: 0.96, $wdth: v.$wdth-display) {
+  font-family: v.$font-display;
+  font-variation-settings: 'wdth' $wdth;
+  font-stretch: #{$wdth + '%'};
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lh;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: v.$color-heading;
+}
+
+// Bagliore ciano usato su testo e bordi
+@mixin glow($color: v.$color-accent, $strength: 0.45) {
+  text-shadow: 0 0 26px rgba($color, $strength);
+}
+
+@mixin container {
+  width: 100%;
+  padding-inline: v.$gutter;
+  margin-inline: auto;
+}

@@ -1,0 +1,9 @@
+# dipendenze di sviluppo (Sass e Bootstrap sono gia' compilati in assets/css)
+node_modules/
+
+# file di sistema
+.DS_Store
+Thumbs.db
+
+# mappe sorgente generate in fase di sviluppo
+assets/css/*.map

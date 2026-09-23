@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// Cornice decorativa del viewport + linee guida verticali del layout
+// Riproducono la griglia visibile nel concept grafico.
+// -----------------------------------------------------------------------------
+@use 'sass:list';
+@use '../abstracts' as *;
+
+// Cornice sottile attorno alla finestra (solo da tablet in su)
+.viewport-frame {
+  position: fixed;
+  inset: $frame-inset;
+  border: 1px solid $color-accent-line;
+  pointer-events: none;
+  z-index: 60;
+  display: none;
+
+  @include up($bp-lg) { display: block; }
+}
+
+// Linee verticali di griglia sullo sfondo
+.grid-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  display: none;
+
+  @include up($bp-lg) { display: block; }
+
+  span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: $color-line-soft;
+  }
+
+  @for $i from 1 through list.length($grid-lines) {
+    span:nth-child(#{$i}) { left: list.nth($grid-lines, $i); }
+  }
+}
+
+// Contenuto sempre sopra la griglia
+.page { position: relative; z-index: 1; }

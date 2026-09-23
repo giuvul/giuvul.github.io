@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// Stili tipografici globali e classi di utilità testuale
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+h1, h2, h3, h4 { margin: 0; }
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+
+.display-xl { @include display($fs-display-xl, 800); }
+.display-lg { @include display($fs-display-lg, 800); }
+.display-md { @include display($fs-display-md, 800); }
+
+// Riga in ciano all'interno di un titolo display
+.display-accent {
+  display: block;
+  color: $color-accent;
+  @include glow($color-accent, 0.22);
+}
+
+.label        { @include label; }
+.label--muted { @include label($color-muted); }
+.label--light { @include label($color-heading); }
+
+// Elenco di micro etichette incolonnate (es. IDEAS / DATA / SYSTEMS)
+.micro-list {
+  @include label($color-faint, $fs-micro);
+  line-height: 2.65;
+
+  li { white-space: nowrap; }
+}
+
+.lead {
+  font-size: $fs-lead;
+  color: $color-text;
+  line-height: 1.34;
+  max-width: 34ch;
+}
+
+.text-accent { color: $color-accent; }
+.text-muted-soft { color: $color-muted; }
+
+// Filetto orizzontale corto usato sotto i titoli
+.rule {
+  width: clamp(80px, 21.8vw, 340px);
+  height: 1px;
+  background: linear-gradient(90deg, $color-accent, rgba($color-accent, 0));
+  border: 0;
+  opacity: 0.9;
+  margin: 0;
+}

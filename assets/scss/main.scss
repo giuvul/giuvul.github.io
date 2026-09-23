@@ -1,0 +1,20 @@
+// =============================================================================
+//  Portfolio — foglio di stile principale
+//  Architettura Sass 7-1 semplificata:
+//    abstracts/  → variabili e mixin (non producono CSS)
+//    base/       → reset e tipografia
+//    layout/     → header, footer, griglia, sezioni
+//    components/ → elementi riutilizzabili
+//    pages/      → stili specifici di ogni pagina
+//  Compilazione:  npm run build:css
+// =============================================================================
+
+@use 'abstracts';
+@use 'base/reset';
+@use 'base/typography';
+@use 'layout/frame';
+@use 'layout/header';
+@use 'layout/section';
+@use 'layout/footer';
+@use 'components';
+@use 'pages';

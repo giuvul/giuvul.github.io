@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Work &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="Selected projects in data engineering, platform architecture and intelligent systems.">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="Work &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="Selected projects in data engineering, platform architecture and intelligent systems.">
+  <meta property="og:url" content="https://giuvul.github.io/work/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="Selected projects in data engineering, platform architecture and intelligent systems.">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../work/" aria-current="page">Work</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+          <li><a href="../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <input class="filter-state" type="radio" name="work-filter" id="f-all" checked>
+      <input class="filter-state" type="radio" name="work-filter" id="f-data">
+      <input class="filter-state" type="radio" name="work-filter" id="f-analytics">
+      <input class="filter-state" type="radio" name="work-filter" id="f-platform">
+      <input class="filter-state" type="radio" name="work-filter" id="f-ai">
+      <p class="label section__label">Selected work</p>
+
+      <div class="section__head">
+        <h1 class="work-title">Building<br>for a more<br>connected<br>world</h1>
+
+        <p class="section__intro">
+          A collection of projects in data engineering,<br>
+          platform architecture, and intelligent systems.
+        </p>
+
+        <ul class="filter-list">
+          <li><label for="f-all">All</label></li>
+          <li><label for="f-data">Data engineering</label></li>
+          <li><label for="f-analytics">Analytics engineering</label></li>
+          <li><label for="f-platform">Platform &amp; DataOps</label></li>
+          <li><label for="f-ai">AI engineering</label></li>
+        </ul>
+      </div>
+
+      <div class="project-grid" id="projects">
+        <article class="project-card" data-cat="data">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/01-decoupled-by-design.svg" alt="Decoupled by Design &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">01</span>
+              <h3 class="project-card__title">Decoupled by Design</h3>
+              <p class="project-card__meta">Python &middot; Parquet &middot; S3</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/decoupled-by-design/"><span class="visually-hidden">Decoupled by Design</span></a>
+        </article>
+        <article class="project-card" data-cat="data">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/02-storage-shaped-by-the-question.svg" alt="Storage Shaped by the Question &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">02</span>
+              <h3 class="project-card__title">Storage Shaped by the Question</h3>
+              <p class="project-card__meta">PostgreSQL &middot; Partitioning &middot; SQL</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/storage-shaped-by-the-question/"><span class="visually-hidden">Storage Shaped by the Question</span></a>
+        </article>
+        <article class="project-card" data-cat="data analytics">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/03-a-promise-the-data-keeps.svg" alt="A Promise the Data Keeps &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">03</span>
+              <h3 class="project-card__title">A Promise the Data Keeps</h3>
+              <p class="project-card__meta">YAML &middot; SQL &middot; CloudWatch</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/a-promise-the-data-keeps/"><span class="visually-hidden">A Promise the Data Keeps</span></a>
+        </article>
+        <article class="project-card" data-cat="data analytics">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/04-the-warehouse-you-already-have.svg" alt="The Warehouse You Already Have &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">04</span>
+              <h3 class="project-card__title">The Warehouse You Already Have</h3>
+              <p class="project-card__meta">Parquet &middot; DuckDB &middot; S3</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/the-warehouse-you-already-have/"><span class="visually-hidden">The Warehouse You Already Have</span></a>
+        </article>
+        <article class="project-card" data-cat="analytics">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/05-the-transformation-layer.svg" alt="The Transformation Layer, Tested &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">05</span>
+              <h3 class="project-card__title">The Transformation Layer, Tested</h3>
+              <p class="project-card__meta">dbt &middot; Dagster &middot; DuckDB</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/the-transformation-layer/"><span class="visually-hidden">The Transformation Layer, Tested</span></a>
+        </article>
+        <article class="project-card" data-cat="platform">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/06-the-platform-beneath-the-pipeline.svg" alt="The Platform Beneath the Pipeline &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">06</span>
+              <h3 class="project-card__title">The Platform Beneath the Pipeline</h3>
+              <p class="project-card__meta">Terraform &middot; AWS ECS &middot; GitHub Actions</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/the-platform-beneath-the-pipeline/"><span class="visually-hidden">The Platform Beneath the Pipeline</span></a>
+        </article>
+        <article class="project-card" data-cat="ai">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/07-judging-the-judge.svg" alt="Judging the Judge &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">07</span>
+              <h3 class="project-card__title">Judging the Judge</h3>
+              <p class="project-card__meta">Python &middot; LLM evaluation &middot; Statistics</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/judging-the-judge/"><span class="visually-hidden">Judging the Judge</span></a>
+        </article>
+        <article class="project-card" data-cat="ai">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/08-authority-by-construction.svg" alt="Authority by Construction &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">08</span>
+              <h3 class="project-card__title">Authority by Construction</h3>
+              <p class="project-card__meta">Agent tooling &middot; PostgreSQL &middot; Access control</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/authority-by-construction/"><span class="visually-hidden">Authority by Construction</span></a>
+        </article>
+        <article class="project-card" data-cat="ai">
+          <div class="project-card__media">
+            <img src="../assets/img/projects/09-instructions-that-learn.svg" alt="Instructions That Learn &mdash; diagram preview" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <div>
+              <span class="project-card__num">09</span>
+              <h3 class="project-card__title">Instructions That Learn</h3>
+              <p class="project-card__meta">Retrieval &middot; Git &middot; Prompt engineering</p>
+            </div>
+            <span class="project-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </div>
+          <a class="project-card__link" href="../work/instructions-that-learn/"><span class="visually-hidden">Instructions That Learn</span></a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

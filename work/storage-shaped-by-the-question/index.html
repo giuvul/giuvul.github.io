@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Storage Shaped by the Question &mdash; Giuseppe Vulduraro</title>
+  <meta name="description" content="A table's physical layout should be dictated by how it is read, not by how it happens to be written. Once storage mirrors the shape of the questions the business actually asks,…">
+  <meta name="author" content="Giuseppe Vulduraro">
+  <link rel="canonical" href="https://giuvul.github.io/work/storage-shaped-by-the-question/">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Giuseppe Vulduraro">
+  <meta property="og:title" content="Storage Shaped by the Question &mdash; Giuseppe Vulduraro">
+  <meta property="og:description" content="A table's physical layout should be dictated by how it is read, not by how it happens to be written. Once storage mirrors the shape of the questions the business actually asks,…">
+  <meta property="og:url" content="https://giuvul.github.io/work/storage-shaped-by-the-question/">
+  <meta property="og:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Storage Shaped by the Question &mdash; Giuseppe Vulduraro">
+  <meta name="twitter:description" content="A table's physical layout should be dictated by how it is read, not by how it happens to be written. Once storage mirrors the shape of the questions the business actually asks,…">
+  <meta name="twitter:image" content="https://giuvul.github.io/assets/img/og-cover.png">
+  <meta name="theme-color" content="#040d17">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+  <!-- Framework front end: Bootstrap 5 (reboot, griglia e utility) -->
+  <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Tipografia self-hosted (Archivo, Barlow, Saira) -->
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+
+  <!-- Foglio di stile compilato da Sass -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Stato del menu a tutto schermo: checkbox nascosta, nessun JavaScript -->
+  <input type="checkbox" id="nav-state" class="nav-state" aria-hidden="true" tabindex="-1">
+
+  <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="viewport-frame" aria-hidden="true"></div>
+
+  <!-- ===================== MENU A TUTTO SCHERMO ===================== -->
+  <nav class="nav-overlay" id="menu" aria-label="Main menu">
+    <div class="nav-overlay__media" aria-hidden="true">
+      <img src="../../assets/img/nav-monoliths.webp" alt="">
+    </div>
+
+    <div class="nav-overlay__top">
+      <span class="logo">Giuseppe Vulduraro</span>
+      <label class="nav-close" for="nav-state" role="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></label>
+    </div>
+
+    <div class="nav-overlay__body">
+      <ul class="nav-menu">
+        <li><span class="nav-menu__num">01</span><a class="nav-menu__link" href="../../work/" aria-current="page">Work</a></li>
+        <li><span class="nav-menu__num">02</span><a class="nav-menu__link" href="../../about/">About</a></li>
+        <li><span class="nav-menu__num">03</span><a class="nav-menu__link" href="../../contact/">Contact</a></li>
+        <li><span class="nav-menu__num">04</span><a class="nav-menu__link" href="../../cv/">CV</a></li>
+      </ul>
+    </div>
+
+    <p class="nav-overlay__tagline">Better<br>Data<br>Brighter<br>Tomorrows</p>
+
+    <div class="nav-overlay__foot">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER STICKY ===================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../../">Giuseppe Vulduraro</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../../work/" aria-current="page">Work</a></li>
+          <li><a href="../../about/">About</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../cv/">CV</a></li>
+        </ul>
+      </nav>
+
+      <label class="nav-toggle" for="nav-state" role="button" aria-label="Open menu" aria-controls="menu"></label>
+    </div>
+  </header>
+  <main class="page">
+    <section class="section section--flush">
+      <a class="back-link" href="../../work/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6"/></svg> All projects</a>
+
+      <div class="case-head">
+        <div>
+          <p class="label section__label">Data Engineering</p>
+          <h1 class="case-title">Storage shaped<br><span class="display-accent">by the question</span></h1>
+          <p class="case-lead">A table's physical layout should be dictated by how it is read, not by how it happens to be written. Once storage mirrors the shape of the questions the business actually asks, both the database and the people maintaining it get their work cut down for free.</p>
+        </div>
+
+        <dl class="case-meta">
+          <div><dt>System</dt><dd>Passenger profiling platform</dd></div>
+          <div><dt>Scale</dt><dd>535M rows across 16 airports</dd></div>
+          <div><dt>Role</dt><dd>Sole architect and engineer</dd></div>
+          <div class="case-meta__stack">
+            <dt>Stack</dt>
+            <dd>PostgreSQL / Partitioning / SQL</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="numbered-cols">
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">01</span>
+          <h2 class="numbered-cols__title">The challenge</h2>
+          <p class="numbered-cols__text">Analytical questions over half a billion rows were reading far more data than the customer was entitled to see, and pushing past the request timeout.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">02</span>
+          <h2 class="numbered-cols__title">The approach</h2>
+          <p class="numbered-cols__text">Split the table along the two axes that matter — who is asking, and how writes arrive — then rewrite the read path to match.</p>
+        </div>
+        <div class="numbered-cols__item">
+          <span class="numbered-cols__num">03</span>
+          <h2 class="numbered-cols__title">The result</h2>
+          <p class="numbered-cols__text">Customer dashboards answer in seconds instead of timing out, upkeep became a bounded operation, and tenancy is enforced by the layout itself.</p>
+        </div>
+      </div>
+
+      <div class="diagram-explore">
+        <input class="dg-state dg-state--pick" type="radio" name="dg02" id="dg02-1">
+        <input class="dg-state dg-state--pick" type="radio" name="dg02" id="dg02-2">
+        <input class="dg-state dg-state--pick" type="radio" name="dg02" id="dg02-3">
+        <input class="dg-state dg-state--pick" type="radio" name="dg02" id="dg02-4">
+        <input class="dg-state dg-state--reset" type="radio" name="dg02" id="dg02-0" checked>
+        <figure class="diagram">
+          <svg class="dg-sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-fastapi" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .039c-6.627 0-12 5.354-12 11.96c-.001 6.606 5.372 11.963 12 11.962S24.001 18.605 24 12S18.627.039 12 .039m-.829 5.415h7.55l-7.58 5.329h5.182L5.28 18.543l5.891-13.088"/></symbol><symbol id="i-postgresql" viewBox="0 0 24 24"><path fill="currentColor" d="M23.56 14.723a.5.5 0 0 0-.057-.12q-.21-.395-1.007-.231c-1.654.34-2.294.13-2.526-.02c1.342-2.048 2.445-4.522 3.041-6.83c.272-1.05.798-3.523.122-4.73a1.6 1.6 0 0 0-.15-.236C21.693.91 19.8.025 17.51.001c-1.495-.016-2.77.346-3.116.479a10 10 0 0 0-.516-.082a8 8 0 0 0-1.312-.127c-1.182-.019-2.203.264-3.05.84C8.66.79 4.729-.534 2.296 1.19C.935 2.153.309 3.873.43 6.304c.041.818.507 3.334 1.243 5.744q.69 2.26 1.433 3.582q.83 1.493 1.714 1.79c.448.148 1.133.143 1.858-.729a56 56 0 0 1 1.945-2.206c.435.235.906.362 1.39.377v.004a11 11 0 0 0-.247.305c-.339.43-.41.52-1.5.745c-.31.064-1.134.233-1.146.811a.6.6 0 0 0 .091.327c.227.423.922.61 1.015.633c1.335.333 2.505.092 3.372-.679c-.017 2.231.077 4.418.345 5.088c.221.553.762 1.904 2.47 1.904q.375.001.829-.094c1.782-.382 2.556-1.17 2.855-2.906c.15-.87.402-2.875.539-4.101c.017-.07.036-.12.057-.136c0 0 .07-.048.427.03l.044.007l.254.022l.015.001c.847.039 1.911-.142 2.531-.43c.644-.3 1.806-1.033 1.595-1.67M2.37 11.876c-.744-2.435-1.178-4.885-1.212-5.571c-.109-2.172.417-3.683 1.562-4.493c1.837-1.299 4.84-.54 6.108-.13l-.01.01C6.795 3.734 6.843 7.226 6.85 7.44c0 .082.006.199.016.36c.034.586.1 1.68-.074 2.918c-.16 1.15.194 2.276.973 3.089q.12.126.252.237c-.347.371-1.1 1.193-1.903 2.158c-.568.682-.96.551-1.088.508c-.392-.13-.813-.587-1.239-1.322c-.48-.839-.963-2.032-1.415-3.512m6.007 5.088a1.6 1.6 0 0 1-.432-.178c.089-.039.237-.09.483-.14c1.284-.265 1.482-.451 1.915-1a8 8 0 0 1 .367-.443a.4.4 0 0 0 .074-.13c.17-.151.272-.11.436-.042c.156.065.308.26.37.475c.03.102.062.295-.045.445c-.904 1.266-2.222 1.25-3.168 1.013m2.094-3.988l-.052.14c-.133.357-.257.689-.334 1.004c-.667-.002-1.317-.288-1.81-.803c-.628-.655-.913-1.566-.783-2.5c.183-1.308.116-2.447.08-3.059l-.013-.22c.296-.262 1.666-.996 2.643-.772c.446.102.718.406.83.928c.585 2.704.078 3.83-.33 4.736a9 9 0 0 0-.23.546m7.364 4.572q-.024.266-.062.596l-.146.438a.4.4 0 0 0-.018.108c-.006.475-.054.649-.115.87a4.8 4.8 0 0 0-.18 1.057c-.11 1.414-.878 2.227-2.417 2.556c-1.515.325-1.784-.496-2.02-1.221a7 7 0 0 0-.078-.227c-.215-.586-.19-1.412-.157-2.555c.016-.561-.025-1.901-.33-2.646q.006-.44.019-.892a.4.4 0 0 0-.016-.113a2 2 0 0 0-.044-.208c-.122-.428-.42-.786-.78-.935c-.142-.059-.403-.167-.717-.087c.067-.276.183-.587.309-.925l.053-.142c.06-.16.134-.325.213-.5c.426-.948 1.01-2.246.376-5.178c-.237-1.098-1.03-1.634-2.232-1.51c-.72.075-1.38.366-1.709.532a6 6 0 0 0-.196.104c.092-1.106.439-3.174 1.736-4.482a4 4 0 0 1 .303-.276a.35.35 0 0 0 .145-.064c.752-.57 1.695-.85 2.802-.833q.616.01 1.174.081c1.94.355 3.244 1.447 4.036 2.383c.814.962 1.255 1.931 1.431 2.454c-1.323-.134-2.223.127-2.68.78c-.992 1.418.544 4.172 1.282 5.496c.135.242.252.452.289.54c.24.583.551.972.778 1.256c.07.087.138.171.189.245c-.4.116-1.12.383-1.055 1.717a35 35 0 0 1-.084.815c-.046.208-.07.46-.1.766m.89-1.621c-.04-.832.27-.919.597-1.01l.135-.041a1 1 0 0 0 .134.103c.57.376 1.583.421 3.007.134c-.202.177-.519.4-.953.601c-.41.19-1.096.333-1.747.364c-.72.034-1.086-.08-1.173-.151m.57-9.271a7 7 0 0 1-.105 1.001c-.055.358-.112.728-.127 1.177c-.014.436.04.89.093 1.33c.107.887.216 1.8-.207 2.701a4 4 0 0 1-.188-.385a8 8 0 0 0-.325-.617c-.616-1.104-2.057-3.69-1.32-4.744c.38-.543 1.342-.566 2.179-.463m.228 7.013l-.085-.107l-.035-.044c.726-1.2.584-2.387.457-3.439c-.052-.432-.1-.84-.088-1.222c.013-.407.066-.755.118-1.092c.064-.415.13-.844.111-1.35a.6.6 0 0 0 .012-.19c-.046-.486-.6-1.938-1.73-3.253a7.8 7.8 0 0 0-2.688-2.04A9.3 9.3 0 0 1 17.62.746c2.052.046 3.675.814 4.824 2.283a1 1 0 0 1 .067.1c.723 1.356-.276 6.275-2.987 10.54m-8.816-6.116c-.025.18-.31.423-.621.423l-.081-.006a.8.8 0 0 1-.506-.315c-.046-.06-.12-.178-.106-.285a.22.22 0 0 1 .093-.149c.118-.089.352-.122.61-.086c.316.044.642.193.61.418m7.93-.411c.011.08-.049.2-.153.31a.72.72 0 0 1-.408.223l-.075.005c-.293 0-.541-.234-.56-.371c-.024-.177.264-.31.56-.352c.298-.042.612.009.636.185"/></symbol><symbol id="i-redis" viewBox="0 0 24 24"><path fill="currentColor" d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483c-3.203 0-4.397-2.825-4.48-5.12c.701 1.484 2.073 2.685 4.214 2.63c4.117-.133 6.94-3.852 6.94-7.239c0-4.05-3.022-6.972-8.268-6.972c-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648c.232 0 .431-.133.664-.365a101 101 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898c3.819 0 7.604-2.756 9.33-8.965c.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922a4.45 4.45 0 0 1-2.235-.568c1.051-1.592 2.092-3.225 3.21-4.973c1.972.334 2.71 1.43 2.71 2.619"/></symbol></svg>
+          <div class="diagram__stage">
+            <svg class="diagram__wide" viewBox="0 0 1020 576" role="img" aria-label="Two-level partitioning with one slice read, wide layout" aria-describedby="d02w-d">
+            <desc id="d02w-d">The table is split by airport and sub-split by passenger, so a customer query is physically confined to a single column of the grid.</desc>
+            <rect x="34.0" y="24.0" width="286.0" height="66.0" class="dg-node dg-node--key"/>
+            <text x="47.0" y="47.0" class="dg-num" font-size="13" text-anchor="start">01</text>
+            <use href="#i-fastapi" x="254.9" y="33.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-redis" x="286.0" y="33.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="177.0" y="51.6" class="dg-label dg-label--key" font-size="16" text-anchor="middle">Dashboard</text>
+            <text x="177.0" y="74.0" class="dg-label dg-label--key" font-size="16" text-anchor="middle">query</text>
+            <path d="M 177.0 96.0 L 177.0 120.3 L 410.6 120.3 L 410.6 141.0" class="dg-edge"/>
+            <polygon points="410.6,150.0 406.1,141.0 415.1,141.0" class="dg-arrow"/>
+            <line x1="176" y1="200" x2="964" y2="200" class="dg-rule"/>
+            <text x="251.2" y="187.0" class="dg-label" font-size="16" text-anchor="middle">FCO</text>
+            <text x="410.6" y="187.0" class="dg-label dg-label--key" font-size="16" text-anchor="middle">DXB</text>
+            <text x="570.0" y="187.0" class="dg-label" font-size="16" text-anchor="middle">SIN</text>
+            <text x="729.4" y="187.0" class="dg-label" font-size="16" text-anchor="middle">LHR</text>
+            <text x="888.8" y="187.0" class="dg-label" font-size="16" text-anchor="middle">+12 more</text>
+            <text x="154.0" y="267.0" class="dg-label" font-size="16" text-anchor="end">bucket 0</text>
+            <text x="154.0" y="370.0" class="dg-label" font-size="16" text-anchor="end">bucket 1</text>
+            <text x="154.0" y="473.0" class="dg-label" font-size="16" text-anchor="end">bucket 2</text>
+            <rect x="176.0" y="214.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="335.4" y="214.0" width="150.4" height="94.0" class="dg-node dg-node--key"/>
+            <rect x="494.8" y="214.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="654.2" y="214.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="813.6" y="214.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="176.0" y="317.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="335.4" y="317.0" width="150.4" height="94.0" class="dg-node dg-node--key"/>
+            <rect x="494.8" y="317.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="654.2" y="317.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="813.6" y="317.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="176.0" y="420.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="335.4" y="420.0" width="150.4" height="94.0" class="dg-node dg-node--key"/>
+            <rect x="494.8" y="420.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="654.2" y="420.0" width="150.4" height="94.0" class="dg-node"/>
+            <rect x="813.6" y="420.0" width="150.4" height="94.0" class="dg-node"/>
+            <use href="#i-postgresql" x="452.8" y="224.0" width="23.0" height="23.0" class="dg-icon dg-icon--key"/>
+            <text x="176.0" y="554.0" class="dg-band" font-size="16" text-anchor="start">Everything outside the lit column is never touched</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--wide">
+            <label class="diagram__hit diagram__hit--start" for="dg02-1" style="left:3.333%;top:4.167%;width:28.039%;height:11.458%;anchor-name:--dg02-wide-1"><span class="visually-hidden">Dashboard query</span><span class="diagram__tip" style="position-anchor:--dg02-wide-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">The question</span><span class="diagram__tip-text">Every customer-facing dashboard asks a variation of the same thing: what does the audience look like at my airport, over these days? The layout below exists to make that one question cheap.</span><span class="diagram__tip-tech">FastAPI / Redis cache</span></span></label>
+            <label class="diagram__hit " for="dg02-2" style="left:17.255%;top:28.125%;width:77.255%;height:6.597%;anchor-name:--dg02-wide-2"><span class="visually-hidden">Partition by airport</span><span class="diagram__tip" style="position-anchor:--dg02-wide-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Partition by airport</span><span class="diagram__tip-text">The table is split into separate physical pieces, one per airport. A customer only ever asks about their own airports, so the database can discard every other piece before it reads a single row. It also means a customer's data is kept apart by the storage itself, not by a filter someone might forget.</span><span class="diagram__tip-tech">PostgreSQL / LIST partitioning</span></span></label>
+            <label class="diagram__hit diagram__hit--start diagram__hit--up" for="dg02-3" style="left:3.333%;top:37.153%;width:11.765%;height:52.083%;anchor-name:--dg02-wide-3"><span class="visually-hidden">Sub-partition by passenger</span><span class="diagram__tip" style="position-anchor:--dg02-wide-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Sub-partition by passenger</span><span class="diagram__tip-text">Each airport's piece is split again into buckets, spread evenly by passenger. Writes arrive in bursts, and without this they would all pile onto the same spot; spreading them means many can land at once without queueing behind each other.</span><span class="diagram__tip-tech">PostgreSQL / HASH sub-partitioning</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg02-4" style="left:32.882%;top:37.153%;width:14.745%;height:52.083%;anchor-name:--dg02-wide-4"><span class="visually-hidden">What actually gets read</span><span class="diagram__tip" style="position-anchor:--dg02-wide-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">What actually gets read</span><span class="diagram__tip-text">The result is that a question about one airport touches one column and ignores the rest. The same split makes routine upkeep cheap: statistics, cleanup and retiring old data all happen one small piece at a time instead of as a single operation over everything.</span><span class="diagram__tip-tech">GROUPING SETS / partition pruning</span></span></label>
+            </div>
+            <svg class="diagram__tall" viewBox="0 0 520 568" role="img" aria-label="Two-level partitioning with one slice read, stacked" aria-describedby="d02t-d">
+            <desc id="d02t-d">The table is split by airport and sub-split by passenger, so a customer query is physically confined to a single column of the grid.</desc>
+            <rect x="30.0" y="24.0" width="460.0" height="76.0" class="dg-node dg-node--key"/>
+            <text x="43.0" y="47.0" class="dg-num" font-size="18" text-anchor="start">01</text>
+            <use href="#i-fastapi" x="420.2" y="33.0" width="25.0" height="25.0" class="dg-icon dg-icon--key"/>
+            <use href="#i-redis" x="454.0" y="33.0" width="25.0" height="25.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="69.6" class="dg-label dg-label--key" font-size="21" text-anchor="middle">Dashboard query</text>
+            <path d="M 260.0 106.0 L 260.0 125.8 L 250.0 125.8 L 250.0 141.0" class="dg-edge"/>
+            <polygon points="250.0,150.0 245.5,141.0 254.5,141.0" class="dg-arrow"/>
+            <line x1="104" y1="200" x2="496" y2="200" class="dg-rule"/>
+            <text x="150.0" y="187.0" class="dg-label" font-size="17" text-anchor="middle">FCO</text>
+            <text x="250.0" y="187.0" class="dg-label dg-label--key" font-size="17" text-anchor="middle">DXB</text>
+            <text x="350.0" y="187.0" class="dg-label" font-size="17" text-anchor="middle">SIN</text>
+            <text x="450.0" y="187.0" class="dg-label" font-size="17" text-anchor="middle">…</text>
+            <text x="88.0" y="266.0" class="dg-label" font-size="17" text-anchor="end">b0</text>
+            <text x="88.0" y="362.0" class="dg-label" font-size="17" text-anchor="end">b1</text>
+            <text x="88.0" y="458.0" class="dg-label" font-size="17" text-anchor="end">b2</text>
+            <rect x="104.0" y="216.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="204.0" y="216.0" width="92.0" height="88.0" class="dg-node dg-node--key"/>
+            <rect x="304.0" y="216.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="404.0" y="216.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="104.0" y="312.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="204.0" y="312.0" width="92.0" height="88.0" class="dg-node dg-node--key"/>
+            <rect x="304.0" y="312.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="404.0" y="312.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="104.0" y="408.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="204.0" y="408.0" width="92.0" height="88.0" class="dg-node dg-node--key"/>
+            <rect x="304.0" y="408.0" width="92.0" height="88.0" class="dg-node"/>
+            <rect x="404.0" y="408.0" width="92.0" height="88.0" class="dg-node"/>
+            <use href="#i-postgresql" x="263.0" y="224.0" width="25.0" height="25.0" class="dg-icon dg-icon--key"/>
+            <text x="260.0" y="538.0" class="dg-band" font-size="16" text-anchor="middle">The rest is never touched</text>
+            </svg>
+            <div class="diagram__hits diagram__hits--tall">
+            <label class="diagram__hit " for="dg02-1" style="left:5.769%;top:4.225%;width:88.462%;height:13.380%;anchor-name:--dg02-tall-1"><span class="visually-hidden">Dashboard query</span><span class="diagram__tip" style="position-anchor:--dg02-tall-1"><span class="diagram__tip-num">01</span><span class="diagram__tip-term">The question</span><span class="diagram__tip-text">Every customer-facing dashboard asks a variation of the same thing: what does the audience look like at my airport, over these days? The layout below exists to make that one question cheap.</span><span class="diagram__tip-tech">FastAPI / Redis cache</span></span></label>
+            <label class="diagram__hit " for="dg02-2" style="left:20.000%;top:28.169%;width:75.385%;height:7.042%;anchor-name:--dg02-tall-2"><span class="visually-hidden">Partition by airport</span><span class="diagram__tip" style="position-anchor:--dg02-tall-2"><span class="diagram__tip-num">02</span><span class="diagram__tip-term">Partition by airport</span><span class="diagram__tip-text">The table is split into separate physical pieces, one per airport. A customer only ever asks about their own airports, so the database can discard every other piece before it reads a single row. It also means a customer's data is kept apart by the storage itself, not by a filter someone might forget.</span><span class="diagram__tip-tech">PostgreSQL / LIST partitioning</span></span></label>
+            <label class="diagram__hit diagram__hit--start diagram__hit--up" for="dg02-3" style="left:4.615%;top:38.028%;width:11.538%;height:49.296%;anchor-name:--dg02-tall-3"><span class="visually-hidden">Sub-partition by passenger</span><span class="diagram__tip" style="position-anchor:--dg02-tall-3"><span class="diagram__tip-num">03</span><span class="diagram__tip-term">Sub-partition by passenger</span><span class="diagram__tip-text">Each airport's piece is split again into buckets, spread evenly by passenger. Writes arrive in bursts, and without this they would all pile onto the same spot; spreading them means many can land at once without queueing behind each other.</span><span class="diagram__tip-tech">PostgreSQL / HASH sub-partitioning</span></span></label>
+            <label class="diagram__hit  diagram__hit--up" for="dg02-4" style="left:39.231%;top:38.028%;width:17.692%;height:49.296%;anchor-name:--dg02-tall-4"><span class="visually-hidden">What actually gets read</span><span class="diagram__tip" style="position-anchor:--dg02-tall-4"><span class="diagram__tip-num">04</span><span class="diagram__tip-term">What actually gets read</span><span class="diagram__tip-text">The result is that a question about one airport touches one column and ignores the rest. The same split makes routine upkeep cheap: statistics, cleanup and retiring old data all happen one small piece at a time instead of as a single operation over everything.</span><span class="diagram__tip-tech">GROUPING SETS / partition pruning</span></span></label>
+            </div>
+          </div>
+          <figcaption class="diagram__caption">Fig. 02 &mdash; Every customer question is answered inside one lit column</figcaption>
+          <p class="diagram__hint"><span class="diagram__hint--pointer">Hover any step to read what it does</span><span class="diagram__hint--touch">Tap any step to read what it does</span></p>
+        </figure>
+        <label class="diagram__scrim" for="dg02-0"><span class="visually-hidden">Close the explanation</span></label>
+        <label class="diagram__close" for="dg02-0">Close</label>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/in/giuseppe-vulduraro-92436332a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/giuvul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a></li>
+        <li><a href="../../cv/">CV</a></li>
+      </ul>
+      <div class="site-footer__meta">
+        <hr class="rule">
+        &copy; 2026 Giuseppe Vulduraro<br>
+        Building a more open, data-driven world.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

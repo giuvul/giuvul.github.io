@@ -1,0 +1,127 @@
+// -----------------------------------------------------------------------------
+// Card di progetto (griglia "Selected work")
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.project-grid {
+  display: grid;                       // layout in CSS Grid
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.9rem, 1.74vw, 1.6rem);
+
+  @include down($bp-lg) { grid-template-columns: repeat(2, 1fr); }
+  @include down($bp-sm) { grid-template-columns: 1fr; }
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: $color-bg-elev;
+  border: 1px solid $color-line;
+  overflow: hidden;
+  transition: border-color 0.35s $ease, box-shadow 0.35s $ease;
+
+  &__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.35s $ease;
+      opacity: 0.9;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: clamp(0.7rem, 0.83vw, 0.8rem) clamp(0.9rem, 1.1vw, 1.05rem) clamp(1rem, 1.53vw, 1.45rem);
+  }
+
+  &__num  { @include label($color-muted, $fs-micro); display: block; margin-bottom: 0.85em; }
+  &__title {
+    font-family: $font-display;
+    font-variation-settings: 'wdth' 108;
+    font-weight: 700;
+    font-size: clamp(0.88rem, 1.18vw, 1.28rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-heading;
+    line-height: 1.2;
+  }
+  &__meta {
+    @include label($color-muted, clamp(0.72rem, 0.97vw, 1rem));
+    letter-spacing: 0.04em;
+    text-transform: none;
+    margin-top: 0.75em;
+  }
+
+  &__arrow {
+    flex: none;
+    color: $color-heading;
+    width: clamp(1.2rem, 1.7vw, 1.7rem);
+    transition: color 0.35s $ease;
+  }
+
+  &:hover {
+    border-color: rgba($color-accent, 0.55);
+    box-shadow: 0 0 34px rgba($color-accent, 0.22);
+
+    .project-card__media img { opacity: 1; }
+    .project-card__arrow { color: $color-accent; }
+  }
+
+  // il link copre tutta la card
+  &__link { position: absolute; inset: 0; }
+}
+
+// Filtri di categoria a destra del titolo di sezione
+.filter-list {
+  border-left: 1px solid $color-line;
+  padding-left: clamp(1rem, 1.74vw, 1.6rem);
+  font-size: clamp(0.7rem, 0.95vw, 1rem);
+  line-height: 1.55;
+
+  @include up($bp-lg) { margin-top: 2.0vw; }
+
+  li + li { margin-top: 1.35em; }
+
+  label {
+    @include label($color-text, inherit);
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: color 0.25s $ease;
+    &:hover { color: $color-accent; }
+  }
+}
+
+// --- filtri senza JavaScript ---------------------------------------------------
+// Un radio per categoria in testa alla sezione: `:checked ~` raggiunge sia la
+// lista (voce attiva) sia la griglia (card fuori categoria nascoste).
+// `fixed` per lo stesso motivo dei diagrammi: il focus non fa saltare la pagina.
+.filter-state {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+$filters: all, data, analytics, platform, ai;
+
+@each $f in $filters {
+  #f-#{$f}:checked ~ .section__head label[for='f-#{$f}'] { color: $color-accent; }
+  #f-#{$f}:focus-visible ~ .section__head label[for='f-#{$f}'] {
+    outline: 2px solid $color-accent;
+    outline-offset: 4px;
+  }
+  @if $f != all {
+    #f-#{$f}:checked ~ .project-grid .project-card:not([data-cat~='#{$f}']) { display: none; }
+  }
+}

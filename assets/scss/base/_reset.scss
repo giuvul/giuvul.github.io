@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// Normalizzazioni applicate sopra il reboot di Bootstrap
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-body;
+  font-size: $fs-body;
+  line-height: 1.55;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s $ease;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+::selection {
+  background: rgba($color-accent, 0.28);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

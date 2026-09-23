@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// Pagina CV
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.cv-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 32%);
+  gap: clamp(1.8rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 5.4vh, 4.2rem);
+
+  @include down($bp-lg) { grid-template-columns: 1fr; align-items: start; }
+}
+
+.cv-title { @include display($fs-display-lg, 800); }
+
+.cv-contact {
+  border-left: 1px solid $color-line;
+  padding-left: clamp(1.2rem, 2.2vw, 2.2rem);
+  @include label($color-text, $fs-micro);
+  letter-spacing: 0.1em;
+  text-transform: none;
+  line-height: 2.1;
+
+  a:hover { color: $color-accent; }
+
+  @include down($bp-lg) { border-left: 0; padding-left: 0; }
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  margin-top: clamp(1.2rem, 3vh, 2.4rem);
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .viewport-frame,
+  .grid-lines,
+  .nav-overlay,
+  .cv-actions { display: none !important; }
+
+  body { background: #fff; color: #111; }
+  .cv-title, .timeline__role, .cv-section__title { color: #111; }
+}

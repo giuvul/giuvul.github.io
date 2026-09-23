@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// Header sticky con logo, navigazione e pulsante del menu a tutto schermo
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.site-header {
+  position: sticky;   // menu sticky su tutte le viewport, mobile compreso
+  top: 0;
+  z-index: 50;
+  height: $header-h;
+  display: flex;
+  align-items: center;
+  padding-inline: $gutter;
+  background: rgba($color-bg, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid $color-line-soft;
+}
+
+.site-header__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// il menu si allinea a destra, il pallino resta all'estremita'
+.main-nav { margin-left: auto; }
+
+.logo {
+  font-family: $font-display;
+  font-variation-settings: 'wdth' $wdth-display;
+  font-stretch: #{$wdth-display + '%'};
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.62vw, 1.7rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-heading;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: none;
+
+  @include up($bp-lg) { display: block; }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 5.72vw, 5.8rem);
+  }
+
+  a {
+    @include label($color-heading, $fs-label);
+    letter-spacing: $tracking-nav;
+    position: relative;
+    padding-bottom: 0.55em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: $color-accent;
+      opacity: 0;                 // appare e sparisce, senza animazione
+    }
+
+    &:hover { color: $color-accent; }
+    &:hover::after,
+    &[aria-current='page']::after { opacity: 1; }
+  }
+}
+
+// Pallino ciano: apre il menu a tutto schermo (nessun JavaScript)
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  margin: 0 -1.02rem 0 clamp(1.5rem, 4.38vw, 4.4rem);
+
+  &::before {
+    content: '';
+    width: clamp(0.5rem, 0.83vw, 0.85rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: $color-accent;
+    box-shadow: 0 0 12px rgba($color-accent, 0.8);
+    transition: box-shadow 0.3s $ease;
+  }
+
+  &:hover::before { box-shadow: 0 0 22px rgba($color-accent, 1); }
+}

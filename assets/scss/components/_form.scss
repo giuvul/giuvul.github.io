@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// Form di contatto
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.contact-form {
+  display: grid;
+  gap: clamp(1.4rem, 2.4vw, 2.2rem);
+  grid-template-columns: repeat(2, 1fr);
+
+  @include down($bp-md) { grid-template-columns: 1fr; }
+
+  &__field--full { grid-column: 1 / -1; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  label {
+    @include label($color-muted, $fs-micro);
+    letter-spacing: 0.16em;
+  }
+
+  // asterisco dei campi obbligatori
+  .req { color: $color-accent; }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $color-line;
+    padding: 0.7em 0;
+    color: $color-heading;
+    font-family: $font-body;
+    font-size: $fs-small;
+    transition: border-color 0.3s $ease;
+
+    &::placeholder { color: $color-faint; }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $color-accent;
+    }
+
+    // stato di errore mostrato solo dopo l'interazione
+    &:not(:placeholder-shown):invalid { border-bottom-color: #e2584d; }
+  }
+
+  textarea { resize: vertical; min-height: 7.5rem; }
+}
+
+.form-note {
+  @include label($color-faint, $fs-micro);
+  letter-spacing: 0.1em;
+  text-transform: none;
+  line-height: 1.8;
+}
+
+// Elenco dei recapiti con icona
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.1rem, 2.35vh, 2rem);
+
+  li { display: flex; align-items: center; gap: clamp(1rem, 3.54vw, 3.6rem); }
+
+  svg {
+    flex: none;
+    width: clamp(1.3rem, 2.3vw, 2.4rem);
+    color: $color-heading;
+  }
+
+  a, span {
+    font-family: $font-body;
+    font-size: clamp(1rem, 2.03vw, 2.05rem);
+    color: $color-text;
+    line-height: 1.55;
+  }
+
+  a:hover { color: $color-accent; }
+}

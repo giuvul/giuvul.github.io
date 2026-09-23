@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// Footer del sito
+// -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+.site-footer {
+  padding: clamp(2.5rem, 5vh, 4rem) $gutter clamp(2rem, 4vh, 3rem);
+  border-top: 1px solid $color-line-soft;
+  margin-top: clamp(3rem, 8vh, 7rem);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;                // su schermi stretti (o con il testo di sistema
+  gap: 0.6rem clamp(1.2rem, 4.9vw, 5rem);  // ingrandito) i link vanno a capo
+
+  a {
+    @include label($color-muted, clamp(0.85rem, 1.25vw, 1.3rem));
+    text-transform: none;         // nel concept i link social non sono maiuscoli
+    letter-spacing: 0.04em;
+    &:hover { color: $color-accent; }
+  }
+}
+
+.site-footer__meta {
+  @include label($color-muted, clamp(0.85rem, 1.5vw, 1.55rem));
+  line-height: 1.7;
+  text-align: right;
+  letter-spacing: 0.02em;
+  text-transform: none;
+
+  .rule { margin-left: auto; margin-bottom: 1.5rem; width: clamp(60px, 5vw, 80px); }
+
+  @include down($bp-lg) {
+    text-align: left;
+    .rule { margin-left: 0; }
+  }
+}

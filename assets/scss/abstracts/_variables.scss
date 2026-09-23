@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// Design tokens — colori, tipografia, spaziature, breakpoint
+// Valori campionati direttamente dal concept grafico del portfolio.
+// -----------------------------------------------------------------------------
+
+// Colori -----------------------------------------------------------------
+$color-bg:          #040d17;   // sfondo pagina
+$color-bg-frame:    #06101b;   // sfondo della cornice esterna
+$color-bg-elev:     #061320;   // card e superfici sollevate
+$color-bg-elev-2:   #08192a;
+
+$color-accent:      #3ce0f4;   // ciano del brand
+$color-accent-soft: rgba(#3ce0f4, 0.5);
+$color-accent-line: rgba(#3ce0f4, 0.18);
+$color-accent-dim:  #1aa7bd;
+
+$color-heading:     #dce6f2;   // titoli display
+$color-text:        #b3c2d1;   // testo corrente
+$color-muted:       #7f8fa0;   // testo secondario
+$color-faint:       #5b6b7b;   // micro etichette
+
+$color-line:        #173b4c;   // bordi principali
+$color-line-soft:   rgba(#9ad7ec, 0.08);
+
+// Tipografia -------------------------------------------------------------
+$font-display: 'Archivo', 'Arial Narrow', sans-serif;
+$font-ui:      'Saira', 'Segoe UI', sans-serif;
+$font-body:    'Barlow', 'Segoe UI', sans-serif;
+
+$tracking-label: 0.22em;   // spaziatura delle micro etichette maiuscole
+$tracking-nav:   0.16em;
+
+// Asse di larghezza del font variabile Archivo usato nei titoli
+$wdth-display: 85;
+$wdth-ui:      100;
+
+// Scala tipografica fluida (rapportata alla larghezza del viewport,
+// così le proporzioni del concept restano identiche a ogni risoluzione)
+$fs-display-xl: clamp(2.05rem, 6.96vw, 7.7rem);   // titolo hero  (100px @1440)
+$fs-display-lg: clamp(1.95rem, 4.40vw, 4.9rem);   // titoli di sezione (61.7px @1440)
+$fs-display-md: clamp(1.9rem, 5.80vw, 6.5rem);   // titolo case study (79.7px @1440)
+$fs-lead:       clamp(1.05rem, 2.03vw, 2.05rem); // paragrafo introduttivo (29px @1440)
+$fs-body:       clamp(0.95rem, 1.39vw, 1.45rem); // testo corrente        (20px @1440)
+$fs-small:      clamp(0.88rem, 1.18vw, 1.25rem); // testo secondario      (17px @1440)
+$fs-label:      clamp(0.75rem, 1.08vw, 1.1rem);  // etichette e menu      (15.5px @1440)
+$fs-micro:      clamp(0.68rem, 0.90vw, 0.95rem); // micro etichette       (13px @1440)
+
+// Layout -----------------------------------------------------------------
+$frame-inset:   14px;                             // cornice decorativa del viewport
+$gutter:        clamp(1.25rem, 4.72vw, 4.25rem);  // margine laterale (68px @1440)
+// distanza fra il bordo inferiore dell'header e la prima etichetta di ogni
+// pagina: un solo valore, cosi Selected work, About, Get in touch e le altre
+// partono tutte alla stessa altezza
+$section-top:   clamp(2.2rem, 5.6vh, 4rem);
+$header-h:      clamp(5rem, 12.4vh, 9.4rem);      // altezza header   (151px @1215)
+
+// Posizione delle linee guida verticali (percentuale della larghezza utile)
+$grid-lines: 5.5%, 30%, 56.5%, 79%;
+
+// Breakpoint (allineati a Bootstrap 5) ------------------------------------
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
