@@ -169,27 +169,29 @@
              non solo nascosta alla vista: altrimenti l'autocompilazione del
              browser la riempie e i messaggi veri vanno persi. -->
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="field">
+        <!-- impaginazione con la griglia di Bootstrap: due colonne da tablet in su -->
+        <div class="row g-4">
+        <div class="col-md-6 field">
           <label for="name">Name <span class="req">*</span></label>
           <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
         </div>
 
-        <div class="field">
+        <div class="col-md-6 field">
           <label for="email">Email <span class="req">*</span></label>
           <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
         </div>
 
-        <div class="field contact-form__field--full">
+        <div class="col-12 field">
           <label for="subject">Subject</label>
           <input type="text" id="subject" name="subject" placeholder="What is it about?">
         </div>
 
-        <div class="field contact-form__field--full">
+        <div class="col-12 field">
           <label for="message">Message <span class="req">*</span></label>
           <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required minlength="20"></textarea>
         </div>
 
-        <div class="contact-form__field--full d-flex flex-wrap align-items-center justify-content-between gap-4">
+        <div class="col-12 d-flex flex-wrap align-items-center justify-content-between gap-4">
           <p class="form-note">
             Messages are delivered by FormSubmit, an external form service.<br>
             Nothing is stored on this site.
@@ -198,6 +200,7 @@
             <span class="cta__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
             <span class="cta__label">Send message</span>
           </button>
+        </div>
         </div>
       </form>
     </section>
