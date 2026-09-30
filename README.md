@@ -1,111 +1,128 @@
-# Portfolio — progetto Master
+# giuvul.github.io
 
-Sito portfolio statico costruito in **HTML + Sass + Bootstrap**, senza JavaScript.
-Il layout riproduce il concept grafico del progetto: tema scuro, accento ciano,
-tipografia display molto ampia e griglia visibile sullo sfondo.
+Portfolio personale di **Giuseppe Vulduraro**, Chief Data Officer e Data & AI Engineer.
+Sito statico in **HTML + Sass + Bootstrap 5**, senza JavaScript, pubblicato su
+GitHub Pages: <https://giuvul.github.io/>.
+
+Nato come progetto del modulo HTML e CSS del Master in AI e Agenti AI per il
+Business (Università degli Studi Guglielmo Marconi), resta il mio sito personale
+anche dopo il master.
+
+## Pagine
+
+| URL | Contenuto |
+|---|---|
+| `/` | home: presentazione e accesso ai lavori |
+| `/work/` | nove case study, filtrabili per area (Data, Analytics, Platform, AI) |
+| `/work/<slug>/` | un case study: problema, approccio, risultato e diagramma interattivo |
+| `/about/` | profilo, aree di lavoro, attività fuori dal lavoro |
+| `/cv/` | curriculum in HTML, con PDF scaricabile e foglio di stile per la stampa |
+| `/contact/` | contatti e form (FormSubmit) |
+| `/contact/thanks/` | conferma dopo l'invio del form (`noindex`) |
 
 ## Struttura delle cartelle
 
 ```
 .
-├── index.html                          home (hero)
+├── index.html                  home
 ├── favicon.svg
+├── .nojekyll                   GitHub Pages pubblica i file così come sono
 ├── work/
-│   ├── index.html                      elenco dei progetti
-│   └── real-time-data-platform/
-│       └── index.html                  case study di dettaglio
+│   ├── index.html              griglia dei progetti con filtri
+│   └── <slug>/index.html       nove case study
 ├── about/index.html
-├── blog/index.html
-├── contact/index.html                  pagina contatti + form
-├── cv/index.html                       curriculum in HTML
+├── cv/index.html
+├── contact/
+│   ├── index.html              contatti + form
+│   └── thanks/index.html
 └── assets/
     ├── css/
-    │   ├── style.css                   foglio di stile compilato da Sass
-    │   ├── fonts.css                   @font-face dei font self-hosted
-    │   └── vendor/bootstrap.min.css    framework front end
-    ├── fonts/                          Archivo, Barlow, Saira (subset latin, woff2)
+    │   ├── style.css           GENERATO da Sass (Bootstrap incluso)
+    │   └── fonts.css           @font-face dei font self-hosted
+    ├── cv/                     CV in PDF
+    ├── fonts/                  Archivo, Barlow, Saira (subset latin, woff2)
     ├── img/
-    │   ├── projects/                   anteprime dei progetti
-    │   ├── photos/                     foto
-    │   └── og-cover.png                immagine per la condivisione social
-    ├── js/                             (vuota: il sito non usa JavaScript)
-    └── scss/                           sorgenti Sass
-        ├── abstracts/                  variabili e mixin
-        ├── base/                       reset e tipografia
-        ├── layout/                     header, footer, sezioni, griglia
-        ├── components/                 card, form, menu, pulsanti…
-        ├── pages/                      stili specifici di ogni pagina
-        └── main.scss                   punto di ingresso
+    │   ├── projects/           anteprime SVG delle card
+    │   ├── photos/             ritratto
+    │   ├── icons.svg           sprite delle icone dei diagrammi
+    │   ├── hero-mountain.webp  immagine della home
+    │   ├── nav-monoliths.webp  immagine del menu
+    │   └── og-cover.png        anteprima per la condivisione social (1200×630)
+    └── scss/
+        ├── vendor/             Bootstrap dai sorgenti: reboot, griglia, helper, utility
+        ├── abstracts/          design token, mixin, funzioni di Bootstrap
+        ├── base/               reset e tipografia
+        ├── layout/             cornice e linee guida, header, sezioni, footer
+        ├── components/         menu, pulsanti, card, form, timeline, diagrammi
+        ├── pages/              stili specifici di ogni pagina
+        └── main.scss           punto di ingresso
 ```
 
-Ogni pagina vive in una cartella con il proprio `index.html`: l'URL resta pulito
-(`/work/`, `/cv/`) e i server trovano da soli il file di ingresso. Le risorse
-statiche stanno tutte sotto `assets/`, separate dalle pagine.
+Ogni pagina vive in una cartella con il proprio `index.html`, così gli URL restano
+puliti (`/work/`, `/cv/`); le risorse statiche stanno tutte sotto `assets/`.
 
 ## Come lavorarci
 
 ```bash
-npm install          # installa Sass e Bootstrap (solo per lo sviluppo)
+npm install          # Sass e Bootstrap, solo per lo sviluppo
 npm run watch:css    # ricompila assets/css/style.css a ogni salvataggio
-npm run build:css    # build finale (CSS compresso)
+npm run build:css    # build finale, CSS compresso
+python -m http.server 5173   # anteprima locale su http://127.0.0.1:5173
 ```
 
-Per vedere il sito in locale basta un server statico, per esempio l'estensione
-**Live Server** di VS Code oppure:
-
-```bash
-python -m http.server 5173
-```
-
-`assets/css/style.css` è **generato**: va modificato il Sass in `assets/scss/`,
-mai il CSS compilato.
+`assets/css/style.css` è generato: si modifica il Sass in `assets/scss/`, mai il
+CSS compilato. Il sito va aperto da un server (anche locale), non come file: lo
+sprite `icons.svg` viene richiamato con `<use href>` e i browser lo bloccano su
+`file://`.
 
 ## Scelte tecniche
 
-| Requisito | Come è stato risolto |
+| Requisito | Come è risolto |
 |---|---|
-| Pagina CV in HTML | `cv/index.html`, con foglio di stile dedicato alla stampa (Ctrl/Cmd + P per il PDF) |
-| Pagina contatti con form | `contact/index.html`, campi con `required`, `type="email"`, `minlength` |
-| Framework front end | Bootstrap 5 (reboot, griglia, utility), caricato in locale da `assets/css/vendor/` |
-| Favicon | `favicon.svg` |
-| Menu sticky | header `position: sticky` su tutte le viewport; su mobile il menu si apre a tutto schermo |
-| Flexbox / Grid | CSS Grid per la griglia progetti, le sezioni e il form; Flexbox per header, footer, statistiche e liste |
-| Sass | architettura 7-1 semplificata in `assets/scss/` |
-| Responsive | scala tipografica fluida (`clamp` + `vw`), verificata a 390, 768 e 1440 px |
-| Open Graph | meta `og:*` e `twitter:*` su ogni pagina, con `assets/img/og-cover.png` |
+| HTML semantico | `header`, due `nav` con `aria-label` distinti più quella del footer, `main`, `article` per le card, `figure`/`figcaption` per i diagrammi, `dl` per i metadati dei case study |
+| Sass | architettura 7-1 semplificata caricata con `@use`/`@forward`; design token in `abstracts/_variables.scss`, scala tipografica fluida in `clamp()` |
+| Bootstrap 5 | compilato dai sorgenti Sass con solo reboot, griglia, helper e le utility di impaginazione. Griglia per le card di Work, le colonne di About e il form; `media-breakpoint-up/down` per tutti i breakpoint del Sass |
+| Flexbox / Grid | griglia di Bootstrap (flexbox) per card e form, CSS Grid per le intestazioni di pagina e il CV, Flexbox per header, footer e liste |
+| Menu sticky | header `position: sticky` su ogni viewport; sotto i 992px il menu si apre a tutto schermo |
+| Responsive | tre colonne → due → una per le card, intestazioni su una colonna sotto i 992px, nessuno scorrimento orizzontale da 280px in su |
+| Pagina CV | HTML generato dalla stessa fonte dati del PDF; stili di stampa dedicati |
+| Form di contatto | `required`, `type="email"`, `minlength`, `autocomplete`; errore mostrato solo dopo l'interazione (`:not(:placeholder-shown):invalid`); honeypot anti-spam; invio con un normale POST a FormSubmit e ritorno su `/contact/thanks/` |
+| Favicon e condivisione | `favicon.svg`; meta description, `canonical`, Open Graph e Twitter card su ogni pagina |
 
-Il menu a tutto schermo è realizzato con una checkbox nascosta e il selettore
-`:checked`: nessun JavaScript, quindi la cartella `assets/js/` resta vuota.
+### Interazione senza JavaScript
 
-## Contenuti da personalizzare
+La cartella `assets/js/` è vuota: tutta l'interazione passa da input nascosti
+e selettori CSS.
 
-Il sito è completo dal punto di vista tecnico, ma i contenuti sono ancora quelli
-del concept e vanno sostituiti:
+- **Menu a tutto schermo**: una checkbox invisibile ma raggiungibile da tastiera
+  (Tab, poi Spazio) apre e chiude il menu; il focus si vede sul pallino ciano.
+- **Filtri di Work**: un radio per categoria; `:checked ~` evidenzia la voce e
+  nasconde le card fuori categoria. I selettori sono generati con `@each`.
+- **Diagrammi dei case study**: su desktop la spiegazione di ogni passo compare
+  in hover o con il focus, agganciata alla casella con l'anchor positioning
+  (`position-anchor`) dove il browser lo supporta; su mobile un tocco apre un
+  pannello sopra il diagramma.
 
-- nome, bio, statistiche, testi delle pagine e voci del CV;
-- link social (LinkedIn, GitHub `giuvul`, email) e CV in PDF in `assets/cv/`;
-- URL del sito nei meta `og:url` e `canonical` di ogni pagina;
-- le immagini in `assets/img/`: sono **segnaposto vettoriali** generati a mano,
-  pensati per essere rimpiazzati da foto e screenshot reali;
-- l'`action` del form in `contact/index.html`: va puntato al proprio endpoint
-  (Formspree, Basin, Netlify Forms) oppure collegato a EmailJS.
+### Contenuti generati
 
-L'indirizzo email nella pagina contatti è scritto con entità HTML numeriche e non
-è un `mailto:`: resta leggibile per chi visita il sito ma non è testo semplice
-per i bot che raccolgono indirizzi.
+I diagrammi dei case study, le anteprime delle card, lo sprite delle icone e il
+partial `components/_diagram-hits.scss` (posizione delle aree attive, una mappa
+Sass trasformata in regole da un ciclo `@each`/`@for`) sono prodotti da script
+Python di supporto a partire da una specifica per ogni progetto. Lo stesso vale
+per la pagina CV e il PDF, generati da un'unica fonte dati. Gli script non fanno
+parte del sito pubblicato.
 
-## Pubblicazione su GitHub Pages
+### Accessibilità
 
-```bash
-git init
-git add .
-git commit -m "Portfolio"
-git branch -M main
-git remote add origin https://github.com/<utente>/<repo>.git
-git push -u origin main
-```
+- i grigi del testo rispettano il contrasto AA: il più chiaro, `$color-faint`,
+  è ad almeno 4.6:1 su tutte le superfici del sito;
+- `aria-current` sulla voce di menu attiva, `aria-label` sui controlli senza testo;
+- menu, filtri e diagrammi utilizzabili da tastiera;
+- le pagine sono raggiungibili anche dai link del footer;
+- l'email è scritta in entità HTML ovunque, per non comparire in chiaro nel sorgente.
 
-Poi su GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root)**.
-Il file `.nojekyll` serve a far pubblicare anche le cartelle il cui nome inizia
-con `_`. Dopo il primo deploy va aggiornato il dominio nei meta `og:url` e
-`canonical` di ogni pagina.
+## Pubblicazione
+
+Il sito è pubblicato da GitHub Pages dal branch `main` (cartella radice) del
+repository `giuvul/giuvul.github.io`. Il file `.nojekyll` disattiva Jekyll, che
+altrimenti escluderebbe i file che iniziano con `_`, come i partial Sass.
