@@ -1,11 +1,8 @@
 // -----------------------------------------------------------------------------
-// Normalizzazioni applicate sopra il reboot di Bootstrap
+// Normalizzazioni applicate sopra il reboot di Bootstrap.
+// box-sizing e .visually-hidden arrivano gia' da Bootstrap (reboot e helper).
 // -----------------------------------------------------------------------------
 @use '../abstracts' as *;
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
@@ -39,14 +36,4 @@ ul { list-style: none; margin: 0; padding: 0; }
 :focus-visible {
   outline: 2px solid $color-accent;
   outline-offset: 3px;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
 }

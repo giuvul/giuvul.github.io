@@ -7,10 +7,6 @@ h1, h2, h3, h4 { margin: 0; }
 p { margin: 0 0 1.1em; }
 p:last-child { margin-bottom: 0; }
 
-.display-xl { @include display($fs-display-xl, 800); }
-.display-lg { @include display($fs-display-lg, 800); }
-.display-md { @include display($fs-display-md, 800); }
-
 // Riga in ciano all'interno di un titolo display
 .display-accent {
   display: block;
@@ -20,7 +16,6 @@ p:last-child { margin-bottom: 0; }
 
 .label        { @include label; }
 .label--muted { @include label($color-muted); }
-.label--light { @include label($color-heading); }
 
 // Elenco di micro etichette incolonnate (es. IDEAS / DATA / SYSTEMS)
 .micro-list {
@@ -38,7 +33,6 @@ p:last-child { margin-bottom: 0; }
 }
 
 .text-accent { color: $color-accent; }
-.text-muted-soft { color: $color-muted; }
 
 // Filetto orizzontale corto usato sotto i titoli
 .rule {

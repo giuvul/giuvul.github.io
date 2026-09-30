@@ -15,7 +15,7 @@
     &:first-child { padding-left: 0; border-left: 0; }
 
     // in colonna su schermi stretti: il filetto passa sopra
-    @include down($bp-md) {
+    @include media-breakpoint-down(md) {
       flex-basis: 100%;
       padding: 1.4rem 0 0;
       border-left: 0;
@@ -47,7 +47,7 @@
   border-top: 1px solid $color-line-soft;
   padding-top: clamp(1.4rem, 2.7vh, 2.2rem);
 
-  @include down($bp-md) { grid-template-columns: 1fr; }
+  @include media-breakpoint-down(md) { grid-template-columns: 1fr; }
 
   &__item {
     padding-left: clamp(1.2rem, 2.1vw, 2.2rem);
@@ -55,7 +55,7 @@
 
     &:first-child { padding-left: 0; border-left: 0; }
 
-    @include down($bp-md) { padding-left: 0; border-left: 0; padding-block: 1rem; }
+    @include media-breakpoint-down(md) { padding-left: 0; border-left: 0; padding-block: 1rem; }
   }
 
   &__num { @include label($color-accent, $fs-micro); display: block; margin-bottom: 1.65em; }

@@ -17,7 +17,8 @@ $color-accent-dim:  #1aa7bd;
 $color-heading:     #dce6f2;   // titoli display
 $color-text:        #b3c2d1;   // testo corrente
 $color-muted:       #7f8fa0;   // testo secondario
-$color-faint:       #5b6b7b;   // micro etichette
+$color-faint:       #748495;   // micro etichette e placeholder (4.6:1 sulle superfici, AA)
+$color-danger:      #e2584d;   // stato di errore dei campi
 
 $color-line:        #173b4c;   // bordi principali
 $color-line-soft:   rgba(#9ad7ec, 0.08);
@@ -56,12 +57,5 @@ $header-h:      clamp(5rem, 12.4vh, 9.4rem);      // altezza header   (151px @12
 
 // Posizione delle linee guida verticali (percentuale della larghezza utile)
 $grid-lines: 5.5%, 30%, 56.5%, 79%;
-
-// Breakpoint (allineati a Bootstrap 5) ------------------------------------
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
-$bp-xxl: 1400px;
 
 $ease: cubic-bezier(0.22, 0.61, 0.36, 1);

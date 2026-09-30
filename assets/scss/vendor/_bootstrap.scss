@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// Bootstrap 5 compilato dai sorgenti Sass, solo con le parti che il sito usa:
+// reboot, griglia, helper (es. .visually-hidden) e utility (flex, display,
+// spaziature). Niente componenti (bottoni, card, navbar...): quelli del sito
+// sono scritti a mano in components/.
+// Bootstrap 5.3 usa ancora @import al suo interno; il file si carica da
+// node_modules grazie a --load-path (vedi package.json).
+// -----------------------------------------------------------------------------
+@use '../abstracts' as site;
+
+// Il reboot parte gia' dai colori e dai font del sito
+$body-bg:               site.$color-bg;
+$body-color:            site.$color-text;
+$font-family-sans-serif: site.$font-body;
+$link-decoration:       none;
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+// Delle utility si tengono solo i gruppi per l'impaginazione (display, flex,
+// allineamenti, gap, dimensioni): colori, bordi, ombre, tipografia e
+// spaziature sono gia' nel CSS del sito e genererebbero migliaia di classi inutili.
+$utilities: map-get-multiple($utilities, (
+  'display', 'flex', 'flex-direction', 'flex-wrap', 'flex-grow', 'flex-shrink',
+  'justify-content', 'align-items', 'align-self', 'gap', 'row-gap', 'column-gap',
+  'width', 'height', 'text-align'
+));
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';

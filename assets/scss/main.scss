@@ -6,9 +6,11 @@
 //    layout/     → header, footer, griglia, sezioni
 //    components/ → elementi riutilizzabili
 //    pages/      → stili specifici di ogni pagina
+//    vendor/     → Bootstrap dai sorgenti Sass (solo le parti usate)
 //  Compilazione:  npm run build:css
 // =============================================================================
 
+@use 'vendor/bootstrap';   // reboot, griglia, helper e utility
 @use 'abstracts';
 @use 'base/reset';
 @use 'base/typography';

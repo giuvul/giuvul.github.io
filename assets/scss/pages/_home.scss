@@ -38,7 +38,7 @@
       linear-gradient(180deg, $color-bg 0%, rgba($color-bg, 0) 26%);
   }
 
-  @include down($bp-lg) {
+  @include media-breakpoint-down(lg) {
     inset: auto 0 0 0;
     height: 55%;
     opacity: 0.5;
@@ -58,7 +58,7 @@
   // il blocco del titolo rientra rispetto al logo, come nel concept
   padding-left: clamp(0px, 3.1vw, 45px);
 
-  @include down($bp-lg) { padding-left: 0; }
+  @include media-breakpoint-down(lg) { padding-left: 0; }
 }
 
 .hero__title {
@@ -69,7 +69,7 @@
   font-size: min(#{$fs-display-xl}, 10.4vh);
   max-width: 14ch;
 
-  @include down($bp-lg) { font-size: $fs-display-xl; }
+  @include media-breakpoint-down(lg) { font-size: $fs-display-xl; }
 }
 
 .hero__rule { margin-top: clamp(1.2rem, 3.5vh, 2.8rem); }
@@ -100,14 +100,14 @@
 
   // da desktop frase e pulsante stanno sulla stessa riga: impilati costavano
   // un'intera altezza di pulsante in piu' nella prima schermata
-  @include up($bp-lg) {
+  @include media-breakpoint-up(lg) {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     gap: clamp(1.2rem, 2vh, 1.8rem) clamp(2rem, 4vw, 4.5rem);
   }
 
-  @include down($bp-lg) { margin-left: 0; }
+  @include media-breakpoint-down(lg) { margin-left: 0; }
 }
 
 .hero__lead { max-width: 40ch; margin-bottom: 0; }

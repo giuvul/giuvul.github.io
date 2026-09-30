@@ -41,7 +41,7 @@
 .main-nav {
   display: none;
 
-  @include up($bp-lg) { display: block; }
+  @include media-breakpoint-up(lg) { display: block; }
 
   ul {
     display: flex;

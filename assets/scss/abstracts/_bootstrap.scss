@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// Funzioni e mixin di Bootstrap (nessun CSS in uscita): il sito usa i suoi
+// media-breakpoint-up / media-breakpoint-down invece di riscriverli, cosi i
+// breakpoint sono quelli della griglia di Bootstrap per costruzione.
+// -----------------------------------------------------------------------------
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';

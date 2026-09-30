@@ -3,13 +3,11 @@
 // -----------------------------------------------------------------------------
 @use '../abstracts' as *;
 
+// La griglia e' quella di Bootstrap (row row-cols-1 row-cols-sm-2
+// row-cols-lg-3 nel markup): qui si regola solo la distanza fra le card.
 .project-grid {
-  display: grid;                       // layout in CSS Grid
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(0.9rem, 1.74vw, 1.6rem);
-
-  @include down($bp-lg) { grid-template-columns: repeat(2, 1fr); }
-  @include down($bp-sm) { grid-template-columns: 1fr; }
+  --bs-gutter-x: #{clamp(0.9rem, 1.74vw, 1.6rem)};
+  --bs-gutter-y: var(--bs-gutter-x);
 }
 
 .project-card {
@@ -86,7 +84,7 @@
   font-size: clamp(0.7rem, 0.95vw, 1rem);
   line-height: 1.55;
 
-  @include up($bp-lg) { margin-top: 2.0vw; }
+  @include media-breakpoint-up(lg) { margin-top: calc(#{$fs-display-lg} * 0.45); }
 
   li + li { margin-top: 1.35em; }
 
@@ -122,6 +120,6 @@ $filters: all, data, analytics, platform, ai;
     outline-offset: 4px;
   }
   @if $f != all {
-    #f-#{$f}:checked ~ .project-grid .project-card:not([data-cat~='#{$f}']) { display: none; }
+    #f-#{$f}:checked ~ .project-grid > :not([data-cat~='#{$f}']) { display: none; }
   }
 }

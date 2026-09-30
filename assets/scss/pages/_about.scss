@@ -10,7 +10,7 @@
   align-items: end;
   margin-bottom: clamp(2.5rem, 4.9vw, 5.6rem);
 
-  @include down($bp-lg) { grid-template-columns: 1fr; }
+  @include media-breakpoint-down(lg) { grid-template-columns: 1fr; }
 
   // titolo sopra, bio sotto: affiancati non ci stanno piu' accanto al ritratto
   &__text {
@@ -48,7 +48,7 @@
     mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
   }
 
-  @include down($bp-lg) {
+  @include media-breakpoint-down(lg) {
     order: -1;
     width: min(72%, 20rem);
     margin: 0 auto;
@@ -67,14 +67,11 @@
   p + p { margin-top: 1.5em; }
 }
 
-// Blocco "Beyond work": testo, foto, micro etichette
+// Blocco "Beyond": due paragrafi affiancati da desktop, sulla griglia di
+// Bootstrap (row + col-lg-6 nel markup); qui solo le distanze e il testo
 .beyond {
-  display: grid;
-  grid-template-columns: minmax(0, 38.1%) minmax(0, 31.6%) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: center;
-
-  @include down($bp-lg) { grid-template-columns: 1fr; gap: 1.8rem; }
+  --bs-gutter-x: #{clamp(1.5rem, 4vw, 4rem)};
+  --bs-gutter-y: 1.8rem;
 
   &__text {
     font-size: clamp(0.95rem, 1.72vw, 1.75rem);
@@ -82,33 +79,29 @@
     line-height: 1.47;
     margin-top: clamp(0.8rem, 2.7vw, 3rem);
   }
-
-  // due paragrafi affiancati: il lavoro fuori dal codice, la vita fuori dal lavoro
-  &--text {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    @include down($bp-lg) { grid-template-columns: 1fr; }
-  }
-
-  &__media img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.02);
-  }
 }
 
-// Competenze per area: un gruppo per riga su mobile, due colonne da tablet
-.about-skills {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.6rem, 3vw, 2.8rem) clamp(1.8rem, 4vw, 4.5rem);
-  margin-bottom: clamp(2.5rem, 4.9vw, 5.6rem);
-
-  @include down($bp-md) { grid-template-columns: 1fr; }
+// Aree di lavoro in About: una sintesi, due colonne da tablet (row-cols-md-2)
+.about-focus {
+  --bs-gutter-x: #{clamp(1.8rem, 4vw, 4.5rem)};
+  --bs-gutter-y: #{clamp(1.6rem, 3vw, 2.8rem)};
 
   &__title {
     @include label($color-accent, $fs-label);
     margin-bottom: 0.9em;
+  }
+
+  &__text {
+    font-size: $fs-body;
+    color: $color-text;
+    line-height: 1.54;
+    max-width: 44ch;
+  }
+
+  &__more {
+    margin: clamp(1.6rem, 3vw, 2.8rem) 0 clamp(2.5rem, 4.9vw, 5.6rem);
+    @include label($color-heading, $fs-micro);
+
+    a:hover { color: $color-accent; }
   }
 }

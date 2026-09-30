@@ -17,6 +17,26 @@
   gap: 2rem;
 }
 
+// Colonna sinistra: pagine del sito sopra, profili esterni sotto. Le pagine
+// sono qui anche perche' il footer resta raggiungibile da ogni dispositivo.
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem clamp(1.2rem, 4.9vw, 5rem);
+
+  a {
+    @include label($color-heading, $fs-label);
+    letter-spacing: $tracking-nav;
+    &:hover { color: $color-accent; }
+  }
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;                // su schermi stretti (o con il testo di sistema
@@ -39,7 +59,7 @@
 
   .rule { margin-left: auto; margin-bottom: 1.5rem; width: clamp(60px, 5vw, 80px); }
 
-  @include down($bp-lg) {
+  @include media-breakpoint-down(lg) {
     text-align: left;
     .rule { margin-left: 0; }
   }

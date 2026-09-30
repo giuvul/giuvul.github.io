@@ -42,7 +42,7 @@
     }
 
     // stato di errore mostrato solo dopo l'interazione
-    &:not(:placeholder-shown):invalid { border-bottom-color: #e2584d; }
+    &:not(:placeholder-shown):invalid { border-bottom-color: $color-danger; }
   }
 
   textarea { resize: vertical; min-height: 7.5rem; }

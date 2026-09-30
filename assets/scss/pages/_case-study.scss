@@ -10,7 +10,7 @@
   align-items: start;
   margin-block: clamp(1.2rem, 2.9vh, 2.4rem) clamp(1.5rem, 3.3vh, 2.7rem);
 
-  @include down($bp-lg) { grid-template-columns: 1fr; }
+  @include media-breakpoint-down(lg) { grid-template-columns: 1fr; }
 }
 
 .case-title {
@@ -47,15 +47,4 @@
   }
 
   &__stack dt { color: $color-accent; }
-}
-
-.case-hero {
-  border: 1px solid $color-line;
-  margin-bottom: clamp(1.5rem, 2.7vh, 2.2rem);
-
-  img {
-    width: 100%;
-    aspect-ratio: 1304 / 312;   // proporzione presa dal concept
-    object-fit: cover;
-  }
 }

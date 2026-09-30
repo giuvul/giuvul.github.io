@@ -2,9 +2,27 @@
 // Menu a tutto schermo (schermata 06 del concept).
 // Funziona senza JavaScript: una checkbox nascosta pilota l'apertura.
 // -----------------------------------------------------------------------------
+@use 'sass:list';
 @use '../abstracts' as *;
 
-.nav-state { position: absolute; opacity: 0; pointer-events: none; }
+.nav-state {
+  // raggiungibile da tastiera ma invisibile, come i radio dei filtri:
+  // `fixed` perche' il focus non faccia scorrere la pagina
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// il focus si vede sul pallino che apre il menu e sulla X che lo chiude
+.nav-state:focus-visible ~ .site-header .nav-toggle,
+.nav-state:focus-visible ~ .nav-overlay .nav-close {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}
 
 .nav-overlay {
   position: fixed;
@@ -47,7 +65,7 @@
       linear-gradient(180deg, $color-bg 0%, rgba($color-bg, 0) 22%, rgba($color-bg, 0) 78%, $color-bg 100%);
   }
 
-  @include down($bp-lg) { display: none; }
+  @include media-breakpoint-down(lg) { display: none; }
 }
 
 .nav-overlay__top {
@@ -105,13 +123,14 @@
 
 .nav-overlay__tagline {
   position: absolute;
-  left: 79.9%;
+  // subito a destra della quarta linea guida verticale (vedi $grid-lines)
+  left: calc(#{list.nth($grid-lines, 4)} + 0.8rem);
   top: 60%;
   @include label($color-muted, clamp(0.75rem, 1.1vw, 1.15rem));
   line-height: 2.14;
   z-index: 2;
 
-  @include down($bp-lg) { display: none; }
+  @include media-breakpoint-down(lg) { display: none; }
 }
 
 .nav-overlay__foot {

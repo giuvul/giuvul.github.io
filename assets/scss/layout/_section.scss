@@ -12,7 +12,7 @@
     .section__label { margin-bottom: clamp(1rem, 2.57vw, 2.7rem); }
   }
 
-  @include down($bp-lg) { padding-block: $section-top 3rem; }
+  @include media-breakpoint-down(lg) { padding-block: $section-top 3rem; }
 }
 
 .section--flush { padding-top: $section-top; }
@@ -27,7 +27,7 @@
   align-items: start;
   margin-bottom: clamp(1.5rem, 2.78vw, 2.6rem);
 
-  @include down($bp-lg) {
+  @include media-breakpoint-down(lg) {
     grid-template-columns: 1fr;
     gap: 1.6rem;
   }
@@ -40,8 +40,9 @@
   max-width: 44ch;
   padding-top: 0.7em;
 
-  // nel concept il paragrafo e' allineato al centro del titolo
-  @include up($bp-lg) { padding-top: 5.3vw; }
+  // allineato al centro del titolo a due righe accanto: la distanza segue il
+  // corpo del titolo, quindi resta giusta anche quando il clamp lo blocca
+  @include media-breakpoint-up(lg) { padding-top: calc(#{$fs-display-lg} * 1.2); }
 }
 
 .divider {
