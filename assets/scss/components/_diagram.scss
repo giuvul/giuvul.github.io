@@ -43,19 +43,16 @@ $dg-max-nodes: 6;
 
   svg { display: block; width: 100%; height: auto; }
 
-  // lo sprite delle icone non si disegna: esiste solo per essere richiamato
-  svg.dg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-
   // Due geometrie dalla stessa specifica. Il selettore ripete `svg` perche
   // altrimenti `.diagram svg` vincerebbe per specificita.
-  svg.diagram__wide { display: none; @include up($bp-md) { display: block; } }
-  svg.diagram__tall { display: block; @include up($bp-md) { display: none; } }
+  svg.diagram__wide { display: none; @include media-breakpoint-up(md) { display: block; } }
+  svg.diagram__tall { display: block; @include media-breakpoint-up(md) { display: none; } }
 
   &__hits {
     position: absolute;
     inset: 0;
-    &--wide { display: none; @include up($bp-md) { display: block; } }
-    &--tall { display: block; @include up($bp-md) { display: none; } }
+    &--wide { display: none; @include media-breakpoint-up(md) { display: block; } }
+    &--tall { display: block; @include media-breakpoint-up(md) { display: none; } }
   }
 
   // Le percentuali sono calcolate sul viewBox: l'SVG scala mantenendo le
@@ -196,8 +193,8 @@ $dg-max-nodes: 6;
 // Il tooltip in hover serve solo a chi ha un puntatore preciso e spazio per il
 // disegno largo; tutti gli altri (dito, finestra stretta) aprono il pannello.
 // Le due condizioni sono complementari: ogni dispositivo ne soddisfa una sola.
-$dg-pointer: '(hover: hover) and (pointer: fine) and (min-width: #{$bp-md})';
-$dg-touch: '(hover: none), (pointer: coarse), (max-width: #{$bp-md - 0.02px})';
+$dg-pointer: '(hover: hover) and (pointer: fine) and (min-width: #{breakpoint-min(md)})';
+$dg-touch: '(hover: none), (pointer: coarse), (max-width: #{breakpoint-max(md)})';
 
 .diagram__hint--touch { display: none; }
 @media #{$dg-touch} {
