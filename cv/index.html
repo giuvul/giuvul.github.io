@@ -130,19 +130,28 @@
         <h2 class="cv-section__title">Experience</h2>
         <div class="timeline">
           <div class="timeline__item">
-            <p class="timeline__period">2024 &ndash; Present</p>
+            <p class="timeline__period">Sep 2026 &ndash; Present</p>
             <div>
               <h3 class="timeline__role">Chief Data Officer</h3>
               <span class="timeline__org">E23 &middot; Airport retail analytics startup</span>
               <ul class="timeline__list">
-                <li>Designed and directed E23&rsquo;s passenger profiling platform (~360k lines of code; Python, FastAPI, PostgreSQL on AWS), serving 535M+ rows across 16 airports to customer-facing dashboards.</li>
+                <li>Introduced declarative data contracts (43 checks, hourly and on every write) with CloudWatch alerting, turning data quality and governance into an automated gate.</li>
+                <li>Built a multi-agent AI operations platform (Claude, MCP) with LLM-as-judge evaluation calibrated against human raters and human approval on every outbound action.</li>
+                <li>Work directly with airport, retail and media clients: translate business questions into data products and KPIs, and shape the product roadmap with the team.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__period">Dec 2024 &ndash; Aug 2026</p>
+            <div>
+              <h3 class="timeline__role">Founding Data Engineer</h3>
+              <span class="timeline__org">E23 &middot; Airport retail analytics startup</span>
+              <ul class="timeline__list">
+                <li>Designed and built E23&rsquo;s passenger profiling platform (~360k lines of code; Python, FastAPI, PostgreSQL on AWS), serving 535M+ rows across 16 airports to customer-facing dashboards.</li>
                 <li>Decoupled data generation from database writes with an exactly-once Parquet pipeline (Celery, PyArrow, S3), so compute scales independently of the database.</li>
                 <li>Aligned PostgreSQL LIST + HASH partitioning with how clients query the data: each dashboard request reads a single airport slice instead of the full table.</li>
-                <li>Introduced declarative data contracts (43 checks, hourly and on every write) with CloudWatch alerting, turning data quality and governance into an automated gate.</li>
                 <li>Built the analytics engineering layer with tested dbt models orchestrated by Dagster, and a DuckDB OLAP engine that reuses the Parquet files the pipeline already writes.</li>
                 <li>Codified the AWS infrastructure (ECS, RDS, S3, CloudFront, KMS) in Terraform, with GitHub Actions CI/CD, security scanning and verified rollbacks.</li>
-                <li>Built a multi-agent AI operations platform (Claude, MCP) with LLM-as-judge evaluation calibrated against human raters and human approval on every outbound action.</li>
-                <li>Worked directly with airport and retail clients: translated business questions into data products and KPIs, and shaped the product roadmap with the team.</li>
               </ul>
             </div>
           </div>
@@ -187,7 +196,7 @@
         <h2 class="cv-section__title">Education</h2>
         <div class="timeline">
           <div class="timeline__item">
-            <p class="timeline__period">Jan 2026 &ndash; Dec 2026 (expected)</p>
+            <p class="timeline__period">2026</p>
             <div>
               <h3 class="timeline__role">First-level Master in AI and AI Agents for Business (60 ECTS)</h3>
               <span class="timeline__org">Universit&agrave; degli Studi Guglielmo Marconi</span>
