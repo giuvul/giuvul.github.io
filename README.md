@@ -2,7 +2,7 @@
 
 Portfolio personale di **Giuseppe Vulduraro**, Chief Data Officer e Data & AI Engineer.
 Sito statico in **HTML + Sass + Bootstrap 5**, senza JavaScript, pubblicato su
-GitHub Pages: <https://giuvul.github.io/>.
+GitHub Pages: <https://giuseppevulduraro.com/> (custom domain; `vulduraro.com` redirects here via Cloudflare).
 
 Nato come progetto del modulo HTML e CSS del Master in AI e Agenti AI per il
 Business (Università degli Studi Guglielmo Marconi), resta il mio sito personale
