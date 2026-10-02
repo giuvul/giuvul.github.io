@@ -11,9 +11,9 @@
 // -----------------------------------------------------------------------------
 
 const EMAILJS = {
-  publicKey: 'YOUR_PUBLIC_KEY',     // Account > General > Public Key
-  serviceId: 'YOUR_SERVICE_ID',     // Email Services > servizio Gmail
-  templateId: 'YOUR_TEMPLATE_ID',   // Email Templates > template del sito
+  publicKey: '4_fjd4Zh3Pq6OoeYG',   // Account > General > Public Key
+  serviceId: 'service_ph0oeyl',     // Email Services > servizio Gmail
+  templateId: 'template_k8n9t8h',   // Email Templates > template del sito
 };
 
 const form = document.querySelector('.contact-form');
