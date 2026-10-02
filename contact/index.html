@@ -154,20 +154,14 @@
         </p>
       </div>
 
-      <!-- Invio via FormSubmit.co: un normale POST HTML, nessun JavaScript.
-           L'indirizzo e' scritto in entita' HTML come nel resto del sito.
-           DA FARE: quando FormSubmit invia l'email di attivazione, sostituirlo
-           con l'alias casuale che fornisce, cosi l'email sparisce dal sorgente. -->
-      <form class="contact-form" action="https://formsubmit.co/&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" method="post">
-        <!-- configurazione di FormSubmit -->
-        <input type="hidden" name="_subject" value="New message from giuseppevulduraro.com">
-        <input type="hidden" name="_next" value="https://giuseppevulduraro.com/contact/thanks/">
-        <input type="hidden" name="_template" value="table">
-        <!-- trappola anti-spam come da documentazione FormSubmit: se contiene un
-             valore l'invio viene scartato in silenzio. Deve essere display:none
-             (d-none di Bootstrap), non solo nascosta alla vista: altrimenti
-             l'autocompilazione del browser la riempie e i messaggi veri vanno persi. -->
-        <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off">
+      <!-- Invio con EmailJS (assets/js/contact.js): niente action, il form
+           lo spedisce lo script. novalidate non c'e': i controlli HTML restano. -->
+      <form class="contact-form">
+        <!-- trappola anti-spam: invisibile e fuori dalla tabulazione, un utente
+             vero la lascia vuota; se contiene qualcosa lo script scarta l'invio.
+             d-none (display:none) e autocomplete="off" evitano che la riempia
+             l'autocompilazione del browser. -->
+        <input type="text" name="website" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <!-- impaginazione con la griglia di Bootstrap: due colonne da tablet in su -->
         <div class="row g-4">
         <div class="col-md-6 field">
@@ -192,13 +186,24 @@
 
         <div class="col-12 d-flex flex-wrap align-items-center justify-content-between gap-4">
           <p class="form-note">
-            Messages are delivered by FormSubmit, an external form service.<br>
+            Messages are delivered by EmailJS, an external email service.<br>
             Nothing is stored on this site.
           </p>
           <button type="submit" class="cta">
             <span class="cta__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
             <span class="cta__label">Send message</span>
           </button>
+        </div>
+
+        <!-- esito dell'invio: annunciato dagli screen reader quando cambia -->
+        <div class="col-12">
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+          <noscript>
+            <p class="form-status form-status--error">
+              The form needs JavaScript to send messages. You can write to me at
+              <a href="mailto:&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#103;&#105;&#117;&#115;&#101;&#112;&#112;&#101;&#118;&#117;&#108;&#100;&#117;&#114;&#97;&#114;&#111;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.
+            </p>
+          </noscript>
         </div>
         </div>
       </form>
@@ -230,5 +235,8 @@
       </div>
     </div>
   </footer>
+  <!-- EmailJS (SDK ufficiale) e invio del form -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="../assets/js/contact.js" defer></script>
 </body>
 </html>

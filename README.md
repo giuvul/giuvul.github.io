@@ -1,7 +1,7 @@
 # giuvul.github.io
 
 Portfolio personale di **Giuseppe Vulduraro**, Chief Data Officer e Data & AI Engineer.
-Sito statico in **HTML + Sass + Bootstrap 5**, senza JavaScript, pubblicato su
+Sito statico in **HTML + Sass + Bootstrap 5**, pubblicato su
 GitHub Pages: <https://giuseppevulduraro.com/> (custom domain; `vulduraro.com` redirects here via Cloudflare).
 
 Nato come progetto del modulo HTML e CSS del Master in AI e Agenti AI per il
@@ -17,7 +17,7 @@ anche dopo il master.
 | `/work/<slug>/` | un case study: problema, approccio, risultato e diagramma interattivo |
 | `/about/` | profilo, aree di lavoro, attività fuori dal lavoro |
 | `/cv/` | curriculum in HTML, con PDF scaricabile e foglio di stile per la stampa |
-| `/contact/` | contatti e form (FormSubmit) |
+| `/contact/` | contatti e form (EmailJS) |
 | `/contact/thanks/` | conferma dopo l'invio del form (`noindex`) |
 
 ## Struttura delle cartelle
@@ -40,6 +40,7 @@ anche dopo il master.
     │   ├── style.css           GENERATO da Sass (Bootstrap incluso)
     │   └── fonts.css           @font-face dei font self-hosted
     ├── cv/                     CV in PDF
+    ├── js/contact.js           invio del form con EmailJS
     ├── fonts/                  Archivo, Barlow, Saira (subset latin, woff2)
     ├── img/
     │   ├── projects/           anteprime SVG delle card
@@ -86,13 +87,14 @@ sprite `icons.svg` viene richiamato con `<use href>` e i browser lo bloccano su
 | Menu sticky | header `position: sticky` su ogni viewport; sotto i 992px il menu si apre a tutto schermo |
 | Responsive | tre colonne → due → una per le card, intestazioni su una colonna sotto i 992px, nessuno scorrimento orizzontale da 280px in su |
 | Pagina CV | HTML generato dalla stessa fonte dati del PDF; stili di stampa dedicati |
-| Form di contatto | `required`, `type="email"`, `minlength`, `autocomplete`; errore mostrato solo dopo l'interazione (`:not(:placeholder-shown):invalid`); honeypot anti-spam; invio con un normale POST a FormSubmit e ritorno su `/contact/thanks/` |
+| Form di contatto | `required`, `type="email"`, `minlength`, `autocomplete`; errore mostrato solo dopo l'interazione (`:not(:placeholder-shown):invalid`); honeypot anti-spam; invio con EmailJS (`assets/js/contact.js`) e ritorno su `/contact/thanks/` |
 | Favicon e condivisione | `favicon.svg`; meta description, `canonical`, Open Graph e Twitter card su ogni pagina |
 
-### Interazione senza JavaScript
+### Interazione quasi senza JavaScript
 
-La cartella `assets/js/` è vuota: tutta l'interazione passa da input nascosti
-e selettori CSS.
+L'unico script del sito è `assets/js/contact.js`, che invia il form di contatto
+con EmailJS (aggiunto con il modulo JavaScript del master). Tutto il resto
+dell'interazione passa da input nascosti e selettori CSS.
 
 - **Menu a tutto schermo**: una checkbox invisibile ma raggiungibile da tastiera
   (Tab, poi Spazio) apre e chiude il menu; il focus si vede sul pallino ciano.
@@ -126,3 +128,11 @@ parte del sito pubblicato.
 Il sito è pubblicato da GitHub Pages dal branch `main` (cartella radice) del
 repository `giuvul/giuvul.github.io`. Il file `.nojekyll` disattiva Jekyll, che
 altrimenti escluderebbe i file che iniziano con `_`, come i partial Sass.
+
+## Form di contatto (EmailJS)
+
+Il form invia i campi `name`, `email`, `subject` e `message` al template di
+EmailJS, che spedisce l'email dal servizio Gmail collegato. L'indirizzo di
+destinazione è impostato nel template ("To Email"), non nel codice. Le tre chiavi
+(public key, service ID, template ID) sono in cima a `assets/js/contact.js`; su
+EmailJS conviene limitare i domini consentiti a `giuseppevulduraro.com`.

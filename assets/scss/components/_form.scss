@@ -55,6 +55,23 @@
   line-height: 1.8;
 }
 
+// Esito dell'invio (scritto da assets/js/contact.js)
+.form-status {
+  font-size: $fs-small;
+  color: $color-text;
+  line-height: 1.5;
+
+  &--error { color: $color-danger; }
+
+  a { color: $color-accent; }
+}
+
+// pulsante disattivato mentre l'invio e' in corso
+.contact-form button[type='submit']:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+
 // Elenco dei recapiti con icona
 .contact-list {
   display: flex;
